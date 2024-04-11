@@ -41,7 +41,7 @@
 			<a href="/" class="text-sm font-semibold leading-6 text-gray-900">Product</a>
 			<a href="/" class="text-sm font-semibold leading-6 text-gray-900">Features</a>
 			<a href="/" class="text-sm font-semibold leading-6 text-gray-900">Marketplace</a>
-			<a href="/" class="text-sm font-semibold leading-6 text-gray-900">Company</a>
+			<a href="/about" class="text-sm font-semibold leading-6 text-gray-900">Company</a>
 		</div>
 		<div class="hidden md:flex md:flex-1 md:justify-end">
 			<a href="/dashboard" class="text-sm font-semibold leading-6 text-gray-900"
@@ -98,7 +98,7 @@
 							>Marketplace</a
 						>
 						<a
-							href="/"
+							href="/about"
 							class="-mx-3 block rounded-lg px-3 py-2 text-base font-semibold leading-7 text-gray-900 hover:bg-gray-50"
 							>Company</a
 						>
