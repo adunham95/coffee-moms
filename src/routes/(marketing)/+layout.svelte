@@ -37,10 +37,10 @@
 			</button>
 		</div>
 		<div class="hidden md:flex md:gap-x-12">
-			<a class="text-sm font-semibold leading-6 text-gray-900">Product</a>
-			<a class="text-sm font-semibold leading-6 text-gray-900">Features</a>
-			<a class="text-sm font-semibold leading-6 text-gray-900">Marketplace</a>
-			<a class="text-sm font-semibold leading-6 text-gray-900">Company</a>
+			<a href="/" class="text-sm font-semibold leading-6 text-gray-900">Product</a>
+			<a href="/" class="text-sm font-semibold leading-6 text-gray-900">Features</a>
+			<a href="/" class="text-sm font-semibold leading-6 text-gray-900">Marketplace</a>
+			<a href="/" class="text-sm font-semibold leading-6 text-gray-900">Company</a>
 		</div>
 		<div class="hidden md:flex md:flex-1 md:justify-end">
 			<a href="/dashboard" class="text-sm font-semibold leading-6 text-gray-900"
@@ -49,7 +49,7 @@
 		</div>
 	</nav>
 	<!-- Mobile menu, show/hide based on menu open state. -->
-	<div class={` ${mobileMenuOpen ? 'hidden' : 'md:hidden'}`} role="dialog" aria-modal="true">
+	<div class={` ${mobileMenuOpen ? 'md:hidden' : 'hidden'}`} role="dialog" aria-modal="true">
 		<!-- Background backdrop, show/hide based on slide-over state. -->
 		<div class="fixed inset-0 z-50"></div>
 		<div
@@ -82,18 +82,22 @@
 				<div class="-my-6 divide-y divide-gray-500/10">
 					<div class="space-y-2 py-6">
 						<a
+							href="/"
 							class="-mx-3 block rounded-lg px-3 py-2 text-base font-semibold leading-7 text-gray-900 hover:bg-gray-50"
 							>Product</a
 						>
 						<a
+							href="/"
 							class="-mx-3 block rounded-lg px-3 py-2 text-base font-semibold leading-7 text-gray-900 hover:bg-gray-50"
 							>Features</a
 						>
 						<a
+							href="/"
 							class="-mx-3 block rounded-lg px-3 py-2 text-base font-semibold leading-7 text-gray-900 hover:bg-gray-50"
 							>Marketplace</a
 						>
 						<a
+							href="/"
 							class="-mx-3 block rounded-lg px-3 py-2 text-base font-semibold leading-7 text-gray-900 hover:bg-gray-50"
 							>Company</a
 						>
