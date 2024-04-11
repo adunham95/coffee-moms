@@ -12,14 +12,14 @@
 				<div
 					class="relative flex h-16 items-center justify-between lg:border-b lg:border-brand-bg-400 lg:border-opacity-25"
 				>
-					<div class="flex items-center px-2 lg:px-0">
+					<a href="/dashboard" class="flex items-center px-2 lg:px-0">
 						<div class="flex-shrink-0">
 							<img src={coffee_logo} alt="Logo" class="block h-8 w-auto" />
 						</div>
 						<div class="flex-shrink-0 hidden sm:flex ml-2">
 							<img src={text_logo} alt="Text Logo" class="block h-5 w-auto" />
 						</div>
-					</div>
+					</a>
 
 					<div class="block lg:ml-4 lg:block">
 						<div class="flex items-center">
