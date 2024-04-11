@@ -1,6 +1,7 @@
 <script>
 	import coffee_logo from '$lib/images/coffee-logo.svg';
 	import text_logo from '$lib/images/text-logo.svg';
+	import Footer from '../../components/Footer.svelte';
 
 	let mobileMenuOpen = false;
 </script>
@@ -118,3 +119,5 @@
 <div class="pt-14">
 	<slot />
 </div>
+
+<Footer />
