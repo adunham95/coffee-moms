@@ -6,7 +6,7 @@
 <header class="pt-2 pb-4 mx-auto max-w-7xl px-2 sm:px-4 lg:px-8">
 	<div>
 		<nav class="sm:hidden" aria-label="Back">
-			<a class="flex items-center text-sm font-medium text-gray-500 hover:text-gray-700">
+			<a href="/" class="flex items-center text-sm font-medium text-gray-500 hover:text-gray-700">
 				<svg
 					class="-ml-1 mr-1 h-5 w-5 flex-shrink-0 text-gray-400"
 					viewBox="0 0 20 20"
