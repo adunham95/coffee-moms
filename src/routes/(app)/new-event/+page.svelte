@@ -24,7 +24,7 @@
 					{ id: 'coffee', title: 'Coffee' },
 					{ id: 'playground', title: 'Playground' },
 					{ id: 'dinner', title: 'Dinner' },
-					{ id: 'other', title: 'Other' },
+					{ id: 'other', title: 'Other', checked: true },
 				]}
 			/>
 		</div>

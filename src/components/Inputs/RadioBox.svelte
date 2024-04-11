@@ -3,7 +3,7 @@
 	export let labelName: string;
 	export let id: string;
 	export let groupName: string;
-	export let options: { id: string; title: string; value?: string }[] = [];
+	export let options: { id: string; title: string; value?: string; checked?: boolean }[] = [];
 </script>
 
 <fieldset>
@@ -12,13 +12,14 @@
 	<div class="mt-2 grid gap-y-6 sm:gap-x-4 grid-template-auto">
 		{#each options as radioElement}
 			<label
-				class="relative flex cursor-pointer rounded-lg border bg-white p-4 shadow-sm focus:outline-none has-[:checked]:border-brand-600 has-[:checked]:ring-2 has-[:checked]:ring-brand-600"
+				class="relative flex cursor-pointer rounded-lg border bg-white p-4 shadow-sm focus:outline-none has-[:checked]:border-brand-600 has-[:checked]:ring-1 has-[:checked]:ring-brand-600 has-[:checked]:bg-brand-50"
 			>
 				<input
 					type="radio"
 					id={radioElement.id}
 					name={groupName}
 					value={radioElement?.value || radioElement.id}
+					checked={radioElement.checked}
 					class="peer sr-only"
 					aria-labelledby="project-type-0-label"
 					aria-describedby="project-type-0-description-0 project-type-0-description-1"
