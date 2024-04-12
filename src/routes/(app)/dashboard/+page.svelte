@@ -11,12 +11,15 @@
 </svelte:head>
 
 <Container className="py-10">
-	<StatBar
-		stats={[
-			{ stat: '6', title: 'Total Events' },
-			{ title: 'Top Type', stat: 'Playground' },
-		]}
-	/>
+	<div class="pb-4">
+		<StatBar
+			stats={[
+				{ title: 'Next Event', stat: 'Tomorrow' },
+				{ stat: '6', title: 'Total Events' },
+				{ title: 'Top Type', stat: 'Playground' },
+			]}
+		/>
+	</div>
 	<EventList
 		events={[
 			{
