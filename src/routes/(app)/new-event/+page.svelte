@@ -3,7 +3,7 @@
 	import RadioBox from '../../../components/Inputs/RadioBox.svelte';
 	import FormTwoColumn from '../../../components/PanelLayout/FormTwoColumn.svelte';
 	import TwoPanel from '../../../components/PanelLayout/TwoPanel.svelte';
-	import TextInput from '../../../components/TextInput.svelte';
+	import TextInput from '../../../components/Inputs/TextInput.svelte';
 </script>
 
 <svelte:head>

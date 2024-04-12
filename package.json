@@ -38,6 +38,7 @@
 	},
 	"type": "module",
 	"dependencies": {
-		"@prisma/client": "5.12.1"
+		"@prisma/client": "5.12.1",
+		"uuid": "^9.0.1"
 	}
 }
