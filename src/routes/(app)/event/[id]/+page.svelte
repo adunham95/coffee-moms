@@ -74,7 +74,7 @@
 							id="more-menu-item-0">Copy URL</button
 						>
 						<a
-							href="#"
+							href="/"
 							class="block px-3 py-1 text-sm leading-6 text-gray-900"
 							role="menuitem"
 							tabindex="-1"

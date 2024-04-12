@@ -1,7 +1,10 @@
 import { redirect } from '@sveltejs/kit';
 import { getUserById } from './store/db';
-const unProtectedRoutes = ['/', '/sign-in', '/sign-up'];
+const unProtectedRoutes = ['/', '/sign-in', '/sign-up', '/about'];
 export const handle = async ({ event, request, resolve }) => {
+	if (unProtectedRoutes.includes(event.url.pathname)) {
+		return resolve(event);
+	}
 	const sessionId = event.cookies.get('session_id');
 	console.log('sessionId', sessionId);
 	if (!sessionId && !unProtectedRoutes.includes(event.url.pathname)) {
