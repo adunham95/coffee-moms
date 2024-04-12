@@ -1,6 +1,6 @@
 // import adapter from '@sveltejs/adapter-auto';
 import { vitePreprocess } from '@sveltejs/vite-plugin-svelte';
-
+import { resolve } from 'path';
 import adapter from '@sveltejs/adapter-netlify';
 
 /** @type {import('@sveltejs/kit').Config} */
@@ -13,6 +13,10 @@ const config = {
 		adapter: adapter({
 			edge: true,
 		}),
+		alias: {
+			$types: resolve('./src/types/'),
+			$components: resolve('./src/components/'),
+		},
 	},
 };
 
