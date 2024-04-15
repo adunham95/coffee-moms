@@ -53,17 +53,17 @@ export default {
 					primary: {
 						DEFAULT: '#9052a8',
 						hover: '#551c75',
-						content: '#ffffff',
+						content: '#f9fafb',
 					},
 					accent: {
 						DEFAULT: '#52a890',
 						hover: '#1c7555',
-						content: '#ffffff',
+						content: '#f9fafb',
 					},
 					danger: {
 						DEFAULT: '#dc2626',
 						hover: '#b91c1c',
-						content: '#ffffff',
+						content: '#f9fafb',
 					},
 
 					info: {
