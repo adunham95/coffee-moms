@@ -12,13 +12,13 @@
 					class="h-16 w-16 flex-none rounded-full ring-1 ring-gray-900/10"
 				/>
 				<h1>
-					<div class="mt-1 text-base font-semibold leading-6 text-gray-900">Event Name</div>
+					<div class="mt-1 text-base font-semibold leading-6 text-theme-content">Event Name</div>
 				</h1>
 			</div>
 			<div class="flex items-center gap-x-4 sm:gap-x-6">
 				<a
 					href="/"
-					class="hidden text-sm font-semibold leading-6 text-gray-900 sm:block rounded px-3 py-2"
+					class="hidden text-sm font-semibold leading-6 text-theme-content sm:block rounded px-3 py-2"
 					>Edit</a
 				>
 				<a
@@ -37,7 +37,7 @@
 					>
 						<span class="sr-only">More</span>
 						<svg
-							class="h-5 w-5 text-gray-500"
+							class="h-5 w-5 text-theme-secondary-content"
 							viewBox="0 0 20 20"
 							fill="currentColor"
 							aria-hidden="true"
@@ -68,14 +68,14 @@
 						<!-- Active: "bg-gray-50", Not Active: "" -->
 						<button
 							type="button"
-							class="block w-full px-3 py-1 text-left text-sm leading-6 text-gray-900"
+							class="block w-full px-3 py-1 text-left text-sm leading-6 text-theme-content"
 							role="menuitem"
 							tabindex="-1"
 							id="more-menu-item-0">Copy URL</button
 						>
 						<a
 							href="/"
-							class="block px-3 py-1 text-sm leading-6 text-gray-900"
+							class="block px-3 py-1 text-sm leading-6 text-theme-content"
 							role="menuitem"
 							tabindex="-1"
 							id="more-menu-item-1">Edit</a

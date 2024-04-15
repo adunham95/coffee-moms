@@ -175,11 +175,11 @@
 	<div class="md:flex md:items-center md:justify-between pt-10 pb-5">
 		<div class="min-w-0 flex-1">
 			<h2
-				class="text-2xl font-bold leading-7 text-gray-900 sm:truncate sm:text-3xl sm:tracking-tight text-center"
+				class="text-2xl font-bold leading-7 text-theme-content sm:truncate sm:text-3xl sm:tracking-tight text-center"
 			>
 				Design Guidelines
 			</h2>
-			<p class="mt-2 max-w-4xl text-sm text-gray-500 text-center">
+			<p class="mt-2 max-w-4xl text-sm text-theme-secondary-content text-center">
 				Our design guidelines help us create a consistent and user-friendly experience across all
 				our products.
 			</p>
@@ -188,17 +188,17 @@
 
 	<!-- Design Principles -->
 	<div class="pb-5">
-		<h3 class="text-lg font-semibold leading-6 text-gray-900">Design Principles</h3>
-		<p class="mt-2 max-w-4xl text-sm text-gray-500">
+		<h3 class="text-lg font-semibold leading-6 text-theme-content">Design Principles</h3>
+		<p class="mt-2 max-w-4xl text-sm text-theme-secondary-content">
 			Our design principles guide our decision-making process and ensure that our products are
 			intuitive, accessible, and beautiful.
 		</p>
 		<ol class="grid gap-3 grid-cols-1 md:grid-cols-2 py-3">
 			<li>
 				<div class="flex items-start gap-x-3">
-					<p class="text-sm font-semibold leading-6 text-gray-900">Accessibility</p>
+					<p class="text-sm font-semibold leading-6 text-theme-content">Accessibility</p>
 				</div>
-				<div class="mt-1 flex items-center gap-x-2 text-xs leading-5 text-gray-500">
+				<div class="mt-1 flex items-center gap-x-2 text-xs leading-5 text-theme-secondary-content">
 					<p>
 						We prioritize accessibility to ensure that all users can interact with our products.
 					</p>
@@ -206,9 +206,9 @@
 			</li>
 			<li>
 				<div class="flex items-start gap-x-3">
-					<p class="text-sm font-semibold leading-6 text-gray-900">Simplicity</p>
+					<p class="text-sm font-semibold leading-6 text-theme-content">Simplicity</p>
 				</div>
-				<div class="mt-1 flex items-center gap-x-2 text-xs leading-5 text-gray-500">
+				<div class="mt-1 flex items-center gap-x-2 text-xs leading-5 text-theme-secondary-content">
 					<p>
 						We believe in the power of simplicity and strive to eliminate complexity from the user
 						experience.
@@ -217,17 +217,17 @@
 			</li>
 			<li>
 				<div class="flex items-start gap-x-3">
-					<p class="text-sm font-semibold leading-6 text-gray-900">Innovation</p>
+					<p class="text-sm font-semibold leading-6 text-theme-content">Innovation</p>
 				</div>
-				<div class="mt-1 flex items-center gap-x-2 text-xs leading-5 text-gray-500">
+				<div class="mt-1 flex items-center gap-x-2 text-xs leading-5 text-theme-secondary-content">
 					<p>We embrace innovation and are constantly exploring new ways to delight our users.</p>
 				</div>
 			</li>
 			<li>
 				<div class="flex items-start gap-x-3">
-					<p class="text-sm font-semibold leading-6 text-gray-900">User-Centric</p>
+					<p class="text-sm font-semibold leading-6 text-theme-content">User-Centric</p>
 				</div>
-				<div class="mt-1 flex items-center gap-x-2 text-xs leading-5 text-gray-500">
+				<div class="mt-1 flex items-center gap-x-2 text-xs leading-5 text-theme-secondary-content">
 					<p>
 						Our design decisions are driven by a deep understanding of our users’ needs and goals.
 					</p>
@@ -238,8 +238,8 @@
 
 	<!-- Color Pallet -->
 	<div class="pb-10">
-		<h3 class="text-lg font-semibold leading-6 text-gray-900">Color Pallet</h3>
-		<p class="mt-2 max-w-4xl text-sm text-gray-500">
+		<h3 class="text-lg font-semibold leading-6 text-theme-content">Color Pallet</h3>
+		<p class="mt-2 max-w-4xl text-sm text-theme-secondary-content">
 			Our color palette consists of carefully selected colors that reflect our brand and provide a
 			pleasant visual experience.
 		</p>
@@ -253,12 +253,15 @@
 				>
 					<div class={`w-12 h-12 rounded-full border border-black ${color.style} `} />
 					<span class="text-sm text-center font-medium">{color.name}</span>
-					<span class="text-sm text-center text-gray-500 dark:text-gray-400">{color.color}</span>
+					<span
+						class="text-sm text-center text-theme-secondary-content dark:text-theme-secondary-content"
+						>{color.color}</span
+					>
 				</button>
 			{/each}
 		</div>
 
-		<h3 class="text-base pt-3 font-semibold leading-6 text-gray-900">Examples</h3>
+		<h3 class="text-base pt-3 font-semibold leading-6 text-theme-content">Examples</h3>
 
 		<!-- Info -->
 		<div class="rounded-md bg-theme-info-bg p-4 mb-2 border-2 border-theme-info">
@@ -422,25 +425,37 @@
 
 	<!-- Typography -->
 	<div class="pb-5">
-		<h3 class="text-lg font-semibold leading-6 text-gray-900">Typography</h3>
-		<p class="my-2 max-w-4xl text-sm text-gray-500">
+		<h3 class="text-lg font-semibold leading-6 text-theme-content">Typography</h3>
+		<p class="my-2 max-w-4xl text-sm text-theme-secondary-content">
 			Our typography is designed to be highly readable and accessible across all devices.
 		</p>
 		<div class="grid w-full grid-cols-2 items-stretch justify-center gap-4 md:grid-cols-3 md:gap-8">
 			<div class="flex flex-col items-start justify-center space-y-1">
 				<span class="font-semibold">Roboto</span>
-				<span class="text-sm text-gray-500 dark:text-gray-400">ABCDEFGHIJKLMNOPQRSTUVWXYZ</span>
-				<span class="text-sm text-gray-500 dark:text-gray-400">abcdefghijklmnopqrstuvwxyz</span>
+				<span class="text-sm text-theme-secondary-content dark:text-theme-secondary-content"
+					>ABCDEFGHIJKLMNOPQRSTUVWXYZ</span
+				>
+				<span class="text-sm text-theme-secondary-content dark:text-theme-secondary-content"
+					>abcdefghijklmnopqrstuvwxyz</span
+				>
 			</div>
 			<div class="flex flex-col items-start justify-center space-y-1">
 				<span class="font-semibold">Inter</span>
-				<span class="text-sm text-gray-500 dark:text-gray-400">ABCDEFGHIJKLMNOPQRSTUVWXYZ</span>
-				<span class="text-sm text-gray-500 dark:text-gray-400">abcdefghijklmnopqrstuvwxyz</span>
+				<span class="text-sm text-theme-secondary-content dark:text-theme-secondary-content"
+					>ABCDEFGHIJKLMNOPQRSTUVWXYZ</span
+				>
+				<span class="text-sm text-theme-secondary-content dark:text-theme-secondary-content"
+					>abcdefghijklmnopqrstuvwxyz</span
+				>
 			</div>
 			<div class="flex flex-col items-start justify-center space-y-1">
 				<span class="font-semibold">Source Sans Pro</span>
-				<span class="text-sm text-gray-500 dark:text-gray-400">ABCDEFGHIJKLMNOPQRSTUVWXYZ</span>
-				<span class="text-sm text-gray-500 dark:text-gray-400">abcdefghijklmnopqrstuvwxyz</span>
+				<span class="text-sm text-theme-secondary-content dark:text-theme-secondary-content"
+					>ABCDEFGHIJKLMNOPQRSTUVWXYZ</span
+				>
+				<span class="text-sm text-theme-secondary-content dark:text-theme-secondary-content"
+					>abcdefghijklmnopqrstuvwxyz</span
+				>
 			</div>
 		</div>
 	</div>
