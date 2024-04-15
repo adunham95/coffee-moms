@@ -291,7 +291,7 @@
 					</svg>
 				</div>
 				<div class="ml-3">
-					<h3 class="text-sm font-medium text-theme-info-content">Attention needed</h3>
+					<h3 class="text-sm font-medium text-theme-info-content">Info</h3>
 					<div class="mt-2 text-sm text-theme-info-secondary-content">
 						<p>
 							Lorem ipsum dolor sit amet consectetur adipisicing elit. Aliquid pariatur, ipsum
@@ -319,7 +319,7 @@
 					</svg>
 				</div>
 				<div class="ml-3">
-					<h3 class="text-sm font-medium text-theme-success-content">Attention needed</h3>
+					<h3 class="text-sm font-medium text-theme-success-content">Success</h3>
 					<div class="mt-2 text-sm text-theme-success-secondary-content">
 						<p>
 							Lorem ipsum dolor sit amet consectetur adipisicing elit. Aliquid pariatur, ipsum
@@ -347,7 +347,7 @@
 					</svg>
 				</div>
 				<div class="ml-3">
-					<h3 class="text-sm font-medium text-theme-error-content">Attention needed</h3>
+					<h3 class="text-sm font-medium text-theme-error-content">Error</h3>
 					<div class="mt-2 text-sm text-theme-error-secondary-content">
 						<p>
 							Lorem ipsum dolor sit amet consectetur adipisicing elit. Aliquid pariatur, ipsum
@@ -375,7 +375,7 @@
 					</svg>
 				</div>
 				<div class="ml-3">
-					<h3 class="text-sm font-medium text-theme-warn-content">Attention needed</h3>
+					<h3 class="text-sm font-medium text-theme-warn-content">Warn</h3>
 					<div class="mt-2 text-sm text-theme-warn-secondary-content">
 						<p>
 							Lorem ipsum dolor sit amet consectetur adipisicing elit. Aliquid pariatur, ipsum
@@ -385,6 +385,24 @@
 				</div>
 			</div>
 		</div>
+		<!-- Primary -->
+		<button
+			type="button"
+			class="rounded-md bg-theme-primary px-3.5 py-2.5 text-sm font-semibold text-theme-primary-content shadow-sm hover:bg-theme-primary-hover focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-theme-primary"
+			>Primary</button
+		>
+		<!-- Accent -->
+		<button
+			type="button"
+			class="rounded-md bg-theme-accent px-3.5 py-2.5 text-sm font-semibold text-theme-accent-content shadow-sm hover:bg-theme-accent-hover focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-theme-accent"
+			>Accent</button
+		>
+		<!-- Danger -->
+		<button
+			type="button"
+			class="rounded-md bg-theme-danger px-3.5 py-2.5 text-sm font-semibold text-theme-danger-content shadow-sm hover:bg-theme-danger-hover focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-theme-danger"
+			>Danger</button
+		>
 	</div>
 
 	<div class="pb-5">
