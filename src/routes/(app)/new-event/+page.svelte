@@ -31,6 +31,14 @@
 				/>
 			</div>
 		</FormTwoColumn>
+		<FormTwoColumn title="Availability">
+			<TextInput id="ava-1" label="Date" name="availability" />
+			<TextInput id="ava-2" label="Date" name="availability" />
+			<TextInput id="ava-3" label="Date" name="availability" />
+			<TextInput id="ava-4" label="Date" name="availability" />
+			<TextInput id="ava-5" label="Date" name="availability" />
+			<TextInput id="ava-6" label="Date" name="availability" />
+		</FormTwoColumn>
 		<div class="flex justify-end py-3">
 			<Button type="submit">Submit</Button>
 		</div>
