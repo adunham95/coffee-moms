@@ -274,7 +274,7 @@
 		<h3 class="text-base pt-3 font-semibold leading-6 text-gray-900">Examples</h3>
 
 		<!-- Info -->
-		<div class="rounded-md bg-theme-info-bg p-4 mb-2">
+		<div class="rounded-md bg-theme-info-bg p-4 mb-2 border-2 border-theme-info">
 			<div class="flex">
 				<div class="flex-shrink-0">
 					<svg
@@ -302,7 +302,7 @@
 			</div>
 		</div>
 		<!-- Success -->
-		<div class="rounded-md bg-theme-success-bg p-4 mb-2">
+		<div class="rounded-md bg-theme-success-bg p-4 mb-2 border-2 border-theme-success">
 			<div class="flex">
 				<div class="flex-shrink-0">
 					<svg
@@ -330,7 +330,7 @@
 			</div>
 		</div>
 		<!-- Error -->
-		<div class="rounded-md bg-theme-error-bg p-4 mb-2">
+		<div class="rounded-md bg-theme-error-bg p-4 mb-2 border-2 border-theme-error">
 			<div class="flex">
 				<div class="flex-shrink-0">
 					<svg
@@ -358,7 +358,7 @@
 			</div>
 		</div>
 		<!-- Warn -->
-		<div class="rounded-md bg-theme-warn-bg p-4 mb-2">
+		<div class="rounded-md bg-theme-warn-bg p-4 mb-2 border-2 border-theme-warn">
 			<div class="flex">
 				<div class="flex-shrink-0">
 					<svg
@@ -377,6 +377,34 @@
 				<div class="ml-3">
 					<h3 class="text-sm font-medium text-theme-warn-content">Warn</h3>
 					<div class="mt-2 text-sm text-theme-warn-secondary-content">
+						<p>
+							Lorem ipsum dolor sit amet consectetur adipisicing elit. Aliquid pariatur, ipsum
+							similique veniam quo totam eius aperiam dolorum.
+						</p>
+					</div>
+				</div>
+			</div>
+		</div>
+		<!-- Brand -->
+		<div class="rounded-md bg-theme-brand-bg p-4 mb-2 border-2 border-theme-brand">
+			<div class="flex">
+				<div class="flex-shrink-0">
+					<svg
+						class="h-5 w-5 text-theme-brand-icon"
+						viewBox="0 0 20 20"
+						fill="currentColor"
+						aria-hidden="true"
+					>
+						<path
+							fill-rule="evenodd"
+							d="M8.485 2.495c.673-1.167 2.357-1.167 3.03 0l6.28 10.875c.673 1.167-.17 2.625-1.516 2.625H3.72c-1.347 0-2.189-1.458-1.515-2.625L8.485 2.495zM10 5a.75.75 0 01.75.75v3.5a.75.75 0 01-1.5 0v-3.5A.75.75 0 0110 5zm0 9a1 1 0 100-2 1 1 0 000 2z"
+							clip-rule="evenodd"
+						/>
+					</svg>
+				</div>
+				<div class="ml-3">
+					<h3 class="text-sm font-medium text-theme-brand-content">Brand</h3>
+					<div class="mt-2 text-sm text-theme-warn-brand-content">
 						<p>
 							Lorem ipsum dolor sit amet consectetur adipisicing elit. Aliquid pariatur, ipsum
 							similique veniam quo totam eius aperiam dolorum.
@@ -405,6 +433,7 @@
 		>
 	</div>
 
+	<!-- Typography -->
 	<div class="pb-5">
 		<h3 class="text-lg font-semibold leading-6 text-gray-900">Typography</h3>
 		<p class="my-2 max-w-4xl text-sm text-gray-500">

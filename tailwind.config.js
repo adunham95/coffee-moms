@@ -66,6 +66,14 @@ export default {
 						content: '#f9fafb',
 					},
 
+					brand: {
+						DEFAULT: '#9052a8',
+						content: '#20073b',
+						'secondary-content': '#411361',
+						icon: '#9052a8',
+						bg: '#d8b8e0',
+					},
+
 					info: {
 						DEFAULT: '#3b82f6',
 						content: '#1d4ed8',
