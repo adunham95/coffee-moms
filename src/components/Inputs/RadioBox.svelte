@@ -1,13 +1,13 @@
 <script lang="ts">
 	import Label from './Label.svelte';
-	export let labelName: string;
+	export let label: string;
 	export let id: string;
 	export let groupName: string;
 	export let options: { id: string; title: string; value?: string; checked?: boolean }[] = [];
 </script>
 
-<fieldset>
-	<Label type="legend" {labelName} {id} />
+<fieldset class={$$props.class}>
+	<Label type="legend" {label} {id} />
 
 	<div class="mt-2 grid gap-y-6 sm:gap-x-4 grid-template-auto">
 		{#each options as radioElement}

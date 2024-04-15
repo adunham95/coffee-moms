@@ -4,6 +4,7 @@
 	import FormTwoColumn from '../../../components/PanelLayout/FormTwoColumn.svelte';
 	import TwoPanel from '../../../components/PanelLayout/TwoPanel.svelte';
 	import TextInput from '../../../components/Inputs/TextInput.svelte';
+	import Button from '$components/Button.svelte';
 </script>
 
 <svelte:head>
@@ -12,21 +13,26 @@
 </svelte:head>
 
 <Container className="py-6">
-	<FormTwoColumn title="New Event">
-		<div>
-			<TextInput id="event-name" labelName="Event Name" />
-			<RadioBox
-				id="event-type"
-				labelName="Event Type"
-				groupName="event-type"
-				options={[
-					{ id: 'park', title: 'Park' },
-					{ id: 'coffee', title: 'Coffee' },
-					{ id: 'playground', title: 'Playground' },
-					{ id: 'dinner', title: 'Dinner' },
-					{ id: 'other', title: 'Other', checked: true },
-				]}
-			/>
+	<form method="POST">
+		<FormTwoColumn title="New Event">
+			<div>
+				<TextInput id="event-name" label="Event Name" name="event-name" />
+				<RadioBox
+					id="event-type"
+					label="Event Type"
+					groupName="event-type"
+					options={[
+						{ id: 'park', title: 'Park' },
+						{ id: 'coffee', title: 'Coffee' },
+						{ id: 'playground', title: 'Playground' },
+						{ id: 'dinner', title: 'Dinner' },
+						{ id: 'other', title: 'Other', checked: true },
+					]}
+				/>
+			</div>
+		</FormTwoColumn>
+		<div class="flex justify-end py-3">
+			<Button type="submit">Submit</Button>
 		</div>
-	</FormTwoColumn>
+	</form>
 </Container>

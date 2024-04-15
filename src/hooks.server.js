@@ -8,10 +8,12 @@ export const handle = async ({ event, request, resolve }) => {
 	const sessionId = event.cookies.get('session_id');
 	console.log('sessionId', sessionId);
 	if (!sessionId && !unProtectedRoutes.includes(event.url.pathname)) {
+		console.log('redirecting to unauth user');
 		throw redirect(303, '/');
 	}
 	const userInfo = await getUserById(sessionId);
 	const currentUser = userInfo;
+	console.log('currentUser', currentUser);
 	if (currentUser) {
 		event.locals.user = {
 			isAuthenticated: true,
@@ -20,6 +22,7 @@ export const handle = async ({ event, request, resolve }) => {
 		};
 	} else {
 		if (!unProtectedRoutes.includes(event.url.pathname)) {
+			console.log('no current user');
 			throw redirect(303, '/');
 		}
 	}
