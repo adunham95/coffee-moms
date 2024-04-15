@@ -24,7 +24,7 @@
 		bind:value={confirmPassword}
 	/>
 	{#if confirmPassword !== '' && confirmPassword !== password}
-		<p class="text-red-600 text-sm font-semibold">Password not match</p>
+		<p class="text-theme-error-content text-sm font-semibold">Password not match</p>
 	{/if}
 	<Button type="submit" disabled={validatePassword(password, confirmPassword)}>Sign Up</Button>
 </form>

@@ -7,7 +7,7 @@
 
 <div class="min-h-full">
 	<div class="bg-brand-bg-600">
-		<nav class="border-b border-brand-bg-900 border-opacity-25 bg-brand-bg-600 lg:border-none">
+		<nav>
 			<div class="mx-auto max-w-7xl px-2 sm:px-4 lg:px-8">
 				<div
 					class="relative flex h-16 items-center justify-between lg:border-b lg:border-brand-bg-400 lg:border-opacity-25"
@@ -51,32 +51,32 @@
 								</div>
 								<!-- Mobile Profile Nav -->
 								<div
-									class={`absolute right-0 z-10 mt-2 w-48 origin-top-right rounded-md bg-brand-bg-400 py-1 shadow-lg ring-1 ring-black ring-opacity-5 focus:outline-none ${mobileNavOpen ? 'scale-100' : 'scale-0'}`}
+									class={`absolute right-0 z-10 mt-2 w-48 origin-top-right rounded-md bg-theme-surface py-1 shadow-lg ring-1 ring-black ring-opacity-5 focus:outline-none ${mobileNavOpen ? 'scale-100' : 'scale-0'}`}
 									role="menu"
 									aria-orientation="vertical"
 									aria-labelledby="user-menu-button"
 									tabindex="-1"
 								>
 									<a
-										class="block px-4 py-2 text-sm text-gray-900 hover:bg-brand-500 hover:text-white"
+										class="block px-4 py-2 text-sm text-theme-content hover:bg-brand-500 hover:text-white"
 										role="menuitem"
 										tabindex="-1"
 										id="user-menu-item-0">Your Profile</a
 									>
 									<a
-										class="block px-4 py-2 text-sm text-gray-900 hover:bg-brand-500 hover:text-white"
+										class="block px-4 py-2 text-sm text-theme-content hover:bg-brand-500 hover:text-white"
 										role="menuitem"
 										tabindex="-1"
 										id="user-menu-item-0">Your Events</a
 									>
 									<a
-										class="block px-4 py-2 text-sm text-gray-900 hover:bg-brand-500 hover:text-white"
+										class="block px-4 py-2 text-sm text-theme-content hover:bg-brand-500 hover:text-white"
 										role="menuitem"
 										tabindex="-1"
 										id="user-menu-item-1">Settings</a
 									>
 									<a
-										class="block px-4 py-2 text-sm text-gray-900 hover:bg-brand-500 hover:text-white"
+										class="block px-4 py-2 text-sm text-theme-content hover:bg-brand-500 hover:text-white"
 										role="menuitem"
 										tabindex="-1"
 										id="user-menu-item-2">Sign out</a

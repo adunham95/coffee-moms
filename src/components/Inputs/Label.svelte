@@ -5,7 +5,7 @@
 </script>
 
 {#if type === 'label'}
-	<label for={id} class="block text-sm font-medium leading-6 text-gray-900">{label}</label>
+	<label for={id} class="block text-sm font-medium leading-6 text-theme-content">{label}</label>
 {:else if type === 'legend'}
-	<legend class="block text-sm font-medium leading-6 text-gray-900">{label}</legend>
+	<legend class="block text-sm font-medium leading-6 text-theme-content">{label}</legend>
 {/if}

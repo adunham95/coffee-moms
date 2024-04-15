@@ -12,7 +12,7 @@
 	<div class="mt-2 grid gap-y-6 sm:gap-x-4 grid-template-auto">
 		{#each options as radioElement}
 			<label
-				class="relative flex cursor-pointer rounded-lg border bg-white p-4 shadow-sm focus:outline-none has-[:checked]:border-brand-600 has-[:checked]:ring-1 has-[:checked]:ring-brand-600 has-[:checked]:bg-brand-50"
+				class="relative flex cursor-pointer rounded-lg border bg-theme-surface p-4 shadow-sm focus:outline-none has-[:checked]:border-theme-brand has-[:checked]:ring-1 has-[:checked]:ring-theme-brand has-[:checked]:bg-theme-brand-bg"
 			>
 				<input
 					type="radio"
@@ -26,14 +26,17 @@
 				/>
 				<span class="flex flex-1">
 					<span class="flex flex-col">
-						<span id="project-type-0-label" class="block text-sm font-medium text-gray-900">
+						<span
+							id="project-type-0-label"
+							class="block text-sm font-medium text-theme-brand-content"
+						>
 							{radioElement.title}
 						</span>
 					</span>
 				</span>
 
 				<svg
-					class="h-5 w-5 text-transparent peer-[:checked]:text-brand-600"
+					class="h-5 w-5 text-transparent peer-[:checked]:text-theme-brand-icon"
 					viewBox="0 0 20 20"
 					fill="currentColor"
 					aria-hidden="true"
@@ -46,7 +49,7 @@
 				</svg>
 
 				<span
-					class="pointer-events-none absolute -inset-px rounded-lg border-2 border-transparent peer-[:checked]:border-brand-600"
+					class="pointer-events-none absolute -inset-px rounded-lg border-2 border-transparent peer-[:checked]:border-theme-brand"
 					aria-hidden="true"
 				></span>
 			</label>

@@ -13,6 +13,11 @@
 			color: 'theme-secondary-content',
 			style: 'bg-theme-secondary-content',
 		},
+		{
+			name: 'Hover Content',
+			color: 'theme-content-hover',
+			style: 'bg-theme-content-hover',
+		},
 		{ name: 'Primary', color: 'theme-primary', style: 'bg-theme-primary' },
 		{ name: 'Primary Hover', color: 'theme-primary-hover', style: 'bg-theme-primary-hover' },
 		{ name: 'Primary Content', color: 'theme-primary-content', style: 'bg-theme-primary-content' },
@@ -22,6 +27,31 @@
 		{ name: 'Danger', color: 'theme-danger', style: 'bg-theme-danger' },
 		{ name: 'Danger Hover', color: 'theme-danger-hover', style: 'bg-theme-danger-hover' },
 		{ name: 'Danger Content', color: 'theme-danger-content', style: 'bg-theme-danger-content' },
+		{
+			name: 'Brand',
+			color: 'theme-brand',
+			style: 'bg-theme-brand',
+		},
+		{
+			name: 'Brand Background',
+			color: 'theme-brand-bg',
+			style: 'bg-theme-brand-bg',
+		},
+		{
+			name: 'Brand Content',
+			color: 'theme-brand-content',
+			style: 'bg-theme-brand-content',
+		},
+		{
+			name: 'Brand Alt Content',
+			color: 'theme-brand-secondary-content',
+			style: 'bg-theme-brand-secondary-content',
+		},
+		{
+			name: 'Brand Icon',
+			color: 'theme-brand-icon',
+			style: 'bg-theme-brand-icon',
+		},
 		{
 			name: 'Info',
 			color: 'theme-info',
@@ -153,49 +183,6 @@
 				Our design guidelines help us create a consistent and user-friendly experience across all
 				our products.
 			</p>
-		</div>
-	</div>
-
-	<div class="border-b border-gray-200 pb-5 mb-5">
-		<div class="sm:hidden">
-			<label for="tabs" class="sr-only">Select a tab</label>
-			<!-- TODO -->
-			<!-- Use an "onChange" listener to redirect the user to the selected tab URL. -->
-			<select
-				id="tabs"
-				name="tabs"
-				class="block w-full rounded-md border-gray-300 focus:border-brand-500 focus:ring-brand-500"
-			>
-				<option>My Account</option>
-				<option>Company</option>
-				<option selected>Team Members</option>
-				<option>Billing</option>
-			</select>
-		</div>
-		<div class="hidden sm:block">
-			<nav class="flex space-x-4 w-full justify-center" aria-label="Tabs">
-				<!-- Current: "bg-gray-100 text-gray-700", Default: "text-gray-500 hover:text-gray-700" -->
-				<a
-					href="#"
-					class="text-gray-500 hover:text-gray-700 rounded-md px-3 py-2 text-sm font-medium"
-					>Principles</a
-				>
-				<a
-					href="#"
-					class="text-gray-500 hover:text-gray-700 rounded-md px-3 py-2 text-sm font-medium"
-					>Colors</a
-				>
-				<a
-					href="#"
-					class="text-gray-500 hover:text-gray-700 rounded-md px-3 py-2 text-sm font-medium"
-					aria-current="page">Typography</a
-				>
-				<a
-					href="#"
-					class="text-gray-500 hover:text-gray-700 rounded-md px-3 py-2 text-sm font-medium"
-					>Billing</a
-				>
-			</nav>
 		</div>
 	</div>
 

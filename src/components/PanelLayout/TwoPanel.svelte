@@ -3,7 +3,7 @@
 	<div class="grid grid-cols-1 gap-4 lg:col-span-2">
 		<section aria-labelledby="section-1-title">
 			<h2 class="sr-only" id="section-1-title">Section title</h2>
-			<div class="overflow-hidden rounded-lg bg-white shadow">
+			<div class="overflow-hidden rounded-lg bg-theme-surface shadow">
 				<div class="p-6">
 					<slot />
 				</div>
@@ -15,7 +15,7 @@
 	<div class="grid grid-cols-1 gap-4">
 		<section aria-labelledby="section-2-title">
 			<h2 class="sr-only" id="section-2-title">Section title</h2>
-			<div class="overflow-hidden rounded-lg bg-white shadow">
+			<div class="overflow-hidden rounded-lg bg-theme-surface shadow">
 				<div class="p-6">
 					<slot name="sidebar" />
 				</div>

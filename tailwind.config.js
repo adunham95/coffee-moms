@@ -45,11 +45,12 @@ export default {
 					1000: '#140601',
 				},
 				theme: {
-					surface: '#faf1e1',
+					surface: '#fffefc',
 					background: '#fcfaf2',
-					border: '#ba9a77',
+					border: '#70482b',
 					content: '#111827',
 					'secondary-content': '#6b7280',
+					'content-hover': '#4c4c4c',
 					primary: {
 						DEFAULT: '#9052a8',
 						hover: '#551c75',

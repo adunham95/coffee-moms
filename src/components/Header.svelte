@@ -6,9 +6,12 @@
 <header class="pt-2 pb-4 mx-auto max-w-7xl px-2 sm:px-4 lg:px-8">
 	<div>
 		<nav class="sm:hidden" aria-label="Back">
-			<a href="/" class="flex items-center text-sm font-medium text-gray-500 hover:text-gray-700">
+			<a
+				href="/"
+				class="flex items-center text-sm font-medium text-theme-content hover:text-theme-content-hover"
+			>
 				<svg
-					class="-ml-1 mr-1 h-5 w-5 flex-shrink-0 text-gray-400"
+					class="-ml-1 mr-1 h-5 w-5 flex-shrink-0 text-theme-secondary-content"
 					viewBox="0 0 20 20"
 					fill="currentColor"
 					aria-hidden="true"
@@ -29,7 +32,7 @@
 						<div class={`flex ${index > 0 && 'items-center'}`}>
 							{#if index > 0}
 								<svg
-									class="h-5 w-5 flex-shrink-0 text-gray-400"
+									class="h-5 w-5 flex-shrink-0 text-theme-secondary-content"
 									viewBox="0 0 20 20"
 									fill="currentColor"
 									aria-hidden="true"
@@ -43,7 +46,7 @@
 							{/if}
 							<a
 								href={path.path}
-								class={`text-sm font-medium text-gray-500 hover:text-gray-700 ${index > 0 && 'ml-4'}`}
+								class={`text-sm font-medium text-theme-content hover:text-theme-content-hover ${index > 0 && 'ml-4'}`}
 								>{path.title}</a
 							>
 						</div>
@@ -55,7 +58,7 @@
 	<div class="mt-2 md:flex md:items-center md:justify-between">
 		<div class="min-w-0 flex-1">
 			<h2
-				class="text-2xl font-bold leading-7 text-gray-900 sm:truncate sm:text-3xl sm:tracking-tight"
+				class="text-2xl font-bold leading-7 text-theme-content sm:truncate sm:text-3xl sm:tracking-tight"
 			>
 				{pageTitle}
 			</h2>

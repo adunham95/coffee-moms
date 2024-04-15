@@ -1,6 +1,9 @@
 <script lang="ts">
 	export let type: 'button' | 'submit' | 'reset' | null | undefined = 'button';
 	export let disabled = false;
+	export let color: 'brand' | 'accent' | 'danger' = 'brand';
+	console.log({ color });
+	// TODO generate colors
 </script>
 
 <button

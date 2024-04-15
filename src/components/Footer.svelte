@@ -51,7 +51,7 @@
 			</a>
 		</div>
 		<div class="mt-8 md:order-1 md:mt-0">
-			<p class="text-center text-xs leading-5 text-gray-500">
+			<p class="text-center text-xs leading-5 text-theme-secondary-content">
 				&copy; {new Date().getFullYear()} Coffee Moms, Inc. All rights reserved.
 			</p>
 		</div>
