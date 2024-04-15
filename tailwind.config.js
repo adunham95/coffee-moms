@@ -44,6 +44,60 @@ export default {
 					950: '#472612',
 					1000: '#140601',
 				},
+				theme: {
+					surface: '#faf1e1',
+					background: '#fcfaf2',
+					border: '#ba9a77',
+					content: '#111827',
+					'secondary-content': '#6b7280',
+					primary: {
+						DEFAULT: '#9052a8',
+						hover: '#551c75',
+						content: '#ffffff',
+					},
+					accent: {
+						DEFAULT: '#52a890',
+						hover: '#1c7555',
+						content: '#ffffff',
+					},
+					danger: {
+						DEFAULT: '#dc2626',
+						hover: '#b91c1c',
+						content: '#ffffff',
+					},
+
+					info: {
+						DEFAULT: '#3b82f6',
+						content: '#1d4ed8',
+						'secondary-content': '#2563eb',
+						icon: '#60a5fa',
+						bg: '#cceafc',
+					},
+
+					success: {
+						DEFAULT: '#22c55e',
+						content: '#166534',
+						'secondary-content': '#15803d',
+						icon: '#4ade80',
+						bg: '#bdf0dc',
+					},
+
+					error: {
+						DEFAULT: '#ef4444',
+						content: '#991b1b',
+						'secondary-content': '#b91c1c',
+						icon: '#f87171',
+						bg: '#fcd6c5',
+					},
+
+					warn: {
+						DEFAULT: '#eab308',
+						content: '#854d0e',
+						'secondary-content': '#a16207',
+						icon: '#facc15',
+						bg: '#fff8c4',
+					},
+				},
 			},
 		},
 	},
