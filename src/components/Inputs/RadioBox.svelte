@@ -7,9 +7,9 @@
 </script>
 
 <fieldset class={$$props.class}>
-	<Label type="legend" {label} {id} />
+	<Label {label} {id} />
 
-	<div class="mt-2 grid gap-y-6 sm:gap-x-4 grid-template-auto">
+	<div class="mt-2 grid gap-y-6 gap-x-4 grid-template-auto">
 		{#each options as radioElement}
 			<label
 				class="relative flex cursor-pointer rounded-lg border bg-theme-surface p-4 shadow-sm focus:outline-none has-[:checked]:border-theme-brand has-[:checked]:ring-1 has-[:checked]:ring-theme-brand has-[:checked]:bg-theme-brand-bg"
@@ -24,14 +24,9 @@
 					aria-labelledby="project-type-0-label"
 					aria-describedby="project-type-0-description-0 project-type-0-description-1"
 				/>
-				<span class="flex flex-1">
-					<span class="flex flex-col">
-						<span
-							id="project-type-0-label"
-							class="block text-sm font-medium text-theme-brand-content"
-						>
-							{radioElement.title}
-						</span>
+				<span class="flex flex-1 text-theme-brand-content">
+					<span id="project-type-0-label" class="block text-sm font-medium">
+						{radioElement.title}
 					</span>
 				</span>
 

@@ -5,6 +5,7 @@
 	import TwoPanel from '../../../components/PanelLayout/TwoPanel.svelte';
 	import TextInput from '../../../components/Inputs/TextInput.svelte';
 	import Button from '$components/Button.svelte';
+	import TextArea from '$components/Inputs/TextArea.svelte';
 </script>
 
 <svelte:head>
@@ -16,11 +17,13 @@
 	<form method="POST">
 		<FormTwoColumn title="New Event">
 			<div>
-				<TextInput id="event-name" label="Event Name" name="event-name" />
+				<TextInput id="event-name" label="Name" name="event-name" />
+				<TextArea id="event-details" label="Details" />
 				<RadioBox
 					id="event-type"
 					label="Event Type"
 					groupName="event-type"
+					class="pt-2"
 					options={[
 						{ id: 'park', title: 'Park' },
 						{ id: 'coffee', title: 'Coffee' },
