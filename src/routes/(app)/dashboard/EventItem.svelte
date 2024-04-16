@@ -1,6 +1,6 @@
 <script lang="ts">
 	import Icon from '$components/Icon.svelte';
-	import Card from '$components/PanelLayout/Card.svelte';
+	import Card from '$components/Card/Card.svelte';
 	import StatusBadge from '$components/StatusBadge.svelte';
 	import type { Event } from '$types/Event';
 	export let event: Event;
@@ -9,7 +9,7 @@
 <div class="col-span-1">
 	<h2 class="sr-only">Summary</h2>
 	<Card>
-		<div slot="header" class="flex flex-wrap pb-6">
+		<div slot="header" class="flex flex-wrap pb-6 p-0">
 			<div class="flex-auto pl-6 pt-6">
 				<dd class="mt-1 text-base font-semibold leading-6 text-theme-content">{event.title}</dd>
 			</div>

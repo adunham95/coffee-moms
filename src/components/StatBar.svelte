@@ -1,5 +1,6 @@
 <script lang="ts">
-	import Card from './PanelLayout/Card.svelte';
+	import Card from './Card/Card.svelte';
+	import CardBody from './Card/CardBody.svelte';
 
 	export let stats: { title: string; stat: string; type?: string }[] = [];
 </script>
@@ -9,9 +10,11 @@
 
 	<div class=" grid grid-cols-1 gap-2 sm:grid-cols-2 lg:grid-cols-3">
 		{#each stats as stat}
-			<Card class="px-4 py-5 shadow sm:p-6 relative">
-				<dt class="truncate text-sm font-medium text-theme-secondary-content">{stat.title}</dt>
-				<dd class="mt-1 text-3xl font-semibold tracking-tight text-theme-content">{stat.stat}</dd>
+			<Card>
+				<CardBody>
+					<dt class="truncate text-sm font-medium text-theme-secondary-content">{stat.title}</dt>
+					<dd class="mt-1 text-3xl font-semibold tracking-tight text-theme-content">{stat.stat}</dd>
+				</CardBody>
 			</Card>
 		{/each}
 	</div>
