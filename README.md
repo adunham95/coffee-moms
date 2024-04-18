@@ -25,6 +25,11 @@ npm run dev
 npm run dev -- --open
 ```
 
+```bash
+start the database
+sudo systemctl restart postgresql.service
+```
+
 ## Building
 
 To create a production version of your app:
