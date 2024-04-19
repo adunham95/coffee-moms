@@ -5,8 +5,10 @@ async function main() {
 		where: { email: 'adrian@coffeemoms.com' },
 		update: {},
 		create: {
+			id: '1234',
 			email: 'adrian@coffeemoms.com',
 			password: 'password',
+			hashedPassword: '',
 			phone: '1234567890',
 			profile: {
 				create: {

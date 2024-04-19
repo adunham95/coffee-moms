@@ -12,29 +12,36 @@ datasource db {
 }
 
 model User {
-  id    Int     @id @default(autoincrement())
-  email String  @unique
+  id    String    @id
+  email String?  @unique
   phone String  @unique
   password String 
+  hashedPassword String
   profile UserProfile?
+  events Event[]
+  sessions Session[]
 }  
 
 
 model UserProfile{
-  user     User      @relation(fields: [id], references: [id])
-  id    Int     @id @default(autoincrement())
+  user     User      @relation(fields: [userId], references: [id])
+  userId    String     @id 
   firstName  String?
   lastName  String?
-  events Event[]
-  
 }
 
 model Event {
   id        Int     @id @default(autoincrement())
   title     String
   status    String?
-  owner    UserProfile    @relation(fields: [ownerId], references: [id])
-  ownerId  Int
+  owner    User    @relation(fields: [ownerId], references: [id])
+  ownerId  String
 }
 
 
+model Session {
+  id        String   @id
+  userId    String
+  expiresAt DateTime
+  user      User     @relation(references: [id], fields: [userId], onDelete: Cascade)
+}
