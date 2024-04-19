@@ -44,6 +44,12 @@ export const actions: Actions = {
 				password,
 				hashedPassword,
 				phone: '',
+				profile: {
+					create: {
+						firstName: '',
+						lastName: '',
+					},
+				},
 			},
 		});
 
