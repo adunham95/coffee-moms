@@ -16,6 +16,7 @@
 		<div>
 			{#each data.users as user}
 				<li>
+					{user.email}
 					{user.profile?.firstName || ''}
 					{user.profile?.lastName || ''}
 				</li>
