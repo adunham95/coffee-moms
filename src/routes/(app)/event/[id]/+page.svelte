@@ -1,6 +1,11 @@
 <script>
 	import Container from '../../../../components/Container.svelte';
+	import { generatePageName } from '../../../../helpers/generatePageName';
 </script>
+
+<svelte:head>
+	<title>{generatePageName('Event')}</title>
+</svelte:head>
 
 <header class="relative isolate border-b border-brand-500/45">
 	<Container className="py-5">

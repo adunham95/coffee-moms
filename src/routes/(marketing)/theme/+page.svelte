@@ -1,5 +1,6 @@
 <script lang="ts">
 	import Container from '$components/Container.svelte';
+	import { generatePageName } from '../../../helpers/generatePageName';
 
 	let colorPallet = [
 		{ name: 'Brand', color: 'brand-400', style: 'bg-brand-400' },
@@ -167,7 +168,7 @@
 </script>
 
 <svelte:head>
-	<title>Theme | Coffee Mom</title>
+	<title>{generatePageName('Theme')}</title>
 	<meta name="description" content="About this app" />
 </svelte:head>
 

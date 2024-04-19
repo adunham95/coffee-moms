@@ -2,12 +2,12 @@
 	import Container from '$components/Container.svelte';
 	import StatBar from '$components/StatBar.svelte';
 	import { EStatus } from '$types/EStatus';
+	import { generatePageName } from '../../../helpers/generatePageName';
 	import EventList from './EventList.svelte';
 </script>
 
 <svelte:head>
-	<title>Dashboard | Coffee Mom</title>
-	<meta name="description" content="About this app" />
+	<title>{generatePageName('Dashboard')}</title>
 </svelte:head>
 
 <Container className="py-10">

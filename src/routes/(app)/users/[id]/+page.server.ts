@@ -1,8 +1,8 @@
+import prisma from '$lib/prisma';
 import type { PageServerLoad } from './$types';
-import { getUserById } from '../../../../db/users';
 
 export const load = (async ({ params: { id } }) => {
-	const user = await getUserById(id);
+	const user = await prisma.user.findFirst({ where: { id }, include: { profile: true } });
 
 	return { user };
 }) satisfies PageServerLoad;

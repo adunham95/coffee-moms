@@ -6,11 +6,11 @@
 	import TextInput from '../../../components/Inputs/TextInput.svelte';
 	import Button from '$components/Button.svelte';
 	import TextArea from '$components/Inputs/TextArea.svelte';
+	import { generatePageName } from '../../../helpers/generatePageName';
 </script>
 
 <svelte:head>
-	<title>New Event | Coffee Moms</title>
-	<meta name="description" content="About this app" />
+	<title>{generatePageName('New Event')}</title>
 </svelte:head>
 
 <Container className="py-6">

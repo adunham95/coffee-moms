@@ -1,5 +1,9 @@
+<script>
+	import { generatePageName } from '../../../helpers/generatePageName';
+</script>
+
 <svelte:head>
-	<title>About</title>
+	<title>{generatePageName('About')}</title>
 	<meta name="description" content="About this app" />
 </svelte:head>
 

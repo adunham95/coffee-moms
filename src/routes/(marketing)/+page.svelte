@@ -1,10 +1,11 @@
 <script>
 	import Container from '../../components/Container.svelte';
 	import FeaturesList from './FeatureList.svelte';
+	import { generatePageName } from '../../helpers/generatePageName';
 </script>
 
 <svelte:head>
-	<title>Coffee Mom</title>
+	<title>{generatePageName()}</title>
 	<meta name="description" content="About this app" />
 </svelte:head>
 
