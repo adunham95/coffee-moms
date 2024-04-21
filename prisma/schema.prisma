@@ -20,6 +20,7 @@ model User {
   profile UserProfile?
   events Event[]
   sessions Session[]
+  avaliblity Avalibility[]
 }  
 
 
@@ -34,8 +35,21 @@ model Event {
   id        Int     @id @default(autoincrement())
   title     String
   status    String?
-  owner    User    @relation(fields: [ownerId], references: [id])
-  ownerId  String
+  type      String
+  details   String
+  owner     User    @relation(fields: [ownerId], references: [id])
+  ownerId   String
+  avaliblity Avalibility[]
+}
+
+model Avalibility {
+  id Int @id @default(autoincrement())
+  eventId Int
+  event Event @relation(fields: [eventId], references: [id])
+  userId String
+  user User @relation(fields: [userId], references: [id])
+  startDate DateTime
+  endDate DateTime
 }
 
 
