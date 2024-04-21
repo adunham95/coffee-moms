@@ -76,6 +76,7 @@
 										id="user-menu-item-1">Settings</a
 									>
 									<a
+										href="/sign-out"
 										class="block px-4 py-2 text-sm text-theme-content hover:bg-brand-500 hover:text-white"
 										role="menuitem"
 										tabindex="-1"

@@ -116,7 +116,7 @@
 	</div>
 </header>
 
-<div class="pt-14">
+<div class=" pt-20">
 	<slot />
 </div>
 
