@@ -47,7 +47,7 @@
 										>
 											<span class="absolute -inset-1.5"></span>
 											<span class="sr-only">Open user menu</span>
-											<Avatar />
+											<Avatar firstName={data.user.firstName} lastName={data.user.lastName} />
 										</button>
 									</div>
 								{:else}
