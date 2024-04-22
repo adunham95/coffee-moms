@@ -1,6 +1,10 @@
-<script>
+<script lang="ts">
 	import Container from '../../../../components/Container.svelte';
 	import { generatePageName } from '../../../../helpers/generatePageName';
+	import type { PageData } from './$types';
+
+	export let data: PageData;
+	console.log(data);
 </script>
 
 <svelte:head>
@@ -17,7 +21,9 @@
 					class="h-16 w-16 flex-none rounded-full ring-1 ring-gray-900/10"
 				/>
 				<h1>
-					<div class="mt-1 text-base font-semibold leading-6 text-theme-content">Event Name</div>
+					<div class="mt-1 text-base font-semibold leading-6 text-theme-content">
+						{data.eventData?.title || 'Event Title'}
+					</div>
 				</h1>
 			</div>
 			<div class="flex items-center gap-x-4 sm:gap-x-6">
