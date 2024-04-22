@@ -41,15 +41,10 @@ export const actions: Actions = {
 			data: {
 				id: userId,
 				email: email,
-				password,
 				hashedPassword,
 				phone: '',
-				profile: {
-					create: {
-						firstName: '',
-						lastName: '',
-					},
-				},
+				firstName: '',
+				lastName: '',
 			},
 		});
 

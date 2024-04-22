@@ -7,15 +7,10 @@ async function main() {
 		create: {
 			id: '1234',
 			email: 'adrian@coffeemoms.com',
-			password: 'password',
 			hashedPassword: '',
 			phone: '1234567890',
-			profile: {
-				create: {
-					firstName: 'Adrian',
-					lastName: 'Dunhams',
-				},
-			},
+			firstName: 'Adrian',
+			lastName: 'Dunham',
 		},
 	});
 
