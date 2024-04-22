@@ -9,6 +9,7 @@ export const actions: Actions = {
 		const details = data.get('event-details');
 		const type = data.get('event-type');
 		console.log({ data: { title }, locals });
+		let id = 0;
 
 		if (!title || typeof title !== 'string' || title.length < 2) {
 			return fail(400, {
@@ -38,11 +39,13 @@ export const actions: Actions = {
 				},
 			});
 
-			console.log(newEvent);
+			id = newEvent.id;
 
-			redirect(302, `/event/${newEvent.id}`);
+			console.log(newEvent);
 		} catch (error) {
 			console.error(error);
 		}
+
+		redirect(302, `/event/${id}`);
 	},
 };
