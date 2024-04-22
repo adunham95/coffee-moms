@@ -21,6 +21,8 @@ model User {
   events Event[]
   sessions Session[]
   avaliblity Avalibility[]
+  createdAt          DateTime  @default(now()) @db.Timestamptz(3)
+  updatedAt          DateTime  @updatedAt @db.Timestamptz(3)
 }  
 
 
@@ -29,6 +31,8 @@ model UserProfile{
   userId    String     @id 
   firstName  String?
   lastName  String?
+  createdAt          DateTime  @default(now()) @db.Timestamptz(3)
+  updatedAt          DateTime  @updatedAt @db.Timestamptz(3)
 }
 
 model Event {
@@ -40,6 +44,8 @@ model Event {
   owner     User    @relation(fields: [ownerId], references: [id])
   ownerId   String
   avaliblity Avalibility[]
+  createdAt          DateTime  @default(now()) @db.Timestamptz(3)
+  updatedAt          DateTime  @updatedAt @db.Timestamptz(3)
 }
 
 model Avalibility {
@@ -48,8 +54,10 @@ model Avalibility {
   event Event @relation(fields: [eventId], references: [id])
   userId String
   user User @relation(fields: [userId], references: [id])
-  startDate DateTime
-  endDate DateTime
+  startDate           DateTime @db.Timestamptz(3)
+  endDate             DateTime @db.Timestamptz(3)
+  createdAt          DateTime  @default(now()) @db.Timestamptz(3)
+  updatedAt          DateTime  @updatedAt @db.Timestamptz(3)
 }
 
 
@@ -58,4 +66,6 @@ model Session {
   userId    String
   expiresAt DateTime
   user      User     @relation(references: [id], fields: [userId], onDelete: Cascade)
+  createdAt          DateTime  @default(now()) @db.Timestamptz(3)
+  updatedAt          DateTime  @updatedAt @db.Timestamptz(3)
 }
