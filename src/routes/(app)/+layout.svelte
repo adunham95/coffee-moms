@@ -61,9 +61,10 @@
 									aria-labelledby="user-menu-button"
 									tabindex="-1"
 								>
-									<!-- <div>
-										{data.user}
-									</div> -->
+									<p class="text-sm font-medium text-gray-700 group-hover:text-gray-900">
+										{data.user?.firstName}
+										{data.user?.lastName}
+									</p>
 									<a
 										class="block px-4 py-2 text-sm text-theme-content hover:bg-brand-500 hover:text-white"
 										role="menuitem"
