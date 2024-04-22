@@ -1,4 +1,4 @@
-<script>
+<script lang="ts">
 	import Container from '../../../components/Container.svelte';
 	import RadioBox from '../../../components/Inputs/RadioBox.svelte';
 	import FormTwoColumn from '../../../components/PanelLayout/FormTwoColumn.svelte';
@@ -8,13 +8,28 @@
 	import TextArea from '$components/Inputs/TextArea.svelte';
 	import { generatePageName } from '../../../helpers/generatePageName';
 	import { enhance } from '$app/forms';
+	import { eventType } from '../../../const/event-types';
+
+	console.log(eventType);
+
+	const getEventTypes = (): {
+		id: string;
+		title: string;
+		value: string | undefined;
+		checked: boolean | undefined;
+	}[] => {
+		return eventType.map((type) => {
+			return { id: type.id, title: type.title, value: undefined, checked: type.checked || false };
+		});
+	};
 </script>
 
 <svelte:head>
 	<title>{generatePageName('New Event')}</title>
 </svelte:head>
 
-<Container className="py-6">
+<Container className="py-6"
+	>|| []
 	<form method="POST" use:enhance>
 		<FormTwoColumn title="New Event">
 			<div>
@@ -25,13 +40,7 @@
 					label="Event Type"
 					groupName="event-type"
 					class="pt-2"
-					options={[
-						{ id: 'park', title: 'Park' },
-						{ id: 'coffee', title: 'Coffee' },
-						{ id: 'playground', title: 'Playground' },
-						{ id: 'dinner', title: 'Dinner' },
-						{ id: 'other', title: 'Other', checked: true },
-					]}
+					options={getEventTypes()}
 				/>
 			</div>
 		</FormTwoColumn>

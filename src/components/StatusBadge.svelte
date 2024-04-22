@@ -1,9 +1,9 @@
 <script lang="ts">
-	import type { EStatus } from '../types/EStatus';
+	import { EStatus } from '../types/EStatus';
 
-	export let status: EStatus;
+	export let status: EStatus | undefined = EStatus.Created;
 
-	console.log(status);
+	console.log('status');
 
 	let statusDetails: { [key in EStatus]: { name: string; style: string } } = {
 		Scheduled: {
@@ -26,8 +26,12 @@
 			name: 'Complete',
 			style: 'bg-green-100 text-green-600',
 		},
+		Error: {
+			name: 'Error',
+			style: 'bg-red-100 text-red-600',
+		},
 	};
-	let selectedStatus = statusDetails[status];
+	let selectedStatus = statusDetails[status || EStatus.Error];
 </script>
 
 <span
