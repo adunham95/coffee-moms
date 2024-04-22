@@ -7,6 +7,7 @@
 	import Button from '$components/Button.svelte';
 	import TextArea from '$components/Inputs/TextArea.svelte';
 	import { generatePageName } from '../../../helpers/generatePageName';
+	import { enhance } from '$app/forms';
 </script>
 
 <svelte:head>
@@ -14,7 +15,7 @@
 </svelte:head>
 
 <Container className="py-6">
-	<form method="POST">
+	<form method="POST" use:enhance>
 		<FormTwoColumn title="New Event">
 			<div>
 				<TextInput id="event-name" label="Name" name="event-name" />
@@ -34,14 +35,14 @@
 				/>
 			</div>
 		</FormTwoColumn>
-		<FormTwoColumn title="Availability">
-			<TextInput id="ava-1" label="Date" name="availability" />
+		<!-- <FormTwoColumn title="Availability">
+			<TextInput id="ava-1" label="Date" name="availability" type="date" />
 			<TextInput id="ava-2" label="Date" name="availability" />
 			<TextInput id="ava-3" label="Date" name="availability" />
 			<TextInput id="ava-4" label="Date" name="availability" />
 			<TextInput id="ava-5" label="Date" name="availability" />
 			<TextInput id="ava-6" label="Date" name="availability" />
-		</FormTwoColumn>
+		</FormTwoColumn> -->
 		<div class="flex justify-end py-3">
 			<Button type="submit">Submit</Button>
 		</div>

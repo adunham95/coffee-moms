@@ -13,6 +13,7 @@
 	export let inputRef = null;
 
 	function setType(node: any) {
+		console.log({ nodeType: node.type, type });
 		node.type = type;
 	}
 </script>
