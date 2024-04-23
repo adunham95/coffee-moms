@@ -15,6 +15,8 @@ const config = {
 		alias: {
 			$types: resolve('./src/types/'),
 			$components: resolve('./src/components/'),
+			$helpers: resolve('./src/helpers/'),
+			$const: resolve('./src/const/'),
 		},
 	},
 };

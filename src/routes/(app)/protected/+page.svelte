@@ -1,5 +1,5 @@
 <script>
-	import { generatePageName } from '../../../helpers/generatePageName.js';
+	import { generatePageName } from '$helpers/generatePageName';
 
 	export let data;
 </script>

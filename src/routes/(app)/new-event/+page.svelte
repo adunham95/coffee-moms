@@ -2,11 +2,10 @@
 	import Container from '../../../components/Container.svelte';
 	import RadioBox from '../../../components/Inputs/RadioBox.svelte';
 	import FormTwoColumn from '../../../components/PanelLayout/FormTwoColumn.svelte';
-	import TwoPanel from '../../../components/PanelLayout/TwoPanel.svelte';
 	import TextInput from '../../../components/Inputs/TextInput.svelte';
 	import Button from '$components/Button.svelte';
 	import TextArea from '$components/Inputs/TextArea.svelte';
-	import { generatePageName } from '../../../helpers/generatePageName';
+	import { generatePageName } from '$helpers/generatePageName';
 	import { enhance } from '$app/forms';
 	import { eventType } from '../../../const/event-types';
 
