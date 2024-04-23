@@ -10,7 +10,14 @@
 
 	let error;
 
-	function validatePassword(password: string, confirmPassword: string) {
+	function validate(password: string, confirmPassword: string, email: string) {
+		if (email === '' || password === '' || confirmPassword === '') {
+			return true;
+		}
+		if (password.length < 3) {
+			return true;
+		}
+
 		return confirmPassword !== password;
 	}
 </script>
@@ -29,9 +36,12 @@
 		{#if confirmPassword !== '' && confirmPassword !== password}
 			<p class="text-theme-error-content text-sm font-semibold">Password not match</p>
 		{/if}
+		{#if password.length < 3 && password !== ''}
+			<p class="text-theme-error-content text-sm font-semibold">Password too short</p>
+		{/if}
 		<div class="flex items-center justify-end">
 			<div class="text-sm leading-6">
-				<a href="/sign-in" class="font-semibold text-theme-primary hover:text-theme-primary-hover"
+				<a href="/login" class="font-semibold text-theme-primary hover:text-theme-primary-hover"
 					>Sign In</a
 				>
 			</div>
@@ -40,7 +50,7 @@
 			<Button
 				class="w-full justify-center"
 				type="submit"
-				disabled={validatePassword(password, confirmPassword)}>Sign Up</Button
+				disabled={validate(password, confirmPassword, email)}>Sign Up</Button
 			>
 		</div>
 	</Container>
