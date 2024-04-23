@@ -14,14 +14,14 @@
 
 <Container class="py-3">
 	<div class="sm:mx-auto sm:w-full sm:max-w-md mt-4">
-		<!-- <img class="mx-auto h-10 w-auto" src={coffee_logo} alt="Coffee Moms" /> -->
-		<img class="mx-auto h-6 w-auto my-3" src={text_logo} alt="Coffee Moms" />
 		<h2 class="mt-6 text-center text-2xl font-bold leading-9 tracking-tight text-gray-900">
 			Create an account
 		</h2>
 	</div>
 	<div class="mt-10 sm:mx-auto sm:w-full sm:max-w-[480px]">
-		<Card class=" px-6 py-12 shadow sm:rounded-lg sm:px-12">
+		<Card class=" pb-6 py-6 shadow sm:rounded-lg sm:pb-12">
+			<img slot="header" class="mx-auto h-6 w-auto my-3" src={text_logo} alt="Coffee Moms" />
+
 			<SignUp />
 		</Card>
 	</div>

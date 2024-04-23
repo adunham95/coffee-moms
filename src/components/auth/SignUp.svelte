@@ -3,10 +3,13 @@
 	import Button from '$components/Button.svelte';
 	import { enhance } from '$app/forms';
 	import Container from '$components/Container.svelte';
+	import { isValidEmail } from '$helpers/helpers';
 
 	let email = '';
 	let password = '';
 	let confirmPassword = '';
+	let firstName = '';
+	let lastName = '';
 
 	let error;
 
@@ -23,30 +26,62 @@
 </script>
 
 <form method="POST" use:enhance>
-	<Container class="space-y-5 {$$props.class}">
-		<Input label="Email" id="email" name="email" type="email" bind:value={email} />
-		<Input label="Password" id="password" name="password" type="password" bind:value={password} />
+	<Container
+		class="{$$props.class} mt-10 grid grid-cols-1 gap-x-2 gap-y-4 sm:grid-cols-4 items-center"
+	>
 		<Input
+			label="First Name"
+			id="firstName"
+			name="firstName"
+			type="firstName"
+			bind:value={firstName}
+			class="sm:col-span-2 mt-0"
+		/>
+		<Input
+			label="Last Name"
+			id="lastName"
+			name="lastName"
+			type="lastName"
+			bind:value={lastName}
+			class="sm:col-span-2 mt-0"
+		/>
+		<Input
+			label="Email"
+			id="email"
+			name="email"
+			type="email"
+			bind:value={email}
+			error={email !== '' && !isValidEmail(email) ? 'Not valid email' : undefined}
+			class="sm:col-span-4"
+		/>
+		<Input
+			label="Password"
+			id="password"
+			name="password"
+			type="password"
+			bind:value={password}
+			error={password.length < 3 && password !== '' ? 'Password too short' : undefined}
+			class="sm:col-span-4"
+		/>
+		<Input
+			class="sm:col-span-4"
 			label="Confirm Password"
 			id="confirm-password"
 			name="confirm-password"
 			type="password"
 			bind:value={confirmPassword}
+			error={confirmPassword !== '' && confirmPassword !== password
+				? 'Password not match'
+				: undefined}
 		/>
-		{#if confirmPassword !== '' && confirmPassword !== password}
-			<p class="text-theme-error-content text-sm font-semibold">Password not match</p>
-		{/if}
-		{#if password.length < 3 && password !== ''}
-			<p class="text-theme-error-content text-sm font-semibold">Password too short</p>
-		{/if}
-		<div class="flex items-center justify-end">
+		<div class="flex items-center justify-end sm:col-span-4">
 			<div class="text-sm leading-6">
 				<a href="/login" class="font-semibold text-theme-primary hover:text-theme-primary-hover"
 					>Sign In</a
 				>
 			</div>
 		</div>
-		<div class="flex md:justify-end">
+		<div class="flex md:justify-end sm:col-span-4">
 			<Button
 				class="w-full justify-center"
 				type="submit"

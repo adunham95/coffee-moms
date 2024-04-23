@@ -7,6 +7,7 @@
 	export let type: string = 'text';
 	export let value: any = '';
 	export let name: string | undefined = undefined;
+	export let error: string | undefined = undefined;
 
 	export let required = false;
 
@@ -18,7 +19,7 @@
 	}
 </script>
 
-<div class="mt-2 {$$props.class}">
+<div class={$$props.class}>
 	<Label {label} {id} />
 	<input
 		use:setType
@@ -30,4 +31,7 @@
 		bind:value
 		bind:this={inputRef}
 	/>
+	{#if error}
+		<p class="mt-2 text-sm text-red-600">{error}</p>
+	{/if}
 </div>
