@@ -24,8 +24,9 @@
 			>
 		</div>
 		<div class="text-sm leading-6">
-			<a href="#" class="font-semibold text-theme-primary hover:text-theme-primary-hover"
-				>Forgot password?</a
+			<a
+				href="/forgot-password"
+				class="font-semibold text-theme-primary hover:text-theme-primary-hover">Forgot password?</a
 			>
 		</div>
 	</div>
