@@ -12,6 +12,8 @@ export const actions: Actions = {
 		const formData = await request.formData();
 		const email = formData.get('email');
 		const password = formData.get('password');
+		const firstName = formData.get('firstName');
+		const lastName = formData.get('lastName');
 
 		console.log({ password, email });
 
@@ -36,15 +38,13 @@ export const actions: Actions = {
 		const userId = generateId(15);
 		const hashedPassword = await new Argon2id().hash(password);
 
-		// TODO: check if username is already used
 		await prisma.user.create({
 			data: {
 				id: userId,
 				email: email,
 				hashedPassword,
-				phone: '',
-				firstName: '',
-				lastName: '',
+				firstName: firstName as string,
+				lastName: lastName as string,
 			},
 		});
 

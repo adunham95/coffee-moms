@@ -14,7 +14,7 @@ datasource db {
 model User {
   id    String    @id
   email String?  @unique
-  phone String  @unique
+  phone String?  @unique
   hashedPassword String
   firstName  String?
   lastName  String?
