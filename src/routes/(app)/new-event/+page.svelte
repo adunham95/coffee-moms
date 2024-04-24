@@ -27,8 +27,7 @@
 	<title>{generatePageName('New Event')}</title>
 </svelte:head>
 
-<Container className="py-6"
-	>|| []
+<Container className="py-6">
 	<form method="POST" use:enhance>
 		<FormTwoColumn title="New Event">
 			<div>
