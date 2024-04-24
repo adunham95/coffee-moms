@@ -14,6 +14,18 @@
 				<img class="h-8 w-auto" src={coffee_logo} alt="" />
 			</a>
 		</div>
+
+		<div class="hidden md:flex md:gap-x-12">
+			<a href="/" class="text-sm font-semibold leading-6 text-theme-content">Product</a>
+			<a href="/" class="text-sm font-semibold leading-6 text-theme-content">Features</a>
+			<a href="/" class="text-sm font-semibold leading-6 text-theme-content">Marketplace</a>
+			<a href="/about" class="text-sm font-semibold leading-6 text-theme-content">Company</a>
+		</div>
+		<div class="flex flex-1 justify-end">
+			<a href="/dashboard" class="text-sm font-semibold leading-6 text-theme-content"
+				>Log in <span aria-hidden="true">&rarr;</span></a
+			>
+		</div>
 		<div class="flex md:hidden">
 			<button
 				type="button"
@@ -36,17 +48,6 @@
 					/>
 				</svg>
 			</button>
-		</div>
-		<div class="hidden md:flex md:gap-x-12">
-			<a href="/" class="text-sm font-semibold leading-6 text-theme-content">Product</a>
-			<a href="/" class="text-sm font-semibold leading-6 text-theme-content">Features</a>
-			<a href="/" class="text-sm font-semibold leading-6 text-theme-content">Marketplace</a>
-			<a href="/about" class="text-sm font-semibold leading-6 text-theme-content">Company</a>
-		</div>
-		<div class="hidden md:flex md:flex-1 md:justify-end">
-			<a href="/dashboard" class="text-sm font-semibold leading-6 text-theme-content"
-				>Log in <span aria-hidden="true">&rarr;</span></a
-			>
 		</div>
 	</nav>
 	<!-- Mobile menu, show/hide based on menu open state. -->
