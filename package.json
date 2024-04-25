@@ -43,6 +43,7 @@
 		"@lucia-auth/adapter-prisma": "^4.0.1",
 		"@prisma/adapter-pg": "^5.12.1",
 		"@prisma/client": "5.12.1",
+		"@tailwindcss/container-queries": "^0.1.1",
 		"@types/node": "^20.12.7",
 		"lucia": "^3.1.1",
 		"oslo": "^1.2.0",
