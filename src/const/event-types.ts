@@ -14,3 +14,8 @@ export function getIcon(id: string): keyof typeof icons {
 	const event = eventType.find((e) => e.id === id);
 	return (event?.icon || 'party') as keyof typeof icons;
 }
+
+export function getEventName(id: string): keyof typeof icons {
+	const event = eventType.find((e) => e.id === id);
+	return (event?.title || 'Other') as keyof typeof icons;
+}

@@ -3,6 +3,7 @@
 	import Card from '$components/Card/Card.svelte';
 	import StatusBadge from '$components/StatusBadge.svelte';
 	import type { Event } from '$types/Event';
+	import { getEventName, getIcon } from '$const/event-types';
 	export let event: Event;
 </script>
 
@@ -22,7 +23,19 @@
 		<dl class="flex flex-wrap pb-6">
 			<div class="mt-4 flex w-full flex-none gap-x-4 px-6">
 				<dt class="flex-none">
-					<span class="sr-only">Client</span>
+					<span class="sr-only">Event Type</span>
+					<Icon
+						name={getIcon(event.type || '')}
+						class="h-6 w-6 fill-theme-secondary-content text-theme-secondary-content"
+					/>
+				</dt>
+				<dd class="text-sm font-medium leading-6 text-theme-secondary-content">
+					{getEventName(event.type)}
+				</dd>
+			</div>
+			<div class="mt-4 flex w-full flex-none gap-x-4 px-6">
+				<dt class="flex-none">
+					<span class="sr-only">Cleient</span>
 					<Icon name="user" class="h-6 w-5 text-theme-secondary-content" />
 				</dt>
 				<dd class="text-sm font-medium leading-6 text-theme-secondary-content">

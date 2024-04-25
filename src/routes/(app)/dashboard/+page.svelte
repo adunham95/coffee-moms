@@ -26,17 +26,22 @@
 				title: 'My first event!',
 				status: EStatus.Scheduled,
 				recipient: 'Martha Stewert',
-				type: 'Playground',
+				type: 'playground',
 			},
-			{ title: 'My second event!', status: EStatus.Canceled, recipient: 'Steve', type: 'Coffee' },
-			{ title: 'Created event!', status: EStatus.Created, recipient: 'Steve', type: 'Outdoor' },
+			{ title: 'My second event!', status: EStatus.Canceled, recipient: 'Steve', type: 'coffee' },
+			{ title: 'Created event!', status: EStatus.Created, recipient: 'Steve', type: 'outdoor' },
 			{
 				title: 'An event with a really long title',
 				status: EStatus.Created,
 				recipient: 'Steve',
-				type: 'Outdoor',
+				type: 'dog-park',
 			},
-			{ title: 'Working on it....', status: EStatus.Scheduling, recipient: 'Steve', type: '' },
+			{
+				title: 'Working on it....',
+				status: EStatus.Scheduling,
+				recipient: 'Steve',
+				type: 'dinner',
+			},
 			{ title: 'Were Done', status: EStatus.Complete, recipient: 'Steve', type: '' },
 		]}
 	/>
