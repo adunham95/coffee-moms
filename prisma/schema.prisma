@@ -12,50 +12,71 @@ datasource db {
 }
 
 model User {
-  id    String    @id
-  email String?  @unique
-  phone String?  @unique
+  id             String        @id
+  email          String?       @unique
+  phone          String?       @unique
   hashedPassword String
-  firstName  String?
-  lastName  String?
-  events Event[]
-  sessions Session[]
-  avaliblity Avalibility[]
-  createdAt          DateTime  @default(now()) @db.Timestamptz(3)
-  updatedAt          DateTime  @updatedAt @db.Timestamptz(3)
-}  
+  firstName      String?
+  lastName       String?
+  events         Event[]
+  sessions       Session[]
+  avaliblity     Avalibility[]
+  createdAt      DateTime      @default(now()) @db.Timestamptz(3)
+  updatedAt      DateTime      @updatedAt @db.Timestamptz(3)
+  Attendee       Attendee[]
+}
 
 model Event {
-  id        Int     @id @default(autoincrement())
-  title     String
-  status    String?
-  type      String
-  details   String
-  owner     User    @relation(fields: [ownerId], references: [id])
-  ownerId   String
+  id         Int           @id @default(autoincrement())
+  title      String
+  status     String?
+  type       String
+  details    String
+  owner      User          @relation(fields: [ownerId], references: [id])
+  ownerId    String
   avaliblity Avalibility[]
-  createdAt          DateTime  @default(now()) @db.Timestamptz(3)
-  updatedAt          DateTime  @updatedAt @db.Timestamptz(3)
+  createdAt  DateTime      @default(now()) @db.Timestamptz(3)
+  updatedAt  DateTime      @updatedAt @db.Timestamptz(3)
+  Attendee   Attendee[]
+}
+
+model Attendee {
+  id         Int          @id @default(autoincrement())
+  eventId    Int
+  event      Event        @relation(fields: [eventId], references: [id])
+  userId     String
+  user       User         @relation(fields: [userId], references: [id])
+  createdAt  DateTime     @default(now()) @db.Timestamptz(3)
+  updatedAt  DateTime     @updatedAt @db.Timestamptz(3)
+  LoginToken LoginToken[]
+}
+
+model LoginToken {
+  id         Int      @id @default(autoincrement())
+  token      String   @unique
+  attendeeId Int
+  attendee   Attendee @relation(fields: [attendeeId], references: [id])
+  createdAt  DateTime @default(now()) @db.Timestamptz(3)
+  updatedAt  DateTime @updatedAt @db.Timestamptz(3)
 }
 
 model Avalibility {
-  id Int @id @default(autoincrement())
-  eventId Int
-  event Event @relation(fields: [eventId], references: [id])
-  userId String
-  user User @relation(fields: [userId], references: [id])
-  startDate           DateTime @db.Timestamptz(3)
-  endDate             DateTime @db.Timestamptz(3)
-  createdAt          DateTime  @default(now()) @db.Timestamptz(3)
-  updatedAt          DateTime  @updatedAt @db.Timestamptz(3)
+  id        Int      @id @default(autoincrement())
+  eventId   Int
+  event     Event    @relation(fields: [eventId], references: [id])
+  userId    String
+  user      User     @relation(fields: [userId], references: [id])
+  startDate DateTime @db.Timestamptz(3)
+  endDate   DateTime @db.Timestamptz(3)
+  createdAt DateTime @default(now()) @db.Timestamptz(3)
+  updatedAt DateTime @updatedAt @db.Timestamptz(3)
 }
-
 
 model Session {
   id        String   @id
   userId    String
   expiresAt DateTime
   user      User     @relation(references: [id], fields: [userId], onDelete: Cascade)
-  createdAt          DateTime  @default(now()) @db.Timestamptz(3)
-  updatedAt          DateTime  @updatedAt @db.Timestamptz(3)
+  createdAt DateTime @default(now()) @db.Timestamptz(3)
+  updatedAt DateTime @updatedAt @db.Timestamptz(3)
 }
