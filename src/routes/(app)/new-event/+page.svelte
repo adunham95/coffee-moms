@@ -42,14 +42,13 @@
 				/>
 			</div>
 		</FormTwoColumn>
-		<!-- <FormTwoColumn title="Availability">
-			<TextInput id="ava-1" label="Date" name="availability" type="date" />
-			<TextInput id="ava-2" label="Date" name="availability" />
-			<TextInput id="ava-3" label="Date" name="availability" />
-			<TextInput id="ava-4" label="Date" name="availability" />
-			<TextInput id="ava-5" label="Date" name="availability" />
-			<TextInput id="ava-6" label="Date" name="availability" />
-		</FormTwoColumn> -->
+		<FormTwoColumn title="Attendee">
+			<TextInput label="Attendee 1" id="'1'" name="attendee" />
+			<TextInput label="Attendee 2" id="'2'" name="attendee" />
+			<TextInput label="Attendee 3" id="'3'" name="attendee" />
+			<TextInput label="Attendee 4" id="'4'" name="attendee" />
+			<TextInput label="Attendee 5" id="'5'" name="attendee" />
+		</FormTwoColumn>
 		<div class="flex justify-end py-3">
 			<Button type="submit">Submit</Button>
 		</div>

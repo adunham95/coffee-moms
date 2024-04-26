@@ -24,12 +24,14 @@ model User {
   createdAt      DateTime      @default(now()) @db.Timestamptz(3)
   updatedAt      DateTime      @updatedAt @db.Timestamptz(3)
   Attendee       Attendee[]
+
+  @@index([email, phone])
 }
 
 model Event {
   id         Int           @id @default(autoincrement())
   title      String
-  status     String?
+  status     String?       @default("Created")
   type       String
   details    String
   owner      User          @relation(fields: [ownerId], references: [id])
@@ -37,7 +39,7 @@ model Event {
   avaliblity Avalibility[]
   createdAt  DateTime      @default(now()) @db.Timestamptz(3)
   updatedAt  DateTime      @updatedAt @db.Timestamptz(3)
-  Attendee   Attendee[]
+  attendees  Attendee[]
 }
 
 model Attendee {
