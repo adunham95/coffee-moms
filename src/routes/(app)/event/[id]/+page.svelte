@@ -5,6 +5,7 @@
 	import DescriptionListItem from '$components/DescriptionList/DescriptionListItem.svelte';
 	import Icon from '$components/Icon.svelte';
 	import StatusBadge from '$components/StatusBadge.svelte';
+	import { shareOrCopy } from '$helpers/shareOrCopy';
 	import type { EStatus } from '$types/EStatus';
 	import Container from '../../../../components/Container.svelte';
 	import { eventType, getEventName, getIcon } from '../../../../const/event-types';
@@ -19,6 +20,15 @@
 
 	export let data: CustomPageData;
 	console.log(data);
+
+	function handleShare(loginToken: string) {
+		const url = `/login/${loginToken}`;
+		shareOrCopy({
+			title: 'Login Link',
+			text: 'Login with this link to add your availability',
+			url,
+		});
+	}
 </script>
 
 <svelte:head>
@@ -64,7 +74,10 @@
 											</div>
 										</div>
 										<div class="ml-4 flex-shrink-0">
-											<button class="font-medium text-indigo-600 hover:text-indigo-500">
+											<button
+												on:click={() => handleShare('')}
+												class="font-medium text-indigo-600 hover:text-indigo-500"
+											>
 												Share link
 											</button>
 										</div>
