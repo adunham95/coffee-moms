@@ -9,7 +9,7 @@
 	import { enhance } from '$app/forms';
 	import { eventType } from '../../../const/event-types';
 
-	console.log(eventType);
+	let array = [1];
 
 	const getEventTypes = (): {
 		id: string;
@@ -20,6 +20,11 @@
 		return eventType.map((type) => {
 			return { id: type.id, title: type.title, value: undefined, checked: type.checked || false };
 		});
+	};
+
+	const addItem = () => {
+		console.log('add items');
+		array = [...array, array.length + 1];
 	};
 </script>
 
@@ -43,11 +48,10 @@
 			</div>
 		</FormTwoColumn>
 		<FormTwoColumn title="Attendee">
-			<TextInput label="Attendee 1" id="'1'" name="attendee" />
-			<TextInput label="Attendee 2" id="'2'" name="attendee" />
-			<TextInput label="Attendee 3" id="'3'" name="attendee" />
-			<TextInput label="Attendee 4" id="'4'" name="attendee" />
-			<TextInput label="Attendee 5" id="'5'" name="attendee" />
+			{#each array as item, index}
+				<TextInput label={`New Attendee`} id={`${item}`} name="attendee" />
+			{/each}
+			<Button on:click={addItem} class="mt-3 w-full justify-center">Add Attendee</Button>
 		</FormTwoColumn>
 		<div class="flex justify-end py-3">
 			<Button type="submit">Submit</Button>
