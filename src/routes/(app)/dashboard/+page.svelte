@@ -1,9 +1,18 @@
-<script>
+<script lang="ts">
 	import Container from '$components/Container.svelte';
 	import StatBar from '$components/StatBar.svelte';
 	import { EStatus } from '$types/EStatus';
 	import { generatePageName } from '../../../helpers/generatePageName';
 	import EventList from './EventList.svelte';
+	import type { PageData } from './$types';
+	import type { Event } from '$types/Event';
+
+	type CustomPageData = PageData & {
+		events: Event[];
+	};
+
+	export let data: CustomPageData;
+	console.log(data);
 </script>
 
 <svelte:head>
@@ -20,29 +29,5 @@
 			]}
 		/>
 	</div>
-	<EventList
-		events={[
-			{
-				title: 'My first event!',
-				status: EStatus.Scheduled,
-				recipient: 'Martha Stewert',
-				type: 'playground',
-			},
-			{ title: 'My second event!', status: EStatus.Canceled, recipient: 'Steve', type: 'coffee' },
-			{ title: 'Created event!', status: EStatus.Created, recipient: 'Steve', type: 'outdoor' },
-			{
-				title: 'An event with a really long title',
-				status: EStatus.Created,
-				recipient: 'Steve',
-				type: 'dog-park',
-			},
-			{
-				title: 'Working on it....',
-				status: EStatus.Scheduling,
-				recipient: 'Steve',
-				type: 'dinner',
-			},
-			{ title: 'Were Done', status: EStatus.Complete, recipient: 'Steve', type: '' },
-		]}
-	/>
+	<EventList events={data.events} />
 </Container>

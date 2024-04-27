@@ -13,6 +13,11 @@ export const load: PageServerLoad = async (event) => {
 		},
 		include: {
 			owner: true,
+			attendees: {
+				include: {
+					user: true,
+				},
+			},
 		},
 	});
 	console.log(events);
