@@ -29,5 +29,8 @@
 			]}
 		/>
 	</div>
+	{#if data.events.length <= 0}
+		<div>NO Events</div>
+	{/if}
 	<EventList events={data.events} />
 </Container>
