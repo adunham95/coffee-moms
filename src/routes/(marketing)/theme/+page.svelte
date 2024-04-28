@@ -1,5 +1,7 @@
 <script lang="ts">
 	import Container from '$components/Container.svelte';
+	import Heading from '$components/Text/Heading.svelte';
+	import Text from '$components/Text/Text.svelte';
 	import { generatePageName } from '../../../helpers/generatePageName';
 
 	let colorPallet = [
@@ -155,6 +157,29 @@
 		},
 	];
 
+	let principles = [
+		{
+			title: 'Accessibility',
+			description:
+				'We prioritize accessibility to ensure that all users can interact with our products.',
+		},
+		{
+			title: 'Simplicity',
+			description:
+				'We believe in the power of simplicity and strive to eliminate complexity from the user experience.',
+		},
+		{
+			title: 'Innovation',
+			description:
+				'We embrace innovation and are constantly exploring new ways to delight our users.',
+		},
+		{
+			title: 'User-Centric',
+			description:
+				'Our design decisions are driven by a deep understanding of our users’ needs and goals.',
+		},
+	];
+
 	async function copyContent(text: string) {
 		try {
 			await navigator.clipboard.writeText(text);
@@ -175,75 +200,45 @@
 <Container>
 	<div class="md:flex md:items-center md:justify-between pt-10 pb-5">
 		<div class="min-w-0 flex-1">
-			<h2
-				class="text-2xl font-bold leading-7 text-theme-content sm:truncate sm:text-3xl sm:tracking-tight text-center"
-			>
-				Design Guidelines
-			</h2>
-			<p class="mt-2 max-w-4xl text-sm text-theme-secondary-content text-center">
+			<Heading class="text-center">Design Guidelines</Heading>
+			<Text class="text-center">
 				Our design guidelines help us create a consistent and user-friendly experience across all
 				our products.
-			</p>
+			</Text>
 		</div>
 	</div>
 
 	<!-- Design Principles -->
 	<div class="pb-5">
-		<h3 class="text-lg font-semibold leading-6 text-theme-content">Design Principles</h3>
-		<p class="mt-2 max-w-4xl text-sm text-theme-secondary-content">
+		<Heading tag="h3" variant="h3">Design Principles</Heading>
+		<Text class="text-theme-secondary-content">
 			Our design principles guide our decision-making process and ensure that our products are
 			intuitive, accessible, and beautiful.
-		</p>
+		</Text>
+
 		<ol class="grid gap-3 grid-cols-1 md:grid-cols-2 py-3">
-			<li>
-				<div class="flex items-start gap-x-3">
-					<p class="text-sm font-semibold leading-6 text-theme-content">Accessibility</p>
-				</div>
-				<div class="mt-1 flex items-center gap-x-2 text-xs leading-5 text-theme-secondary-content">
-					<p>
-						We prioritize accessibility to ensure that all users can interact with our products.
-					</p>
-				</div>
-			</li>
-			<li>
-				<div class="flex items-start gap-x-3">
-					<p class="text-sm font-semibold leading-6 text-theme-content">Simplicity</p>
-				</div>
-				<div class="mt-1 flex items-center gap-x-2 text-xs leading-5 text-theme-secondary-content">
-					<p>
-						We believe in the power of simplicity and strive to eliminate complexity from the user
-						experience.
-					</p>
-				</div>
-			</li>
-			<li>
-				<div class="flex items-start gap-x-3">
-					<p class="text-sm font-semibold leading-6 text-theme-content">Innovation</p>
-				</div>
-				<div class="mt-1 flex items-center gap-x-2 text-xs leading-5 text-theme-secondary-content">
-					<p>We embrace innovation and are constantly exploring new ways to delight our users.</p>
-				</div>
-			</li>
-			<li>
-				<div class="flex items-start gap-x-3">
-					<p class="text-sm font-semibold leading-6 text-theme-content">User-Centric</p>
-				</div>
-				<div class="mt-1 flex items-center gap-x-2 text-xs leading-5 text-theme-secondary-content">
-					<p>
-						Our design decisions are driven by a deep understanding of our users’ needs and goals.
-					</p>
-				</div>
-			</li>
+			{#each principles as principle}
+				<li>
+					<div class="flex items-start gap-x-3">
+						<Heading variant="h5" tag="h5">{principle.title}</Heading>
+					</div>
+					<div class="mt-1 flex items-center gap-x-2">
+						<Text variant="bodySm" class="text-theme-secondary-content">
+							{principle.description}
+						</Text>
+					</div>
+				</li>
+			{/each}
 		</ol>
 	</div>
 
 	<!-- Color Pallet -->
 	<div class="pb-10">
-		<h3 class="text-lg font-semibold leading-6 text-theme-content">Color Pallet</h3>
-		<p class="mt-2 max-w-4xl text-sm text-theme-secondary-content">
+		<Heading variant="h3" tag="h3">Color Pallet</Heading>
+		<Text variant="bodySm" class="mt-2 max-w-4xl text-theme-secondary-content">
 			Our color palette consists of carefully selected colors that reflect our brand and provide a
 			pleasant visual experience.
-		</p>
+		</Text>
 		<div
 			class="grid w-full grid-cols-2 sm:grid-cols-3 items-stretch justify-center gap-4 md:grid-cols-4 lg:grid-cols-6 md:gap-8 pt-3"
 		>
@@ -253,16 +248,13 @@
 					on:click={() => copyContent(color.color)}
 				>
 					<div class={`w-12 h-12 rounded-full border border-black ${color.style} `} />
-					<span class="text-sm text-center font-medium">{color.name}</span>
-					<span
-						class="text-sm text-center text-theme-secondary-content dark:text-theme-secondary-content"
-						>{color.color}</span
-					>
+					<Heading variant="h5" tag="span" class="text-center">{color.name}</Heading>
+					<Text variant="bodySm" tag="span">{color.color}</Text>
 				</button>
 			{/each}
 		</div>
 
-		<h3 class="text-base pt-3 font-semibold leading-6 text-theme-content">Examples</h3>
+		<Heading variant="h3" tag="h3" class="pt-3 pb-2">Examples</Heading>
 
 		<!-- Info -->
 		<div class="rounded-md bg-theme-info-bg p-4 mb-2 border-2 border-theme-info">
@@ -426,35 +418,26 @@
 
 	<!-- Typography -->
 	<div class="pb-5">
-		<h3 class="text-lg font-semibold leading-6 text-theme-content">Typography</h3>
-		<p class="my-2 max-w-4xl text-sm text-theme-secondary-content">
+		<Heading variant="h3" tag="h3">Typography</Heading>
+		<Text variant="bodySm" class="mt-2 max-w-4xl text-theme-secondary-content">
 			Our typography is designed to be highly readable and accessible across all devices.
-		</p>
+		</Text>
 		<div class="grid w-full grid-cols-2 items-stretch justify-center gap-4 md:grid-cols-3 md:gap-8">
-			<div class="flex flex-col items-start justify-center space-y-1">
-				<span class="font-semibold">Roboto</span>
-				<span class="text-sm text-theme-secondary-content dark:text-theme-secondary-content"
+			<div class="flex flex-col items-start justify-center space-y-1 font-body">
+				<span class="font-semibold text-lg">Lato</span>
+				<span class="text-base text-theme-secondary-content dark:text-theme-secondary-content"
 					>ABCDEFGHIJKLMNOPQRSTUVWXYZ</span
 				>
-				<span class="text-sm text-theme-secondary-content dark:text-theme-secondary-content"
+				<span class="text-base text-theme-secondary-content dark:text-theme-secondary-content"
 					>abcdefghijklmnopqrstuvwxyz</span
 				>
 			</div>
-			<div class="flex flex-col items-start justify-center space-y-1">
-				<span class="font-semibold">Inter</span>
-				<span class="text-sm text-theme-secondary-content dark:text-theme-secondary-content"
+			<div class="flex flex-col items-start justify-center space-y-1 font-heading">
+				<span class="font-semibold text-lg">Lustria</span>
+				<span class="text-base text-theme-secondary-content dark:text-theme-secondary-content"
 					>ABCDEFGHIJKLMNOPQRSTUVWXYZ</span
 				>
-				<span class="text-sm text-theme-secondary-content dark:text-theme-secondary-content"
-					>abcdefghijklmnopqrstuvwxyz</span
-				>
-			</div>
-			<div class="flex flex-col items-start justify-center space-y-1">
-				<span class="font-semibold">Source Sans Pro</span>
-				<span class="text-sm text-theme-secondary-content dark:text-theme-secondary-content"
-					>ABCDEFGHIJKLMNOPQRSTUVWXYZ</span
-				>
-				<span class="text-sm text-theme-secondary-content dark:text-theme-secondary-content"
+				<span class="text-base text-theme-secondary-content dark:text-theme-secondary-content"
 					>abcdefghijklmnopqrstuvwxyz</span
 				>
 			</div>

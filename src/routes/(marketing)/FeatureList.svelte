@@ -1,4 +1,6 @@
 <script lang="ts">
+	import Heading from '$components/Text/Heading.svelte';
+	import Text from '$components/Text/Text.svelte';
 	import Icon from '../../components/Icon.svelte';
 	export let features: { title: string; description: string; icon: string }[] = [];
 </script>
@@ -12,10 +14,12 @@
 				>
 					<Icon class="h-6 w-6 text-white" name={feature.icon} />
 				</div>
-				{feature.title}
+				<Heading tag="p" variant="h4">{feature.title}</Heading>
 			</dt>
-			<dd class="mt-2 text-base leading-7 text-gray-600">
-				{feature.description}
+			<dd class="mt-2">
+				<Text>
+					{feature.description}
+				</Text>
 			</dd>
 		</div>
 	{/each}

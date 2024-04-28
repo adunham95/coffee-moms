@@ -1,4 +1,6 @@
 <script lang="ts">
+	import Heading from './Text/Heading.svelte';
+
 	export let pageTitle = 'Page Title';
 	export let paths: { path: string; title: string }[] = [];
 </script>
@@ -57,11 +59,9 @@
 	</div>
 	<div class="mt-2 md:flex md:items-center md:justify-between">
 		<div class="min-w-0 flex-1">
-			<h2
-				class="text-2xl font-bold leading-7 text-theme-content sm:truncate sm:text-3xl sm:tracking-tight"
-			>
+			<Heading variant="h2">
 				{pageTitle}
-			</h2>
+			</Heading>
 		</div>
 	</div>
 </header>

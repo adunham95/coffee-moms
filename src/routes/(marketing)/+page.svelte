@@ -2,6 +2,8 @@
 	import Container from '../../components/Container.svelte';
 	import FeaturesList from './FeatureList.svelte';
 	import { generatePageName } from '../../helpers/generatePageName';
+	import Heading from '$components/Text/Heading.svelte';
+	import Text from '$components/Text/Text.svelte';
 </script>
 
 <svelte:head>
@@ -23,13 +25,14 @@
 		<div class="mx-auto max-w-7xl px-6 pb-32 pt-36 sm:pt-60 lg:px-8 lg:pt-32">
 			<div class="mx-auto max-w-2xl gap-x-14 lg:mx-0 lg:flex lg:max-w-none lg:items-center">
 				<div class="relative w-full max-w-xl lg:shrink-0 xl:max-w-2xl">
-					<h1 class="text-4xl font-bold tracking-tight text-text-theme-content sm:text-6xl">
-						Empowering moms, one playdate at a time
-					</h1>
-					<p class="mt-6 text-lg leading-8 text-theme-secondary-content sm:max-w-md lg:max-w-none">
+					<Heading variant="h1" tag="h1">Empowering moms, one playdate at a time</Heading>
+					<Text
+						variant="bodyLg"
+						class="mt-6 text-theme-secondary-content sm:max-w-md lg:max-w-none"
+					>
 						Discover the Ultimate Mom-Approved Playdate Solution: Connecting Moms, Creating
 						Memories!
-					</p>
+					</Text>
 					<div class="mt-10 flex items-center gap-x-6">
 						<a
 							href="/new-event"
@@ -107,14 +110,12 @@
 
 <Container>
 	<div class="mx-auto max-w-2xl lg:text-center">
-		<h2 class="text-base font-semibold leading-7 text-brand-600">Play faster</h2>
-		<p class="mt-2 text-3xl font-bold tracking-tight text-text-theme-content sm:text-4xl">
-			Everything you need to set up a playdate
-		</p>
-		<p class="mt-6 text-lg leading-8 text-theme-secondary-content">
+		<Text variant="brand" tag="h2">Play faster</Text>
+		<Heading tag="p">Everything you need to set up a social event</Heading>
+		<Text variant="bodyLg" class="mt-6 text-theme-secondary-content">
 			Quis tellus eget adipiscing convallis sit sit eget aliquet quis. Suspendisse eget egestas a
 			elementum pulvinar et feugiat blandit at. In mi viverra elit nunc.
-		</p>
+		</Text>
 	</div>
 	<div class="mt-16 sm:mt-20 lg:mt-24">
 		<FeaturesList

@@ -6,7 +6,7 @@ export default {
 		extend: {
 			fontFamily: {
 				body: ['Lato', 'sans-serif'],
-				headline: ['Lustria', 'serif'],
+				heading: ['Lustria', 'serif'],
 			},
 			colors: {
 				brand: {
