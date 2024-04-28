@@ -4,6 +4,10 @@ export default {
 	plugins: [require('@tailwindcss/container-queries')],
 	theme: {
 		extend: {
+			fontFamily: {
+				body: ['Lato', 'sans-serif'],
+				headline: ['Lustria', 'serif'],
+			},
 			colors: {
 				brand: {
 					50: '#f8f0fa',
