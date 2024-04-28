@@ -25,13 +25,14 @@
 		<div class="mx-auto max-w-7xl px-6 pb-32 pt-36 sm:pt-60 lg:px-8 lg:pt-32">
 			<div class="mx-auto max-w-2xl gap-x-14 lg:mx-0 lg:flex lg:max-w-none lg:items-center">
 				<div class="relative w-full max-w-xl lg:shrink-0 xl:max-w-2xl">
-					<Heading variant="h1" tag="h1">Empowering moms, one playdate at a time</Heading>
+					<Heading variant="h1" tag="h1"
+						>Building Bonds, One Event at a Time: Where Moms Connect, Kids Thrive!</Heading
+					>
 					<Text
 						variant="bodyLg"
 						class="mt-6 text-theme-secondary-content sm:max-w-md lg:max-w-none"
 					>
-						Discover the Ultimate Mom-Approved Playdate Solution: Connecting Moms, Creating
-						Memories!
+						Empower Your Child's Social Circle: Join Moms in Crafting Unforgettable Moments!
 					</Text>
 					<div class="mt-10 flex items-center gap-x-6">
 						<a
@@ -113,8 +114,8 @@
 		<Text variant="brand" tag="h2">Play faster</Text>
 		<Heading tag="p">Everything you need to set up a social event</Heading>
 		<Text variant="bodyLg" class="mt-6 text-theme-secondary-content">
-			Quis tellus eget adipiscing convallis sit sit eget aliquet quis. Suspendisse eget egestas a
-			elementum pulvinar et feugiat blandit at. In mi viverra elit nunc.
+			Effortlessly organize playdates and connect with fellow moms using our intuitive platform. Say
+			goodbye to scheduling headaches and hello to stress-free socializing for your child!
 		</Text>
 	</div>
 	<div class="mt-16 sm:mt-20 lg:mt-24">
@@ -127,9 +128,9 @@
 					icon: 'chat',
 				},
 				{
-					title: 'Availability',
+					title: 'Intuitive Scheduling',
 					description:
-						'Allow other moms to add there availability and let us recommend times that work for everyone',
+						'Seamlessly coordinate playdates with other moms, with easy-to-use scheduling tools that eliminate the hassle of back-and-forth messaging.',
 					icon: 'calender',
 				},
 				{
@@ -138,9 +139,10 @@
 					icon: 'stars',
 				},
 				{
-					title: 'App Feature',
-					description: 'App feature description',
-					icon: 'check',
+					title: 'Group Planning',
+					description:
+						'Organize group outings and social events with multiple moms and their children, making it easy to create memorable experiences together.',
+					icon: 'stars',
 				},
 			]}
 		/>
