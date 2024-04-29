@@ -47,9 +47,9 @@
 				/>
 			</div>
 		</FormTwoColumn>
-		<FormTwoColumn title="Attendee">
-			{#each array as item, index}
-				<TextInput label={`New Attendee`} id={`${item}`} name="attendee" />
+		<FormTwoColumn title="Attendee" class="pt-4">
+			{#each array as item}
+				<TextInput label={`New Attendee Phone Number`} id={`${item}`} name="attendee" />
 			{/each}
 			<Button on:click={addItem} class="mt-3 w-full justify-center">Add Attendee</Button>
 		</FormTwoColumn>

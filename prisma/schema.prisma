@@ -12,66 +12,75 @@ datasource db {
 }
 
 model User {
-  id             String        @id
-  email          String?       @unique
-  phone          String?       @unique
+  id             String       @id
+  email          String?      @unique
+  phone          String?      @unique
   hashedPassword String
   firstName      String?
   lastName       String?
   events         Event[]
   sessions       Session[]
-  avaliblity     Avalibility[]
-  createdAt      DateTime      @default(now()) @db.Timestamptz(3)
-  updatedAt      DateTime      @updatedAt @db.Timestamptz(3)
+  loginToken     LoginToken[]
+  createdAt      DateTime     @default(now()) @db.Timestamptz(3)
+  updatedAt      DateTime     @updatedAt @db.Timestamptz(3)
   Attendee       Attendee[]
 
   @@index([email, phone])
 }
 
 model Event {
-  id         Int           @id @default(autoincrement())
-  title      String
-  status     String?       @default("Created")
-  type       String
-  details    String
-  owner      User          @relation(fields: [ownerId], references: [id])
-  ownerId    String
-  avaliblity Avalibility[]
-  createdAt  DateTime      @default(now()) @db.Timestamptz(3)
-  updatedAt  DateTime      @updatedAt @db.Timestamptz(3)
-  attendees  Attendee[]
+  id          Int           @id @default(autoincrement())
+  title       String
+  status      String?       @default("Created")
+  type        String
+  details     String
+  owner       User          @relation(fields: [ownerId], references: [id])
+  ownerId     String
+  avaliblity  Avalibility[]
+  createdAt   DateTime      @default(now()) @db.Timestamptz(3)
+  updatedAt   DateTime      @updatedAt @db.Timestamptz(3)
+  attendees   Attendee[]
+  loginTokens LoginToken[]
+
+  @@index([ownerId])
 }
 
 model Attendee {
-  id         Int          @id @default(autoincrement())
+  id         Int           @id @default(autoincrement())
   eventId    Int
-  event      Event        @relation(fields: [eventId], references: [id])
+  event      Event         @relation(fields: [eventId], references: [id])
   userId     String
-  user       User         @relation(fields: [userId], references: [id])
-  createdAt  DateTime     @default(now()) @db.Timestamptz(3)
-  updatedAt  DateTime     @updatedAt @db.Timestamptz(3)
-  LoginToken LoginToken[]
+  user       User          @relation(fields: [userId], references: [id])
+  createdAt  DateTime      @default(now()) @db.Timestamptz(3)
+  updatedAt  DateTime      @updatedAt @db.Timestamptz(3)
+  avaliblity Avalibility[]
+
+  @@index([eventId, userId])
 }
 
 model LoginToken {
-  id         Int      @id @default(autoincrement())
-  token      String   @unique
-  attendeeId Int
-  attendee   Attendee @relation(fields: [attendeeId], references: [id])
-  createdAt  DateTime @default(now()) @db.Timestamptz(3)
-  updatedAt  DateTime @updatedAt @db.Timestamptz(3)
+  id        Int      @id @default(autoincrement())
+  token     String   @unique
+  userId    String
+  user      User     @relation(fields: [userId], references: [id])
+  eventId   Int?
+  event     Event?   @relation(fields: [eventId], references: [id])
+  createdAt DateTime @default(now()) @db.Timestamptz(3)
+  updatedAt DateTime @updatedAt @db.Timestamptz(3)
+
+  @@index([token])
 }
 
 model Avalibility {
-  id        Int      @id @default(autoincrement())
-  eventId   Int
-  event     Event    @relation(fields: [eventId], references: [id])
-  userId    String
-  user      User     @relation(fields: [userId], references: [id])
-  startDate DateTime @db.Timestamptz(3)
-  endDate   DateTime @db.Timestamptz(3)
-  createdAt DateTime @default(now()) @db.Timestamptz(3)
-  updatedAt DateTime @updatedAt @db.Timestamptz(3)
+  id         Int      @id @default(autoincrement())
+  eventId    Int
+  event      Event    @relation(fields: [eventId], references: [id])
+  attendeeId Int
+  attendee   Attendee @relation(fields: [attendeeId], references: [id])
+  startDate  DateTime @db.Timestamptz(3)
+  endDate    DateTime @db.Timestamptz(3)
+  createdAt  DateTime @default(now()) @db.Timestamptz(3)
+  updatedAt  DateTime @updatedAt @db.Timestamptz(3)
 }
 
 model Session {

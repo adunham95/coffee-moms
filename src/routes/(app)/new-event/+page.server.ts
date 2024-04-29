@@ -47,23 +47,6 @@ export const actions: Actions = {
 			),
 		);
 
-		console.log(newAttendees);
-
-		// const userId = generateId(15);
-		// const randomPass = generateId(15);
-		// const hashedPassword = await new Argon2id().hash(randomPass);
-		// const upsertUser = await prisma.user.upsert({
-		// 	where: {
-		// 		phone: '8283989038',
-		// 	},
-		// 	update: {},
-		// 	create: {
-		// 		id: userId,
-		// 		phone: '8283989038',
-		// 		hashedPassword,
-		// 	},
-		// });
-
 		try {
 			const newEvent = await prisma.event.create({
 				data: {
@@ -78,11 +61,16 @@ export const actions: Actions = {
 							}),
 						},
 					},
+					loginTokens: {
+						createMany: {
+							data: newAttendees.map((a) => {
+								return { userId: a.id, token: generateId(7) };
+							}),
+						},
+					},
 				},
 			});
 			id = newEvent.id;
-			console.log(newEvent);
-			console.log('id', id);
 		} catch (error) {
 			console.error(error);
 		}

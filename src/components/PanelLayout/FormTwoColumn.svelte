@@ -4,7 +4,7 @@
 </script>
 
 <div
-	class="grid grid-cols-1 gap-x-8 gap-y-10 border-b border-theme-content/10 pb-12 md:grid-cols-3"
+	class={`grid grid-cols-1 gap-x-8 gap-y-10 border-b border-theme-content/10 pb-12 md:grid-cols-3 ${$$props.class}`}
 >
 	<div>
 		<h2 class="text-base font-semibold leading-7 text-theme-content">{title}</h2>
