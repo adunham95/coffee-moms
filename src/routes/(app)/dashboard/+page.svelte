@@ -6,6 +6,7 @@
 	import EventList from './EventList.svelte';
 	import type { PageData } from './$types';
 	import type { Event } from '$types/Event';
+	import EmptyEvent from '$components/EmptyEvent.svelte';
 
 	type CustomPageData = PageData & {
 		events: Event[];
@@ -30,7 +31,7 @@
 		/>
 	</div>
 	{#if data.events.length <= 0}
-		<div>NO Events</div>
+		<EmptyEvent />
 	{/if}
 	<EventList events={data.events} />
 </Container>
