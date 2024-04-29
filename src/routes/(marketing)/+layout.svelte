@@ -16,13 +16,20 @@
 		</div>
 
 		<div class="hidden md:flex md:gap-x-12">
-			<a href="/" class="text-sm font-semibold leading-6 text-theme-content">Product</a>
-			<a href="/" class="text-sm font-semibold leading-6 text-theme-content">Features</a>
-			<a href="/" class="text-sm font-semibold leading-6 text-theme-content">Marketplace</a>
-			<a href="/about" class="text-sm font-semibold leading-6 text-theme-content">Company</a>
+			<a href="/" class="text-sm font-semibold leading-6 font-heading text-theme-content">Product</a
+			>
+			<a href="/" class="text-sm font-semibold leading-6 font-heading text-theme-content"
+				>Features</a
+			>
+			<a href="/" class="text-sm font-semibold leading-6 font-heading text-theme-content"
+				>Marketplace</a
+			>
+			<a href="/about" class="text-sm font-semibold leading-6 font-heading text-theme-content"
+				>Company</a
+			>
 		</div>
 		<div class="flex flex-1 justify-end">
-			<a href="/dashboard" class="text-sm font-semibold leading-6 text-theme-content"
+			<a href="/dashboard" class="text-sm font-semibold leading-6 font-heading text-theme-content"
 				>Log in <span aria-hidden="true">&rarr;</span></a
 			>
 		</div>
@@ -85,29 +92,29 @@
 					<div class="space-y-2 py-6">
 						<a
 							href="/"
-							class="-mx-3 block rounded-lg px-3 py-2 text-base font-semibold leading-7 text-theme-content hover:bg-gray-50"
+							class="-mx-3 block rounded-lg px-3 py-2 text-base font-semibold leading-7 font-heading text-theme-content hover:bg-gray-50"
 							>Product</a
 						>
 						<a
 							href="/"
-							class="-mx-3 block rounded-lg px-3 py-2 text-base font-semibold leading-7 text-theme-content hover:bg-gray-50"
+							class="-mx-3 block rounded-lg px-3 py-2 text-base font-semibold leading-7 font-heading text-theme-content hover:bg-gray-50"
 							>Features</a
 						>
 						<a
 							href="/"
-							class="-mx-3 block rounded-lg px-3 py-2 text-base font-semibold leading-7 text-theme-content hover:bg-gray-50"
+							class="-mx-3 block rounded-lg px-3 py-2 text-base font-semibold leading-7 font-heading text-theme-content hover:bg-gray-50"
 							>Marketplace</a
 						>
 						<a
 							href="/about"
-							class="-mx-3 block rounded-lg px-3 py-2 text-base font-semibold leading-7 text-theme-content hover:bg-gray-50"
+							class="-mx-3 block rounded-lg px-3 py-2 text-base font-semibold leading-7 font-heading text-theme-content hover:bg-gray-50"
 							>Company</a
 						>
 					</div>
 					<div class="py-6">
 						<a
 							href="/dashboard"
-							class="-mx-3 block rounded-lg px-3 py-2.5 text-base font-semibold leading-7 text-theme-content hover:bg-gray-50"
+							class="-mx-3 block rounded-lg px-3 py-2.5 text-base font-semibold leading-7 font-heading text-theme-content hover:bg-gray-50"
 							>Log in</a
 						>
 					</div>
