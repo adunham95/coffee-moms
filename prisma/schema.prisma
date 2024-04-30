@@ -77,8 +77,7 @@ model Avalibility {
   event      Event    @relation(fields: [eventId], references: [id])
   attendeeId Int
   attendee   Attendee @relation(fields: [attendeeId], references: [id])
-  startDate  DateTime @db.Timestamptz(3)
-  endDate    DateTime @db.Timestamptz(3)
+  date       DateTime @db.Timestamptz(3)
   createdAt  DateTime @default(now()) @db.Timestamptz(3)
   updatedAt  DateTime @updatedAt @db.Timestamptz(3)
 }

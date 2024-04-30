@@ -71,6 +71,26 @@ export const actions: Actions = {
 					},
 				},
 			});
+
+			const myAttendee = await prisma.attendee.create({
+				data: {
+					userId: locals.user?.id || '',
+					eventId: newEvent.id,
+				},
+			});
+
+			const myAvailability = await prisma.avalibility.createMany({
+				data: proposedTimes.map((time) => {
+					return {
+						attendeeId: myAttendee.id,
+						eventId: newEvent.id,
+						date: new Date(time as string),
+					};
+				}),
+			});
+
+			console.log({ myAttendee, myAvailability });
+
 			id = newEvent.id;
 		} catch (error) {
 			console.error(error);
