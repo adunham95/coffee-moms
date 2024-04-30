@@ -11,8 +11,9 @@ export const actions: Actions = {
 		const type = data.get('event-type');
 
 		const attendees = data.getAll('attendee').filter((a) => a !== '');
+		const proposedTimes = data.getAll('time-preference');
 
-		console.log({ data: { title, attendees }, locals });
+		console.log({ data: { title, attendees, proposedTimes }, locals });
 		let id = 0;
 
 		if (!title || typeof title !== 'string' || title.length < 2) {

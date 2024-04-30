@@ -8,8 +8,10 @@
 	import { generatePageName } from '$helpers/generatePageName';
 	import { enhance } from '$app/forms';
 	import { eventType } from '../../../const/event-types';
-
-	let array = [1];
+	import DateInput from '$components/Inputs/DateInput.svelte';
+	import ScheduleInput from '$components/Inputs/ScheduleInput.svelte';
+	import TextInputList from '$components/Inputs/TextInputList.svelte';
+	import Heading from '$components/Text/Heading.svelte';
 
 	const getEventTypes = (): {
 		id: string;
@@ -20,11 +22,6 @@
 		return eventType.map((type) => {
 			return { id: type.id, title: type.title, value: undefined, checked: type.checked || false };
 		});
-	};
-
-	const addItem = () => {
-		console.log('add items');
-		array = [...array, array.length + 1];
 	};
 </script>
 
@@ -38,6 +35,7 @@
 			<div>
 				<TextInput id="event-name" label="Name" name="event-name" />
 				<TextArea id="event-details" label="Details" />
+				<DateInput id="event-date" label="Date" />
 				<RadioBox
 					id="event-type"
 					label="Event Type"
@@ -47,11 +45,14 @@
 				/>
 			</div>
 		</FormTwoColumn>
-		<FormTwoColumn title="Attendee" class="pt-4">
-			{#each array as item}
-				<TextInput label={`New Attendee Phone Number`} id={`${item}`} name="attendee" />
-			{/each}
-			<Button on:click={addItem} class="mt-3 w-full justify-center">Add Attendee</Button>
+		<FormTwoColumn title="Attendees" class="pt-4">
+			<div>
+				<Heading tag="h3" variant="h3">Add Attendees</Heading>
+				<TextInputList placeholder="Phone Number: 1234567890" groupName="attendee" />
+			</div>
+		</FormTwoColumn>
+		<FormTwoColumn title="Proposed Times" class="pt-4">
+			<ScheduleInput />
 		</FormTwoColumn>
 		<div class="flex justify-end py-3">
 			<Button type="submit">Submit</Button>

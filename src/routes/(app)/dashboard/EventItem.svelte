@@ -10,7 +10,7 @@
 <div class="col-span-1">
 	<h2 class="sr-only">Summary</h2>
 	<Card>
-		<div slot="header" class="flex flex-wrap pb-6 p-0">
+		<a href={`/event/${event.id}`} slot="header" class="flex flex-wrap pb-6 p-0">
 			<div class="flex-auto pl-6 pt-6">
 				<dd class="mt-1 text-base font-semibold leading-6 text-theme-content">{event.title}</dd>
 			</div>
@@ -18,7 +18,7 @@
 				<dt class="sr-only">Status</dt>
 				<StatusBadge status={event.status} />
 			</div>
-		</div>
+		</a>
 
 		<dl class="flex flex-wrap pb-6">
 			<div class="mt-4 flex w-full flex-none gap-x-4 px-6">
@@ -33,7 +33,7 @@
 					{getEventName(event.type)}
 				</dd>
 			</div>
-			<div class="mt-4 flex w-full flex-none gap-x-4 px-6">
+			<!-- <div class="mt-4 flex w-full flex-none gap-x-4 px-6">
 				<dt class="flex-none">
 					<span class="sr-only">Cleient</span>
 					<Icon name="user" class="h-6 w-5 text-theme-secondary-content" />
@@ -41,7 +41,7 @@
 				<dd class="text-sm font-medium leading-6 text-theme-secondary-content">
 					{event.recipient}
 				</dd>
-			</div>
+			</div> -->
 			<div class="mt-4 flex w-full flex-none gap-x-4 px-6">
 				<dt class="flex-none">
 					<span class="sr-only">Due date</span>
@@ -52,13 +52,13 @@
 					Event Date
 				</dd>
 			</div>
-			<div class="mt-4 flex w-full flex-none gap-x-4 px-6">
+			<!-- <div class="mt-4 flex w-full flex-none gap-x-4 px-6">
 				<dt class="flex-none">
 					<span class="sr-only">Status</span>
 					<Icon name="location" class="h-6 w-5 text-theme-secondary-content" />
 				</dt>
 				<dd class="text-sm leading-6 text-theme-secondary-content">{event.type || 'Undecided'}</dd>
-			</div>
+			</div> -->
 		</dl>
 	</Card>
 </div>
