@@ -74,12 +74,14 @@
 											</div>
 										</div>
 										<div class="ml-4 flex-shrink-0">
-											<button
-												on:click={() => handleShare('')}
-												class="font-medium text-indigo-600 hover:text-indigo-500"
-											>
-												Share link
-											</button>
+											{#if attendee.user.loginToken[0]?.token}
+												<button
+													on:click={() => handleShare(attendee.user.loginToken[0]?.token)}
+													class="font-medium text-indigo-600 hover:text-indigo-500"
+												>
+													Share link
+												</button>
+											{/if}
 										</div>
 									</li>
 								{/each}

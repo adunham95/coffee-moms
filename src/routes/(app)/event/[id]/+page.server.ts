@@ -9,7 +9,14 @@ export const load: PageServerLoad = async (event) => {
 
 	const eventData = await prisma.event.findFirst({
 		where: { id: parseInt(id) },
-		include: { attendees: { include: { user: true } }, loginTokens: true, avaliblity: true },
+		include: {
+			attendees: {
+				include: {
+					user: { include: { loginToken: { where: { eventId: parseInt(id) }, take: 1 } } },
+				},
+			},
+			avaliblity: true,
+		},
 	});
 
 	console.log(eventData);
