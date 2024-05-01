@@ -4,7 +4,7 @@
 	export let id: string;
 	export let groupName: string;
 	export let options: { id: string; title: string; value?: string; checked?: boolean }[] = [];
-	console.log(options);
+	// console.log(options);
 </script>
 
 <fieldset class={$$props.class}>
