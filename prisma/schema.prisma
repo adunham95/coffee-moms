@@ -58,15 +58,22 @@ model Attendee {
   @@index([eventId, userId])
 }
 
+enum tokenType {
+  login
+  event_recipeint
+}
+
 model LoginToken {
-  id        Int      @id @default(autoincrement())
-  token     String   @unique
+  id        Int       @id @default(autoincrement())
+  token     String    @unique
+  tokenType tokenType @default(login)
   userId    String
-  user      User     @relation(fields: [userId], references: [id])
+  user      User      @relation(fields: [userId], references: [id])
   eventId   Int?
-  event     Event?   @relation(fields: [eventId], references: [id])
-  createdAt DateTime @default(now()) @db.Timestamptz(3)
-  updatedAt DateTime @updatedAt @db.Timestamptz(3)
+  event     Event?    @relation(fields: [eventId], references: [id])
+  expiresAt DateTime? @db.Timestamptz(3)
+  createdAt DateTime  @default(now()) @db.Timestamptz(3)
+  updatedAt DateTime  @updatedAt @db.Timestamptz(3)
 
   @@index([token])
 }

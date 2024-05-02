@@ -2,6 +2,7 @@ import type { Actions } from './$types';
 import prisma from '$lib/prisma';
 import { fail, redirect } from '@sveltejs/kit';
 import { generateId } from 'lucia';
+import { tokenType } from '@prisma/client';
 
 export const actions: Actions = {
 	default: async ({ request, locals }) => {
@@ -65,7 +66,11 @@ export const actions: Actions = {
 					loginTokens: {
 						createMany: {
 							data: newAttendees.map((a) => {
-								return { userId: a.id, token: generateId(7) };
+								return {
+									userId: a.id,
+									token: generateId(7),
+									tokenType: tokenType.event_recipeint,
+								};
 							}),
 						},
 					},
