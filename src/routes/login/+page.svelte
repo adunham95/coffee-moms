@@ -4,7 +4,7 @@
 	import Card from '$components/Card/Card.svelte';
 	import Container from '$components/Container.svelte';
 	import SignIn from '$components/auth/SignIn.svelte';
-	import { generatePageName } from '../../../helpers/generatePageName';
+	import { generatePageName } from '$helpers/generatePageName';
 
 	let form: any;
 </script>

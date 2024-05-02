@@ -5,7 +5,7 @@ import { Argon2id } from 'oslo/password';
 import prisma from '$lib/prisma';
 
 import type { Actions } from './$types';
-import { isValidEmail } from '../../../helpers/helpers';
+import { isValidEmail } from '$helpers/helpers';
 
 export const actions: Actions = {
 	default: async ({ request, cookies }) => {

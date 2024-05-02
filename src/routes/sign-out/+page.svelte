@@ -1,6 +1,6 @@
 <script lang="ts">
 	import { enhance } from '$app/forms';
-	import { generatePageName } from '../../../helpers/generatePageName';
+	import { generatePageName } from '$helpers/generatePageName';
 </script>
 
 <svelte:head>

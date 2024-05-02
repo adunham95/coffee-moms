@@ -3,12 +3,13 @@
 	import Card from '$components/Card/Card.svelte';
 	import Container from '$components/Container.svelte';
 	import SignUp from '$components/auth/SignUp.svelte';
+	import { generatePageName } from '$helpers/generatePageName';
 
 	let error: string;
 </script>
 
 <svelte:head>
-	<title>Sign Up | Coffee Moms</title>
+	<title>{generatePageName('Sign Up')}</title>
 	<meta name="description" content="About this app" />
 </svelte:head>
 
