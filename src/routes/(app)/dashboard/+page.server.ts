@@ -20,10 +20,19 @@ export const load: PageServerLoad = async (event) => {
 			},
 		},
 	});
-	console.log(events);
+
+	const attendeeEvents = await prisma.attendee.findMany({
+		where: {
+			userId: event.locals.user.id,
+		},
+		include: {
+			event: { include: { owner: true } },
+		},
+	});
 
 	return {
 		user: event.locals.user,
 		events,
+		attendeeEvents,
 	};
 };
