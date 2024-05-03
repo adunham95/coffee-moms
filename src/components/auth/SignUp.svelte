@@ -2,7 +2,6 @@
 	import Input from '$components/Inputs/TextInput.svelte';
 	import Button from '$components/Button.svelte';
 	import { enhance } from '$app/forms';
-	import Container from '$components/Container.svelte';
 	import { isValidEmail } from '$helpers/helpers';
 
 	let email = '';
@@ -26,9 +25,7 @@
 </script>
 
 <form method="POST" use:enhance>
-	<Container
-		class="{$$props.class} mt-10 grid grid-cols-1 gap-x-2 gap-y-4 sm:grid-cols-4 items-center"
-	>
+	<div class="{$$props.class} grid grid-cols-1 gap-x-2 gap-y-4 sm:grid-cols-4 items-center">
 		<Input
 			label="First Name"
 			id="firstName"
@@ -88,5 +85,5 @@
 				disabled={validate(password, confirmPassword, email)}>Sign Up</Button
 			>
 		</div>
-	</Container>
+	</div>
 </form>
