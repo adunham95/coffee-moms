@@ -3,13 +3,20 @@
 	import StatBar from '$components/StatBar.svelte';
 	import { EStatus } from '$types/EStatus';
 	import { generatePageName } from '../../../helpers/generatePageName';
-	import EventList from './EventList.svelte';
 	import type { PageData } from './$types';
 	import type { Event } from '$types/Event';
 	import EmptyEvent from '$components/EmptyEvent.svelte';
+	import EventCard from '$components/EventCard/EventCard.svelte';
 
 	type CustomPageData = PageData & {
-		events: Event[];
+		events: [{ status: EStatus }];
+		attendeeEvents: [
+			{
+				event: {
+					status: EStatus;
+				};
+			},
+		];
 	};
 
 	export let data: CustomPageData;
@@ -33,5 +40,26 @@
 	{#if data.events.length <= 0}
 		<EmptyEvent />
 	{/if}
-	<EventList events={data.events} />
+
+	<div>
+		{#each data?.attendeeEvents as attendeeEvent}
+			<EventCard
+				title={attendeeEvent.event.title}
+				description={attendeeEvent.event.details}
+				status={attendeeEvent.event.status}
+				type={attendeeEvent.event.type}
+			/>
+		{/each}
+	</div>
+
+	<div class="grid md:grid-cols-2 lg:grid-cols-3 grid-cols-1 gap-2">
+		{#each data.events as event}
+			<EventCard
+				title={event.title}
+				description={event.details}
+				status={event.status}
+				type={event.type}
+			/>
+		{/each}
+	</div>
 </Container>
