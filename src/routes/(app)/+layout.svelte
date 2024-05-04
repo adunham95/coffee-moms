@@ -68,6 +68,7 @@
 										{data.user?.lastName}
 									</p>
 									<a
+										href="/profile"
 										class="block px-4 py-2 text-sm text-theme-content hover:bg-brand-500 hover:text-white"
 										role="menuitem"
 										tabindex="-1"
