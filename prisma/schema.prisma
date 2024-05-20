@@ -41,6 +41,12 @@ model Event {
   updatedAt   DateTime      @updatedAt @db.Timestamptz(3)
   attendees   Attendee[]
   loginTokens LoginToken[]
+  locationName String?
+  street String?
+  street2 String?
+  city String?
+  state String?
+  zip String?
 
   @@index([ownerId])
 }
