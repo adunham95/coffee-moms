@@ -3,8 +3,6 @@
 
 	export let status: EStatus | undefined = EStatus.Created;
 
-	console.log('status');
-
 	let statusDetails: { [key in EStatus]: { name: string; style: string } } = {
 		Scheduled: {
 			name: 'Scheduled',
