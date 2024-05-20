@@ -12,6 +12,7 @@
 	import ScheduleInput from '$components/Inputs/ScheduleInput.svelte';
 	import TextInputList from '$components/Inputs/TextInputList.svelte';
 	import Heading from '$components/Text/Heading.svelte';
+	import Address from '$components/Inputs/Address.svelte';
 
 	const getEventTypes = (): {
 		id: string;
@@ -43,6 +44,7 @@
 					class="pt-2"
 					options={getEventTypes()}
 				/>
+				<Address class="pt-2" />
 			</div>
 		</FormTwoColumn>
 		<FormTwoColumn title="Attendees" class="pt-4">
