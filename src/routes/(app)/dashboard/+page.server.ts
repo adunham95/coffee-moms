@@ -24,6 +24,9 @@ export const load: PageServerLoad = async (event) => {
 	const attendeeEvents = await prisma.attendee.findMany({
 		where: {
 			userId: event.locals.user.id,
+			event: {
+				isNot: { ownerId: event.locals.user.id },
+			},
 		},
 		include: {
 			event: { include: { owner: true } },

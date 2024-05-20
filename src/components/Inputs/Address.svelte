@@ -4,7 +4,7 @@
 </script>
 
 <div class={`grid grid-cols-3 gap-2 ${$$props.class}`}>
-	<TextInput id="locationName" label="Name" class="col-span-3" />
+	<TextInput id="location-name" label="Name" class="col-span-3" />
 	<TextInput id="street" label="Street" class="col-span-3" />
 	<TextInput id="street2" label="Street 2" class="col-span-3" />
 	<TextInput id="city" label="City" class="col-span-1" />

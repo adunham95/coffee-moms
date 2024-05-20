@@ -10,9 +10,15 @@ export const actions: Actions = {
 		const title = data.get('event-name');
 		const details = data.get('event-details');
 		const type = data.get('event-type');
+		const locationName = data.get('location-name');
+		const street = data.get('street');
+		const street2 = data.get('street2');
+		const city = data.get('city');
+		const state = data.get('state');
+		const zip = data.get('zip');
 
-		const attendees = data.getAll('attendee').filter((a) => a !== '');
-		const proposedTimes = data.getAll('time-preference');
+		const attendees = data.getAll('attendee').filter((a) => a !== '') || [];
+		const proposedTimes = data.getAll('time-preference').filter((a) => a !== '') || [];
 
 		console.log({ data: { title, attendees, proposedTimes }, locals });
 		let id = 0;
@@ -25,13 +31,49 @@ export const actions: Actions = {
 
 		if (!type || typeof type !== 'string') {
 			return fail(400, {
-				message: 'Invalid title',
+				message: 'Invalid type',
 			});
 		}
 
 		if (typeof details !== 'string') {
 			return fail(400, {
-				message: 'Invalid title',
+				message: 'Invalid details',
+			});
+		}
+
+		if (locationName && typeof locationName !== 'string') {
+			return fail(400, {
+				message: 'Invalid location name',
+			});
+		}
+
+		if (street && typeof street !== 'string') {
+			return fail(400, {
+				message: 'Invalid street',
+			});
+		}
+
+		if (street2 && typeof street2 !== 'string') {
+			return fail(400, {
+				message: 'Invalid street',
+			});
+		}
+
+		if (city && typeof city !== 'string') {
+			return fail(400, {
+				message: 'Invalid city',
+			});
+		}
+
+		if (state && typeof state !== 'string') {
+			return fail(400, {
+				message: 'Invalid state',
+			});
+		}
+
+		if (zip && typeof zip !== 'string') {
+			return fail(400, {
+				message: 'Invalid zip',
 			});
 		}
 
@@ -56,6 +98,12 @@ export const actions: Actions = {
 					type,
 					details: details || '',
 					ownerId: locals.user?.id || '',
+					locationName,
+					street,
+					street2,
+					city,
+					state,
+					zip,
 					attendees: {
 						createMany: {
 							data: newAttendees.map((a) => {
