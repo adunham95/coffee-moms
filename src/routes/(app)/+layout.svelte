@@ -1,13 +1,11 @@
 <script>
 	import Avatar from '$components/Avatar.svelte';
 	import Footer from '$components/Footer.svelte';
-	import coffee_logo from '$lib/images/coffee-logo.svg';
+	import icon_logo from '$lib/images/icon-logo-brand.svg';
 	import text_logo from '$lib/images/text-logo.svg';
 
 	let mobileNavOpen = false;
 	export let data;
-
-	console.log({ layoutData: data });
 </script>
 
 <div class="min-h-full">
@@ -19,7 +17,7 @@
 				>
 					<a href="/dashboard" class="flex items-center px-2 lg:px-0">
 						<div class="flex-shrink-0">
-							<img src={coffee_logo} alt="Logo" class="block h-8 w-auto" />
+							<img src={icon_logo} alt="Logo" class="block h-8 w-auto" />
 						</div>
 						<div class="flex-shrink-0 hidden sm:flex ml-2">
 							<img src={text_logo} alt="Text Logo" class="block h-5 w-auto" />

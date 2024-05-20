@@ -1,6 +1,6 @@
 export function generatePageName(pageName?: string) {
 	if (!pageName) {
-		return 'Coffee Moms';
+		return 'Planner Bee';
 	}
-	return `${pageName} | Coffee Moms`;
+	return `${pageName} | Planner Bee`;
 }
