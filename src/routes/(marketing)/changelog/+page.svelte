@@ -4,8 +4,6 @@
 	import { generatePageName } from '$helpers/generatePageName';
 
 	export let data;
-
-	console.log(data);
 </script>
 
 <svelte:head>
