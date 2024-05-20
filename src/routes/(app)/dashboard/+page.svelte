@@ -41,25 +41,15 @@
 		<EmptyEvent />
 	{/if}
 
-	<div>
+	<div class="grid md:grid-cols-2 lg:grid-cols-3 grid-cols-1 gap-2">
 		{#each data?.attendeeEvents as attendeeEvent}
-			<EventCard
-				title={attendeeEvent.event.title}
-				description={attendeeEvent.event.details}
-				status={attendeeEvent.event.status}
-				type={attendeeEvent.event.type}
-			/>
+			<EventCard {...attendeeEvent.event} />
 		{/each}
 	</div>
 
 	<div class="grid md:grid-cols-2 lg:grid-cols-3 grid-cols-1 gap-2">
 		{#each data.events as event}
-			<EventCard
-				title={event.title}
-				description={event.details}
-				status={event.status}
-				type={event.type}
-			/>
+			<EventCard {...event} />
 		{/each}
 	</div>
 </Container>

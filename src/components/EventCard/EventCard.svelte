@@ -2,13 +2,19 @@
 	import Icon from '$components/Icon.svelte';
 	import StatusBadge from '$components/StatusBadge.svelte';
 	import type { EStatus } from '$types/EStatus';
-	import EventStatusBar from './EventStatusBar.svelte';
-	import { getEventName, getIcon } from '$const/event-types';
+	import { getIcon } from '$const/event-types';
 
+	export let id: number;
 	export let title: string;
-	export let description: string;
+	export let details: string;
 	export let status: EStatus;
-	export let type: string | undefined;
+	export let type: string | null;
+	export let locationName: string | null;
+	export let street: string | null;
+	export let street2: string | null;
+	export let city: string | null;
+	export let state: string | null;
+	export let zip: string | null;
 </script>
 
 <div class="container border-b border-t border-gray-200 bg-white shadow-sm rounded-lg border mb-1">
@@ -25,11 +31,11 @@
 
 			<div class="mt-6 ml-6 @sm:mt-0">
 				<h3 class="text-base font-medium text-gray-900">
-					<a href="#">{title}</a>
+					<a href={`/event/${id}`}>{title}</a>
 				</h3>
 				<StatusBadge {status} />
 				<p class="mt-3 text-sm text-gray-500">
-					{description}
+					{details}
 				</p>
 			</div>
 		</div>
@@ -37,12 +43,19 @@
 		<div class="mt-6 @lg:col-span-5 @lg:mt-0">
 			<dl class="grid grid-cols-2 gap-x-6 text-sm">
 				<div>
-					<dt class="font-medium text-gray-900">Delivery address</dt>
-					<dd class="mt-3 text-gray-500">
-						<span class="block">Floyd Miles</span>
-						<span class="block">7363 Cynthia Pass</span>
-						<span class="block">Toronto, ON N3Y 4H8</span>
-					</dd>
+					{#if locationName}
+						<dt class="font-medium text-gray-900">Event Location</dt>
+						<dd class="mt-3 text-gray-500">
+							<span class="block">{locationName}</span>
+							{#if street && city && state && zip}
+								<span class="block">{street}</span>
+								{#if street2}
+									<span class="block">{street2}</span>
+								{/if}
+								<span class="block">{city}, {state} {zip}</span>
+							{/if}
+						</dd>
+					{/if}
 				</div>
 				<div>
 					<dt class="font-medium text-gray-900">Shipping updates</dt>
