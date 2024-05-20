@@ -1,9 +1,13 @@
 /** @type {import('tailwindcss').Config} */
 export default {
 	content: ['./src/**/*.{html,js,svelte,ts}'],
-	plugins: [require('@tailwindcss/container-queries')],
+	plugins: [require('@tailwindcss/container-queries'), require('@tailwindcss/typography')],
 	theme: {
 		extend: {
+			minHeight: {
+				screen: 'calc(100vh - 64px - 120px)',
+				'screen-mobile': 'calc(100vh - 64px - 172px)',
+			},
 			fontFamily: {
 				body: ['Lato', 'sans-serif'],
 				heading: ['Lustria', 'serif'],

@@ -1,3 +1,7 @@
+<script>
+	import { PUBLIC_APP_VERSION } from '$env/static/public';
+</script>
+
 <footer>
 	<div class="mx-auto max-w-7xl px-6 py-12 md:flex md:items-center md:justify-between lg:px-8">
 		<div class="flex justify-center space-x-6 md:order-2">
@@ -53,6 +57,10 @@
 		<div class="mt-8 md:order-1 md:mt-0">
 			<p class="text-center text-xs leading-5 text-theme-secondary-content">
 				&copy; {new Date().getFullYear()} Coffee Moms, Inc. All rights reserved.
+
+				<a href="/changelog" class="inline hover:text-theme-primary-hover">
+					v{PUBLIC_APP_VERSION}
+				</a>
 			</p>
 		</div>
 	</div>
