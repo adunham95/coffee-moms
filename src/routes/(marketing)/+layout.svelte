@@ -1,6 +1,5 @@
 <script>
-	import coffee_logo from '$lib/images/coffee-logo.svg';
-	import text_logo from '$lib/images/text-logo.svg';
+	import icon_logo from '$lib/images/icon-logo-brand.svg';
 	import Footer from '../../components/Footer.svelte';
 
 	let mobileMenuOpen = false;
@@ -11,7 +10,7 @@
 		<div class="flex md:flex-1">
 			<a href="/" class="-m-1.5 p-1.5">
 				<span class="sr-only">Coffee Mom</span>
-				<img class="h-8 w-auto" src={coffee_logo} alt="" />
+				<img class="h-8 w-auto" src={icon_logo} alt="" />
 			</a>
 		</div>
 
@@ -67,7 +66,7 @@
 			<div class="flex items-center justify-between">
 				<a href="/" class="-m-1.5 p-1.5">
 					<span class="sr-only">Coffee Mom</span>
-					<img class="h-8 w-auto" src={coffee_logo} alt="" />
+					<img class="h-8 w-auto" src={icon_logo} alt="" />
 				</a>
 				<button
 					type="button"
