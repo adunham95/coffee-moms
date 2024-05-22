@@ -13,6 +13,7 @@
 	import TextInputList from '$components/Inputs/TextInputList.svelte';
 	import Heading from '$components/Text/Heading.svelte';
 	import Address from '$components/Inputs/Address.svelte';
+	import Toggle from '$components/Inputs/Toggle.svelte';
 
 	const getEventTypes = (): {
 		id: string;
@@ -50,6 +51,7 @@
 		<FormTwoColumn title="Attendees" class="pt-4">
 			<div>
 				<Heading tag="h3" variant="h3">Add Attendees</Heading>
+				<Toggle id="allow-group" label="Allow Group" />
 				<TextInputList placeholder="Phone Number: 1234567890" groupName="attendee" />
 			</div>
 		</FormTwoColumn>
