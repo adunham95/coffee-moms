@@ -28,6 +28,7 @@ export const load: PageServerLoad = async (event) => {
 
 	switch (tokenData?.tokenType) {
 		case tokenType.event_recipeint:
+		case tokenType.event:
 			redirect(302, `/event/${tokenData.eventId}/attendee`);
 			break;
 

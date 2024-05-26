@@ -113,13 +113,16 @@ export const actions: Actions = {
 					},
 					loginTokens: {
 						createMany: {
-							data: newAttendees.map((a) => {
-								return {
-									userId: a.id,
-									token: generateId(7),
-									tokenType: tokenType.event_recipeint,
-								};
-							}),
+							data: [
+								{ token: generateId(7), tokenType: tokenType.event },
+								...newAttendees.map((a) => {
+									return {
+										userId: a.id,
+										token: generateId(7),
+										tokenType: tokenType.event_recipient,
+									};
+								}),
+							],
 						},
 					},
 				},

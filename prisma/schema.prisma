@@ -67,14 +67,16 @@ model Attendee {
 enum tokenType {
   login
   event_recipeint
+  event_recipient
+  event
 }
 
 model LoginToken {
   id        Int       @id @default(autoincrement())
   token     String    @unique
   tokenType tokenType @default(login)
-  userId    String
-  user      User      @relation(fields: [userId], references: [id])
+  userId    String?
+  user      User?      @relation(fields: [userId], references: [id])
   eventId   Int?
   event     Event?    @relation(fields: [eventId], references: [id])
   expiresAt DateTime? @db.Timestamptz(3)

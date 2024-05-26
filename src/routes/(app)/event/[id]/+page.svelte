@@ -36,6 +36,18 @@
 </svelte:head>
 
 <Container>
+	<div class="sm:py-5 pt-2">
+		<div
+			class="pointer-events-auto flex items-center justify-between gap-x-6 bg-gray-900 px-6 py-2.5 rounded-sm sm:rounded-xl sm:py-3 sm:pl-4 sm:pr-3.5"
+		>
+			<div class="">
+				<p class="text-xl leading-6 text-white">Level up your event</p>
+				<p class="text-sm leading-6 text-white">
+					<a href="#">With add on such as sign up, RSVP, etc..</a>
+				</p>
+			</div>
+		</div>
+	</div>
 	<div class=" py-3 grid grid-cols-1 items-start gap-4 lg:grid-cols-3 lg:gap-6">
 		<main class="col-span-2">
 			<Card>
@@ -113,6 +125,33 @@
 								<StatusBadge status={data.eventData?.status} />
 							</div>
 						</div>
+					</div>
+				</CardContainer>
+			</Card>
+
+			<Card class="mt-2">
+				<CardContainer>
+					<div class="flex items-center text-lg">
+						<svg
+							xmlns="http://www.w3.org/2000/svg"
+							fill="none"
+							viewBox="0 0 24 24"
+							stroke-width="1.5"
+							stroke="currentColor"
+							class="h-[1em] 2-[1em]"
+						>
+							<path
+								stroke-linecap="round"
+								stroke-linejoin="round"
+								d="M7.217 10.907a2.25 2.25 0 1 0 0 2.186m0-2.186c.18.324.283.696.283 1.093s-.103.77-.283 1.093m0-2.186 9.566-5.314m-9.566 7.5 9.566 5.314m0 0a2.25 2.25 0 1 0 3.935 2.186 2.25 2.25 0 0 0-3.935-2.186Zm0-12.814a2.25 2.25 0 1 0 3.933-2.185 2.25 2.25 0 0 0-3.933 2.185Z"
+							/>
+						</svg>
+						<p class="ml-1 font-bold">Share Your Event</p>
+					</div>
+					<div class="my-2 w-full border-t border-gray-300"></div>
+					<div>
+						<p>Event Url</p>
+						<p class="w-full bg-brand-200 rounded p-2">http://example.com/your-placeholder</p>
 					</div>
 				</CardContainer>
 			</Card>
