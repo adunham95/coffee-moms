@@ -3,7 +3,7 @@
 	import SignIn from '$components/auth/SignIn.svelte';
 	import { generatePageName } from '$helpers/generatePageName';
 
-	let form: any;
+	export let form: any;
 </script>
 
 <svelte:head>
