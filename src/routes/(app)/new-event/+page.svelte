@@ -14,6 +14,7 @@
 	import Heading from '$components/Text/Heading.svelte';
 	import Address from '$components/Inputs/Address.svelte';
 	import Toggle from '$components/Inputs/Toggle.svelte';
+	import RadioBoxList from '$components/Inputs/RadioBoxList.svelte';
 
 	const getEventTypes = (): {
 		id: string;
@@ -46,12 +47,35 @@
 					options={getEventTypes()}
 				/>
 				<Address class="pt-2" />
+				<RadioBoxList
+					class="pt-2"
+					id="security-settings"
+					groupName="security-settings"
+					label="Security Settings"
+					options={[
+						{
+							id: 'invite-link',
+							title: 'Public',
+							subtitle: 'This event would be available to anyone who has the link',
+							checked: true,
+						},
+						{
+							id: 'attendee-only',
+							title: 'Attendee Only',
+							subtitle: 'Only attendees of this event would be able to access',
+						},
+						{
+							id: 'private',
+							title: 'Private',
+							subtitle: 'Only you have access to this event',
+						},
+					]}
+				/>
 			</div>
 		</FormTwoColumn>
 		<FormTwoColumn title="Attendees" class="pt-4">
 			<div>
 				<Heading tag="h3" variant="h3">Add Attendees</Heading>
-				<Toggle id="allow-group" label="Allow Group" />
 				<TextInputList placeholder="Phone Number: 1234567890" groupName="attendee" />
 			</div>
 		</FormTwoColumn>

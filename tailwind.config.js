@@ -1,7 +1,11 @@
 /** @type {import('tailwindcss').Config} */
 export default {
 	content: ['./src/**/*.{html,js,svelte,ts}'],
-	plugins: [require('@tailwindcss/container-queries'), require('@tailwindcss/typography')],
+	plugins: [
+		require('@tailwindcss/container-queries'),
+		require('@tailwindcss/typography'),
+		require('@tailwindcss/forms'),
+	],
 	theme: {
 		extend: {
 			minHeight: {

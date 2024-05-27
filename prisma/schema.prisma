@@ -47,6 +47,7 @@ model Event {
   city String?
   state String?
   zip String?
+  securitySettings String?
 
   @@index([ownerId])
 }
