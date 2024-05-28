@@ -15,7 +15,6 @@
 	import Address from '$components/Inputs/Address.svelte';
 	import Toggle from '$components/Inputs/Toggle.svelte';
 	import RadioBoxList from '$components/Inputs/RadioBoxList.svelte';
-	import DualTextInputList from '$components/Inputs/DualTextInputList.svelte';
 
 	const getEventTypes = (): {
 		id: string;
@@ -47,32 +46,11 @@
 					class="pt-2"
 					options={getEventTypes()}
 				/>
-				<Address class="pt-2" />
-				<RadioBoxList
-					class="pt-2"
-					id="security-settings"
-					groupName="security-settings"
-					label="Security Settings"
-					options={[
-						{
-							id: 'invite-link',
-							title: 'Public',
-							subtitle: 'This event would be available to anyone who has the link',
-							checked: true,
-						},
-						{
-							id: 'attendee-only',
-							title: 'Attendee Only',
-							subtitle: 'Only attendees of this event would be able to access',
-						},
-						{
-							id: 'private',
-							title: 'Private',
-							subtitle: 'Only you have access to this event',
-						},
-					]}
-				/>
+				<Toggle id="rsvp" class="pt-3" label="RSVP Required" />
 			</div>
+		</FormTwoColumn>
+		<FormTwoColumn title="Location" class="pt-4">
+			<Address class="pt-2" />
 		</FormTwoColumn>
 		<FormTwoColumn title="Attendees" class="pt-4">
 			<div>
@@ -83,9 +61,32 @@
 		<FormTwoColumn title="Proposed Times" class="pt-4">
 			<ScheduleInput />
 		</FormTwoColumn>
-		<!-- <FormTwoColumn title="Sign Ups" class="pt-4">
-			<DualTextInputList />
-		</FormTwoColumn> -->
+		<FormTwoColumn title="Advanced Settings" class="pt-4">
+			<RadioBoxList
+				class="pt-2"
+				id="security-settings"
+				groupName="security-settings"
+				label="Security Settings"
+				options={[
+					{
+						id: 'invite-link',
+						title: 'Public',
+						subtitle: 'This event would be available to anyone who has the link',
+						checked: true,
+					},
+					{
+						id: 'attendee-only',
+						title: 'Attendee Only',
+						subtitle: 'Only attendees of this event would be able to access',
+					},
+					{
+						id: 'private',
+						title: 'Private',
+						subtitle: 'Only you have access to this event',
+					},
+				]}
+			/>
+		</FormTwoColumn>
 		<div class="flex justify-end py-3">
 			<Button type="submit">Submit</Button>
 		</div>

@@ -9,8 +9,8 @@
 
 <div class={$$props.class}>
 	<div class="flex">
-		{#if label}
-			<Label {label} {id} class="mr-1" />
+		{#if labelUnchecked}
+			<Label label={labelUnchecked} {id} class="mr-1" />
 		{/if}
 
 		<div class="flex items-center">
@@ -20,15 +20,15 @@
 				aria-checked="false"
 				aria-labelledby="annual-billing-label"
 			>
-				<input {id} {required} type="checkbox" class="peer hidden" />
+				<input {id} {required} name={id} type="checkbox" class="peer hidden" />
 				<span
 					aria-hidden="true"
 					class="translate-x-0 pointer-events-none inline-block h-5 w-5 transform rounded-full bg-white shadow ring-0 transition duration-200 ease-in-out peer-[:checked]:translate-x-5"
 				></span>
 			</label>
 		</div>
-		{#if labelUnchecked}
-			<Label label={labelUnchecked} {id} class="mr-1" />
+		{#if label}
+			<Label {label} {id} class="ml-1" />
 		{/if}
 	</div>
 </div>

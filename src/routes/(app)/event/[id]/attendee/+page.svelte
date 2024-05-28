@@ -43,13 +43,17 @@
 				<CardContainer>
 					<EventSidecar title={data.eventData.title} type={data.eventData.type} showStatus={false}>
 						<dl class="space-y-4 divide-y divide-gray-900/10">
-							<Accordion title="RSVP" expanded>
-								<h1>RSVP</h1>
-							</Accordion>
+							{#if data.eventData.rsvpEnabled}
+								<Accordion title="RSVP" expanded>
+									<h1>RSVP</h1>
+								</Accordion>
+							{/if}
 
-							<Accordion title="Sign Ups">
-								<h1>Sign Up</h1>
-							</Accordion>
+							{#if data.eventData.availabilityEnabled}
+								<Accordion title="Set Availability">
+									<h1>Sign Up</h1>
+								</Accordion>
+							{/if}
 						</dl>
 					</EventSidecar>
 				</CardContainer>

@@ -29,25 +29,27 @@ model User {
 }
 
 model Event {
-  id          Int           @id @default(autoincrement())
-  title       String
-  status      String?       @default("Created")
-  type        String
-  details     String
-  owner       User          @relation(fields: [ownerId], references: [id])
-  ownerId     String
-  avaliblity  Avalibility[]
-  createdAt   DateTime      @default(now()) @db.Timestamptz(3)
-  updatedAt   DateTime      @updatedAt @db.Timestamptz(3)
-  attendees   Attendee[]
-  loginTokens LoginToken[]
-  locationName String?
-  street String?
-  street2 String?
-  city String?
-  state String?
-  zip String?
-  securitySettings String?
+  id                  Int           @id @default(autoincrement())
+  title               String
+  status              String?       @default("Created")
+  type                String
+  details             String
+  owner               User          @relation(fields: [ownerId], references: [id])
+  ownerId             String
+  avaliblity          Avalibility[]
+  availabilityEnabled Boolean?      @default(false)
+  createdAt           DateTime      @default(now()) @db.Timestamptz(3)
+  updatedAt           DateTime      @updatedAt @db.Timestamptz(3)
+  attendees           Attendee[]
+  loginTokens         LoginToken[]
+  locationName        String?
+  street              String?
+  street2             String?
+  city                String?
+  state               String?
+  zip                 String?
+  securitySettings    String?       @default("private")
+  rsvpEnabled         Boolean?      @default(false)
 
   @@index([ownerId])
 }
@@ -77,7 +79,7 @@ model LoginToken {
   token     String    @unique
   tokenType tokenType @default(login)
   userId    String?
-  user      User?      @relation(fields: [userId], references: [id])
+  user      User?     @relation(fields: [userId], references: [id])
   eventId   Int?
   event     Event?    @relation(fields: [eventId], references: [id])
   expiresAt DateTime? @db.Timestamptz(3)

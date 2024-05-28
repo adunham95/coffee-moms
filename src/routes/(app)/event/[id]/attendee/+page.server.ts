@@ -17,11 +17,13 @@ export const load: PageServerLoad = async (event) => {
 	console.log(eventData);
 	if (!eventData) error(404, 'Event Not Found');
 
-	if (eventData.securitySettings === 'private') error(404, 'Event Not Found');
+	if (eventData.securitySettings === 'private' && user?.id !== eventData.ownerId)
+		error(404, 'Event Not Found');
+
+	console.log({ user, includesUser: eventData.attendees.some((a) => a.userId === user?.id) });
 	if (
 		eventData.securitySettings === 'attendee-only' &&
-		user &&
-		eventData.attendees.some((a) => a.userId === user.id)
+		eventData.attendees.some((a) => a.userId !== user?.id)
 	)
 		error(404, 'Event Not Found');
 

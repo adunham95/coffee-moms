@@ -16,11 +16,13 @@ export const actions: Actions = {
 		const city = data.get('city');
 		const state = data.get('state');
 		const zip = data.get('zip');
+		const rsvp = data.get('rsvp');
+		const securitySettings = data.get('security-settings');
 
 		const attendees = data.getAll('attendee').filter((a) => a !== '') || [];
 		const proposedTimes = data.getAll('time-preference').filter((a) => a !== '') || [];
 
-		console.log({ data: { title, attendees, proposedTimes }, locals });
+		console.log({ data: { title, attendees, proposedTimes, rsvp, securitySettings }, locals });
 		let id = 0;
 
 		if (!title || typeof title !== 'string' || title.length < 2) {
@@ -77,6 +79,12 @@ export const actions: Actions = {
 			});
 		}
 
+		if (securitySettings && typeof securitySettings !== 'string') {
+			return fail(400, {
+				message: 'Invalid security settings',
+			});
+		}
+
 		const newAttendees = await prisma.$transaction(
 			attendees.map((attendeePhone) =>
 				prisma.user.upsert({
@@ -104,6 +112,9 @@ export const actions: Actions = {
 					city,
 					state,
 					zip,
+					availabilityEnabled: proposedTimes.length > 0,
+					rsvpEnabled: rsvp === 'on',
+					securitySettings,
 					attendees: {
 						createMany: {
 							data: newAttendees.map((a) => {
