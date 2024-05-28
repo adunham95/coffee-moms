@@ -44,7 +44,7 @@
 					<EventSidecar title={data.eventData.title} type={data.eventData.type} showStatus={false}>
 						<dl class="space-y-4 divide-y divide-gray-900/10">
 							{#if data.eventData.rsvpEnabled}
-								<Accordion title="RSVP" expanded>
+								<Accordion title="RSVP">
 									<h1>RSVP</h1>
 								</Accordion>
 							{/if}
