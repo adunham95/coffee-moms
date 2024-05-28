@@ -12,19 +12,15 @@ export const load: PageServerLoad = async (event) => {
 
 	console.log({ tokenData });
 
-	if (!tokenData?.userId) {
-		redirect(302, '/login');
+	if (tokenData?.userId) {
+		const session = await lucia.createSession(tokenData?.userId, {});
+		const sessionCookie = lucia.createSessionCookie(session.id);
+		console.log(session, sessionCookie);
+		event.cookies.set(sessionCookie.name, sessionCookie.value, {
+			path: '.',
+			...sessionCookie.attributes,
+		});
 	}
-
-	//TODO Check expiration
-
-	const session = await lucia.createSession(tokenData?.userId, {});
-	const sessionCookie = lucia.createSessionCookie(session.id);
-	console.log(session, sessionCookie);
-	event.cookies.set(sessionCookie.name, sessionCookie.value, {
-		path: '.',
-		...sessionCookie.attributes,
-	});
 
 	switch (tokenData?.tokenType) {
 		case tokenType.event_recipeint:

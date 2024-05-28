@@ -15,6 +15,7 @@
 	import Address from '$components/Inputs/Address.svelte';
 	import Toggle from '$components/Inputs/Toggle.svelte';
 	import RadioBoxList from '$components/Inputs/RadioBoxList.svelte';
+	import DualTextInputList from '$components/Inputs/DualTextInputList.svelte';
 
 	const getEventTypes = (): {
 		id: string;
@@ -82,6 +83,9 @@
 		<FormTwoColumn title="Proposed Times" class="pt-4">
 			<ScheduleInput />
 		</FormTwoColumn>
+		<!-- <FormTwoColumn title="Sign Ups" class="pt-4">
+			<DualTextInputList />
+		</FormTwoColumn> -->
 		<div class="flex justify-end py-3">
 			<Button type="submit">Submit</Button>
 		</div>
