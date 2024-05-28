@@ -3,13 +3,14 @@
 	import CardContainer from '$components/Card/CardContainer.svelte';
 	import DescriptionList from '$components/DescriptionList/DescriptionList.svelte';
 	import DescriptionListItem from '$components/DescriptionList/DescriptionListItem.svelte';
+	import EventSidecar from '$components/EventSidecar.svelte';
 	import Icon from '$components/Icon.svelte';
 	import TwoColumnShell from '$components/Shell/TwoColumnShell.svelte';
 	import StatusBadge from '$components/StatusBadge.svelte';
 	import { shareOrCopy } from '$helpers/shareOrCopy';
 	import type { EStatus } from '$types/EStatus';
 	import Container from '../../../../components/Container.svelte';
-	import { eventType, getEventName, getIcon } from '../../../../const/event-types';
+	import { getEventName } from '../../../../const/event-types';
 	import { generatePageName } from '../../../../helpers/generatePageName';
 	import type { PageData } from './$types';
 	type CustomPageData = PageData & {
@@ -105,24 +106,7 @@
 			<!-- Secondary column (hidden on smaller screens) -->
 			<Card>
 				<CardContainer>
-					<div class="flex items-center gap-x-6">
-						<div
-							class="bg-theme-primary h-16 w-16 p-1 flex-none rounded-full inline-flex justify-center items-center"
-						>
-							<Icon
-								name={getIcon(data.eventData?.type || '')}
-								class="h-12 w-12 fill-theme-primary-content text-theme-primary-content "
-							/>
-						</div>
-						<div>
-							<div class=" mt-1 flex items-center">
-								<h1 class="text-base font-semibold leading-6 text-theme-content pr-2">
-									{data.eventData?.title || 'Event Title'}
-								</h1>
-								<StatusBadge status={data.eventData?.status} />
-							</div>
-						</div>
-					</div>
+					<EventSidecar title={data.eventData.title} type={data.eventData.type} />
 				</CardContainer>
 			</Card>
 
