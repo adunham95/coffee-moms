@@ -35,6 +35,10 @@
 			return { id: type.id, title: type.title, value: undefined, checked: type.checked || false };
 		});
 	};
+
+	export let form;
+
+	console.log({ form });
 </script>
 
 <svelte:head>
