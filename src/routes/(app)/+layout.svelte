@@ -9,7 +9,7 @@
 </script>
 
 <div class="min-h-full">
-	<div class="bg-brand-bg-600">
+	<div class="bg-brand-bg-600 relative z-50">
 		<nav>
 			<div class="mx-auto max-w-7xl px-2 sm:px-4 lg:px-8">
 				<div
