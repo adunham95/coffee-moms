@@ -17,7 +17,7 @@
 	};
 </script>
 
-<ul role="list" class="mt-2 divide-y divide-gray-200 border-b border-t border-gray-200">
+<ul role="list" class="mt-2 divide-y divide-gray-200">
 	{#each array as item}
 		<li class="flex items-center justify-between py-3">
 			<TextInput

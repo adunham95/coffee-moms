@@ -8,6 +8,9 @@ export default {
 	],
 	theme: {
 		extend: {
+			transitionProperty: {
+				width: 'width',
+			},
 			minHeight: {
 				screen: 'calc(100vh - 64px - 120px)',
 				'screen-mobile': 'calc(100vh - 64px - 172px)',

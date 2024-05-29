@@ -1,6 +1,6 @@
 <script lang="ts">
 	import Label from './Label.svelte';
-	export let label: string;
+	export let label: string | undefined = undefined;
 	export let id: string;
 	export let groupName: string;
 	export let options: { id: string; title: string; value?: string; checked?: boolean }[] = [];
@@ -8,7 +8,9 @@
 </script>
 
 <fieldset class={$$props.class}>
-	<Label {label} {id} />
+	{#if label}
+		<Label {label} {id} />
+	{/if}
 
 	<div class="mt-2 grid gap-y-6 gap-x-4 grid-template-auto">
 		{#each options as radioElement}

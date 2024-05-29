@@ -13,8 +13,8 @@
 			</div>
 		</div>
 		<div class="ml-3">
-			<h3 class="font-medium text-theme-content">Beatrice Tips</h3>
-			<div class="mt-2 text-sm text-theme-secondary-content">
+			<!-- <h3 class="font-medium mb-2 text-theme-content">Beatrice Tips</h3> -->
+			<div class="text-sm text-theme-secondary-content">
 				<p>
 					{text}
 				</p>

@@ -3,5 +3,8 @@
 </script>
 
 <div class="overflow-hidden rounded-full bg-theme-secondary-content/10">
-	<div class="h-2 rounded-full bg-theme-primary transition" style={`width: ${width}%`}></div>
+	<div
+		class="h-2 rounded-full bg-theme-primary transition-width duration-200"
+		style={`width: ${width}%`}
+	></div>
 </div>
