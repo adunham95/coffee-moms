@@ -13,6 +13,8 @@
 	import { getEventName } from '../../../../const/event-types';
 	import { generatePageName } from '../../../../helpers/generatePageName';
 	import type { PageData } from './$types';
+	import { browser } from '$app/environment';
+
 	type CustomPageData = PageData & {
 		eventData: {
 			status: EStatus;
@@ -132,9 +134,11 @@
 					<div class="my-2 w-full border-t border-gray-300"></div>
 					<div>
 						<p>Event Url</p>
-						<p class="w-full bg-brand-200 rounded p-2">
-							{`${window.location.hostname}:${window.location.port}/event/${data.eventData.id}/invite`}
-						</p>
+						{#if browser}
+							<p class="w-full bg-brand-200 rounded p-2">
+								{`${window.location.hostname}:${window.location.port}/event/${data.eventData.id}/invite`}
+							</p>
+						{/if}
 					</div>
 				</CardContainer>
 			</Card>

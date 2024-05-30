@@ -1,7 +1,5 @@
 <script lang="ts">
 	import text_logo from '$lib/images/text-logo.svg';
-	import Card from '$components/Card/Card.svelte';
-	import Container from '$components/Container.svelte';
 	import SignUp from '$components/auth/SignUp.svelte';
 	import { generatePageName } from '$helpers/generatePageName';
 
