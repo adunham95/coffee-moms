@@ -3,6 +3,7 @@
 	import StatusBadge from '$components/StatusBadge.svelte';
 	import type { EStatus } from '$types/EStatus';
 	import { getIcon } from '$const/event-types';
+	import AddressDisplay from '$components/AddressDisplay.svelte';
 
 	export let id: number;
 	export let title: string;
@@ -42,21 +43,7 @@
 
 		<div class="mt-6 @lg:col-span-5 @lg:mt-0">
 			<dl class="grid grid-cols-2 gap-x-6 text-sm">
-				<div>
-					{#if locationName}
-						<dt class="font-medium text-gray-900">Event Location</dt>
-						<dd class="mt-3 text-gray-500">
-							<span class="block">{locationName}</span>
-							{#if street && city && state && zip}
-								<span class="block">{street}</span>
-								{#if street2}
-									<span class="block">{street2}</span>
-								{/if}
-								<span class="block">{city}, {state} {zip}</span>
-							{/if}
-						</dd>
-					{/if}
-				</div>
+				<AddressDisplay {locationName} {street} {street2} {city} {state} {zip} />
 				<div>
 					<dt class="font-medium text-gray-900">Shipping updates</dt>
 					<dd class="mt-3 space-y-3 text-gray-500">

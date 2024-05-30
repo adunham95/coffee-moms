@@ -1,4 +1,5 @@
 <script lang="ts">
+	import AddressDisplay from '$components/AddressDisplay.svelte';
 	import Card from '$components/Card/Card.svelte';
 	import CardContainer from '$components/Card/CardContainer.svelte';
 	import Heading from '$components/Text/Heading.svelte';
@@ -26,7 +27,7 @@
 	</div>
 
 	<div class="flex items-center justify-center">
-		<Card>
+		<Card class="min-w-[500px]">
 			<CardContainer>
 				<div class="flex justify-center w-full pb-3">
 					<div class="flex-shrink-0">
@@ -38,20 +39,14 @@
 					{data.eventData.invitationGreeting}
 				</Text>
 				<dl class="grid grid-cols-2 gap-x-6 text-sm mb-4">
-					<div>
-						<dd class="mt-3 text-gray-500">
-							<span class="block">{data.eventData.locationName}</span>
-							{#if data.eventData.street && data.eventData.city && data.eventData.state && data.eventData.zip}
-								<span class="block">{data.eventData.street}</span>
-								{#if data.eventData.street2}
-									<span class="block">{data.eventData.street2}</span>
-								{/if}
-								<span class="block">
-									{data.eventData.city}, {data.eventData.state}, {data.eventData.zip}
-								</span>
-							{/if}
-						</dd>
-					</div>
+					<AddressDisplay
+						locationName={data.eventData.locationName}
+						street={data.eventData.street}
+						street2={data.eventData.street2}
+						city={data.eventData.city}
+						state={data.eventData.state}
+						zip={data.eventData.zip}
+					/>
 					<div>
 						<dd class="mt-3 text-gray-500">
 							<p class="block">Something</p>

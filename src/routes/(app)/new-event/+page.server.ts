@@ -23,7 +23,10 @@ export const actions: Actions = {
 		const attendees = data.getAll('attendee').filter((a) => a !== '') || [];
 		const proposedTimes = data.getAll('time-preference').filter((a) => a !== '') || [];
 
-		console.log({ data: { title, attendees, proposedTimes, rsvp, securitySettings }, locals });
+		console.log({
+			data: { title, attendees, proposedTimes, rsvp, securitySettings, type, greeting },
+			locals,
+		});
 		let id = 0;
 
 		if (!title || typeof title !== 'string' || title.length < 2) {
@@ -33,6 +36,7 @@ export const actions: Actions = {
 		}
 
 		if (!type || typeof type !== 'string') {
+			console.log(type);
 			return fail(400, {
 				message: 'Invalid type',
 			});

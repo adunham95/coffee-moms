@@ -9,7 +9,7 @@
 	export let previousDisabled = false;
 </script>
 
-<fieldset disabled={!enabled} class={`${enabled ? '' : 'hidden'}`}>
+<fieldset class={`${enabled ? '' : 'hidden'}`}>
 	<div class="pb-2 flex items-center justify-between">
 		<Heading tag="legend" variant="h2" class="inline-flex">{title}</Heading>
 	</div>

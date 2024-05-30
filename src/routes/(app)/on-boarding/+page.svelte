@@ -11,12 +11,13 @@
 	import TextInputList from '$components/Inputs/TextInputList.svelte';
 	import StepperBar from '$components/Stepper/StepperBar.svelte';
 	import Tips from '$components/Tips.svelte';
-	import { enhance } from '$app/forms';
+	import { enhance, applyAction } from '$app/forms';
 	import { eventType } from '$const/event-types';
 	import Toggle from '$components/Inputs/Toggle.svelte';
 	import StepperFieldSet from '$components/Stepper/StepperFieldSet.svelte';
 
 	let showProposeDate = false;
+	let loading = false;
 
 	let step = 'type';
 
@@ -47,7 +48,7 @@
 
 	export let form;
 
-	console.log({ form });
+	$: console.log({ form });
 </script>
 
 <svelte:head>
@@ -55,7 +56,22 @@
 </svelte:head>
 
 <Container>
-	<form class="max-w-3xl mx-auto" method="POST" use:enhance action="/new-event">
+	<form
+		class="max-w-3xl mx-auto"
+		method="POST"
+		use:enhance={() => {
+			loading = true;
+			return async ({ result, update }) => {
+				await applyAction(result); // manually call applyAction to update `page.form`
+				await update();
+				loading = false;
+			};
+		}}
+		action="/new-event"
+	>
+		{#if form?.message}
+			<p>{form?.message}</p>
+		{/if}
 		<Card class="mt-3">
 			<StepperBar width={((steps.indexOf(step) + 1) / steps.length) * 100} />
 			<CardContainer>
@@ -116,6 +132,7 @@
 				<StepperFieldSet
 					enabled={step === 'details'}
 					title="Details"
+					buttonType="submit"
 					{gotToNextStep}
 					{gotToPreviousStep}
 				>
@@ -123,7 +140,7 @@
 						class="mb-2"
 						text="Let’s finalize the details. Choose your location, give it a name, and add some details."
 					/>
-					<TextInput id="event-name" label="Name" name="event-name" />
+					<TextInput id="event-name" label="Name" name="event-name" required />
 					<TextArea id="event-details" label="Details" />
 					<Address class="pt-2" />
 

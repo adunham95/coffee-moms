@@ -132,7 +132,9 @@
 					<div class="my-2 w-full border-t border-gray-300"></div>
 					<div>
 						<p>Event Url</p>
-						<p class="w-full bg-brand-200 rounded p-2">http://example.com/your-placeholder</p>
+						<p class="w-full bg-brand-200 rounded p-2">
+							{`${window.location.hostname}:${window.location.port}/event/${data.eventData.id}/invite`}
+						</p>
 					</div>
 				</CardContainer>
 			</Card>

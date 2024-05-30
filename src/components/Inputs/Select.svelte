@@ -18,13 +18,10 @@
 		{required}
 		name={name || id}
 		bind:value
-		class="block bg-theme-surface w-full rounded-md border-0 px-1.5 py-2.5 text-theme-content shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-theme-secondary-content focus:ring-2 focus:ring-inset focus:ring-theme-brand sm:text-sm sm:leading-6"
+		class="block bg-theme-surface w-full rounded-md border-0 px-1.5 py-1.5 text-theme-content shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-theme-secondary-content focus:ring-2 focus:ring-inset focus:ring-theme-brand sm:text-sm sm:leading-6"
 	>
 		{#each options as option}
 			<option>{option.label}</option>
 		{/each}
-		<option>United States</option>
-		<option selected>Canada</option>
-		<option>Mexico</option>
 	</select>
 </div>
