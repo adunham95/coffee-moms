@@ -16,13 +16,14 @@
 	import { eventType } from '$const/event-types';
 	import Toggle from '$components/Inputs/Toggle.svelte';
 
-	let step = 1;
-	const totalSteps = 4;
+	let step = 'type';
+
+	const steps = ['type', 'guests', 'invitation', 'time', 'details'];
 
 	function gotToNextStep() {
-		if (step < totalSteps) {
-			step += 1;
-		}
+		const id = steps[steps.indexOf(step) + 1];
+		if (!id) return;
+		step = id;
 	}
 
 	const getEventTypes = (): {
@@ -48,17 +49,17 @@
 <Container>
 	<form class="max-w-3xl mx-auto" method="POST" use:enhance action="/new-event">
 		<Card class="mt-3">
-			<StepperBar width={(step / totalSteps) * 100} />
+			<StepperBar width={((steps.indexOf(step) + 1) / steps.length) * 100} />
 			<CardContainer>
-				<fieldset class={`${step !== 1 ? 'hidden' : ''}`}>
+				<fieldset class={`${step === 'type' ? '' : 'hidden'}`}>
 					<StepperHeading title="What type of event is it?" {gotToNextStep} />
 					<Tips
 						class="mb-2"
-						text="First, let’s choose the perfect event type. How about a park day? Spend time at the splash pad or something else?"
+						text="First, let’s choose the perfect event type. How about a park day? Host a dinner party or something else?"
 					/>
 					<RadioBox id="event-type" groupName="event-type" class="pt-2" options={getEventTypes()} />
 				</fieldset>
-				<fieldset class={step !== 2 ? 'hidden' : ''}>
+				<fieldset class={step === 'guests' ? '' : 'hidden'}>
 					<StepperHeading title="Guests" {gotToNextStep} />
 					<Tips
 						class="mb-2"
@@ -66,7 +67,15 @@
 					/>
 					<TextInputList placeholder="Phone Number: 1234567890" groupName="attendee" />
 				</fieldset>
-				<fieldset class={step !== 3 ? 'hidden' : ''}>
+				<fieldset class={`${step === 'invitation' ? '' : 'hidden'}`}>
+					<StepperHeading title="Invitation" {gotToNextStep} />
+					<Tips
+						class="mb-2"
+						text="Now, let’s create an invitation. Add a greeting and a message. You can customize it later."
+					/>
+					<TextArea id="invite-greeting" label="Invitation Greeting" />
+				</fieldset>
+				<fieldset class={step === 'time' ? '' : 'hidden'}>
 					<StepperHeading title="Time" {gotToNextStep} />
 					<Tips
 						class="mb-2"
@@ -75,7 +84,7 @@
 					<DateInput id="event-date" label="Date" />
 					<ScheduleInput hideHeading />
 				</fieldset>
-				<fieldset class={step !== 4 ? 'hidden' : ''}>
+				<fieldset class={step === 'details' ? '' : 'hidden'}>
 					<StepperHeading title="Details" {gotToNextStep} buttonType="submit" />
 					<Tips
 						class="mb-2"
@@ -89,5 +98,8 @@
 				</fieldset>
 			</CardContainer>
 		</Card>
+		<div class="flex justify-end pt-2 text-sm text-theme-primary hover:text-theme-primary-hover">
+			<a href="/new-event">Use the Advanced Event Editor</a>
+		</div>
 	</form>
 </Container>

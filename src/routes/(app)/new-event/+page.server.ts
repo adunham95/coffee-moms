@@ -9,6 +9,7 @@ export const actions: Actions = {
 		const data = await request.formData();
 		const title = data.get('event-name');
 		const details = data.get('event-details');
+		const greeting = data.get('invite-greeting');
 		const type = data.get('event-type');
 		const locationName = data.get('location-name');
 		const street = data.get('street');
@@ -37,7 +38,7 @@ export const actions: Actions = {
 			});
 		}
 
-		if (typeof details !== 'string') {
+		if (details && typeof details !== 'string') {
 			return fail(400, {
 				message: 'Invalid details',
 			});
@@ -85,6 +86,12 @@ export const actions: Actions = {
 			});
 		}
 
+		if (greeting && typeof greeting !== 'string') {
+			return fail(400, {
+				message: 'Invalid greeting',
+			});
+		}
+
 		const newAttendees = await prisma.$transaction(
 			attendees.map((attendeePhone) =>
 				prisma.user.upsert({
@@ -115,6 +122,7 @@ export const actions: Actions = {
 					availabilityEnabled: proposedTimes.length > 0,
 					rsvpEnabled: rsvp === 'on',
 					securitySettings,
+					invitationGreeting: greeting,
 					attendees: {
 						createMany: {
 							data: newAttendees.map((a) => {

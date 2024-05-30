@@ -36,7 +36,7 @@
 					</Text>
 					<div class="mt-10 flex items-center gap-x-6">
 						<a
-							href="/new-event"
+							href="/on-boarding"
 							class="rounded-md bg-brand-600 px-3.5 py-2.5 text-sm font-semibold text-white shadow-sm hover:bg-brand-500 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-brand-600"
 							>Create an Event</a
 						>

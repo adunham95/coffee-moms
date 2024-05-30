@@ -38,6 +38,7 @@
 			<div>
 				<TextInput id="event-name" label="Name" name="event-name" />
 				<TextArea id="event-details" label="Details" />
+				<TextArea id="invite-greeting" label="Invitation Greeting" />
 				<DateInput id="event-date" label="Date" />
 				<RadioBox
 					id="event-type"

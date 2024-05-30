@@ -50,6 +50,7 @@ model Event {
   zip                 String?
   securitySettings    String?       @default("private")
   rsvpEnabled         Boolean?      @default(false)
+  invitationGreeting   String?       @default("We are delighted to invite you")
 
   @@index([ownerId])
 }

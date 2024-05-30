@@ -27,7 +27,7 @@
 					<div class="block lg:ml-4 lg:block">
 						<div class="flex items-center">
 							<a
-								href="/new-event"
+								href="/on-boarding"
 								class="bg-brand-700 text-white rounded-md py-2 px-3 text-sm font-medium"
 								aria-current="page">Create Event</a
 							>
