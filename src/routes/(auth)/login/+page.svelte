@@ -11,7 +11,7 @@
 </svelte:head>
 
 <div class="sm:mx-auto sm:w-full sm:max-w-md mt-4">
-	<img class="mx-auto h-6 w-auto my-3" src={text_logo} alt="Coffee Moms" />
+	<img class="mx-auto h-6 w-auto my-3" src={text_logo} alt="Planner Bee" />
 </div>
 <h2 class="mt-8 pb-2 text-2xl font-bold leading-9 tracking-tight text-gray-900">
 	Sign in to your account

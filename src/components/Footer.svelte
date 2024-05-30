@@ -56,7 +56,7 @@
 		</div>
 		<div class="mt-8 md:order-1 md:mt-0">
 			<p class="text-center text-xs leading-5 text-theme-secondary-content">
-				&copy; {new Date().getFullYear()} Coffee Moms, Inc. All rights reserved.
+				&copy; {new Date().getFullYear()} Planner Bee, Inc. All rights reserved.
 
 				<a href="/changelog" class="inline hover:text-theme-primary-hover">
 					v{PUBLIC_APP_VERSION}
