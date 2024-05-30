@@ -10,7 +10,7 @@
 <div class={`${$$props.class}`}>
 	{#if locationName}
 		<dt class="font-medium text-gray-900">Event Location</dt>
-		<dd class="mt-3 text-gray-500">
+		<dd class=" text-gray-500">
 			<span class="block">{locationName}</span>
 			{#if street && city && state && zip}
 				<span class="block">{street}</span>
