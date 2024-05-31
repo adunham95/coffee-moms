@@ -118,6 +118,14 @@
 						</div>
 					</div>
 				</div>
+				<DescriptionList>
+					<DescriptionListItem title="Title">
+						{data.eventData.title}
+					</DescriptionListItem>
+					<DescriptionListItem title="Title">
+						{data.eventData.title}
+					</DescriptionListItem>
+				</DescriptionList>
 			</CardContainer>
 		</Card>
 		<div slot="aside">
