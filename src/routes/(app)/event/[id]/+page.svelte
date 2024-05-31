@@ -51,57 +51,73 @@
 			</div>
 		</div>
 	</div>
+	<div>
+		<dl class="mt-5 grid grid-cols-1 gap-5 sm:grid-cols-3">
+			<Card>
+				<CardContainer>
+					<dt class="truncate text-sm font-medium text-theme-secondary-content">Total Guests</dt>
+					<dd class="mt-1 text-3xl font-semibold tracking-tight text-theme-content">
+						{data.eventData.attendees.length}
+					</dd>
+				</CardContainer>
+			</Card>
+			<!-- <Card>
+				<CardContainer>
+					<dt class="truncate text-sm font-medium text-theme-secondary-content">Avg. Open Rate</dt>
+					<dd class="mt-1 text-3xl font-semibold tracking-tight text-theme-content">58.16%</dd>
+				</CardContainer>
+			</Card>
+			<Card>
+				<CardContainer>
+					<dt class="truncate text-sm font-medium text-theme-secondary-content">Avg. Click Rate</dt>
+					<dd class="mt-1 text-3xl font-semibold tracking-tight text-theme-content">24.57%</dd>
+				</CardContainer>
+			</Card> -->
+		</dl>
+	</div>
+
 	<TwoColumnShell>
 		<Card>
 			<CardContainer>
-				<DescriptionList>
-					<DescriptionListItem title="Title">
-						{data.eventData.title}
-					</DescriptionListItem>
-					<DescriptionListItem title="Status">
-						<StatusBadge status={data.eventData?.status} />
-					</DescriptionListItem>
-					<DescriptionListItem title="Type">
-						{getEventName(data.eventData.type)}
-					</DescriptionListItem>
-					<DescriptionListItem title="Details">
-						{data.eventData.details}
-					</DescriptionListItem>
-					<DescriptionListItem title="Attendees">
-						<ul role="list" class="divide-y divide-gray-100 rounded-md border border-gray-200">
-							{#each data.eventData.attendees as attendee}
-								<li class="flex items-center justify-between py-4 pl-4 pr-5 text-sm leading-6">
-									<div class="flex w-0 flex-1 items-center">
-										<Icon name="user" class="h-5 w-5 flex-shrink-0 text-gray-400" />
+				<div class="border-b border-gray-200">
+					<div class="sm:flex sm:items-baseline sm:justify-between">
+						<div class="sm:w-0 sm:flex-1">
+							<h1 id="message-heading" class="text-base font-semibold leading-6 text-gray-900">
+								{data.eventData.title}
+							</h1>
+							<p class="mt-1 truncate text-sm text-gray-500">{data.eventData.details}</p>
+						</div>
 
-										<div class="ml-4 flex min-w-0 flex-1 gap-2">
-											{#if attendee.user.email}
-												<span class="truncate font-medium">{attendee.user.email}</span>
-											{/if}
-											{#if attendee.user.email && attendee.user.phone}
-												<span>|</span>
-											{/if}
+						<div
+							class="mt-4 flex items-center justify-between sm:ml-6 sm:mt-0 sm:flex-shrink-0 sm:justify-start"
+						>
+							<StatusBadge status={data.eventData?.status} />
+						</div>
+					</div>
+					<div class="mt-3 sm:mt-4">
+						<div class="block">
+							<nav class="-mb-px flex space-x-8">
+								<!-- Current: "border-indigo-500 text-indigo-600", Default: "border-transparent text-gray-500 hover:border-gray-300 hover:text-gray-700" -->
 
-											{#if attendee.user.phone}
-												<span class="truncate font-medium">{attendee.user.phone}</span>
-											{/if}
-										</div>
-									</div>
-									<div class="ml-4 flex-shrink-0">
-										{#if attendee.user.loginToken[0]?.token}
-											<button
-												on:click={() => handleShare(attendee.user.loginToken[0]?.token)}
-												class="font-medium text-indigo-600 hover:text-indigo-500"
-											>
-												Share link
-											</button>
-										{/if}
-									</div>
-								</li>
-							{/each}
-						</ul>
-					</DescriptionListItem>
-				</DescriptionList>
+								<a
+									href="#"
+									class=" border-theme-primary text-theme-primary whitespace-nowrap border-b-2 px-1 pb-4 text-sm font-medium"
+									aria-current="page">Details</a
+								>
+								<a
+									href="#"
+									class="border-transparent text-gray-500 hover:border-gray-300 hover:text-gray-700 whitespace-nowrap border-b-2 px-1 pb-4 text-sm font-medium"
+									>Guests</a
+								>
+								<a
+									href="#"
+									class="border-transparent text-gray-500 hover:border-gray-300 hover:text-gray-700 whitespace-nowrap border-b-2 px-1 pb-4 text-sm font-medium"
+									>Invitation</a
+								>
+							</nav>
+						</div>
+					</div>
+				</div>
 			</CardContainer>
 		</Card>
 		<div slot="aside">
