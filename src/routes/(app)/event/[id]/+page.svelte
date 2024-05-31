@@ -4,16 +4,19 @@
 	import DescriptionList from '$components/DescriptionList/DescriptionList.svelte';
 	import DescriptionListItem from '$components/DescriptionList/DescriptionListItem.svelte';
 	import EventSidecar from '$components/EventSidecar.svelte';
-	import Icon from '$components/Icon.svelte';
 	import TwoColumnShell from '$components/Shell/TwoColumnShell.svelte';
 	import StatusBadge from '$components/StatusBadge.svelte';
 	import { shareOrCopy } from '$helpers/shareOrCopy';
 	import type { EStatus } from '$types/EStatus';
 	import Container from '../../../../components/Container.svelte';
-	import { getEventName } from '../../../../const/event-types';
 	import { generatePageName } from '../../../../helpers/generatePageName';
 	import type { PageData } from './$types';
 	import { browser } from '$app/environment';
+	import AddressDisplay from '$components/AddressDisplay.svelte';
+	import Tabs from '$components/Tabs.svelte';
+	import TabContent from '$components/TabContent.svelte';
+
+	let activeTab = 'details';
 
 	type CustomPageData = PageData & {
 		eventData: {
@@ -51,35 +54,10 @@
 			</div>
 		</div>
 	</div>
-	<div>
-		<dl class="mt-5 grid grid-cols-1 gap-5 sm:grid-cols-3">
-			<Card>
-				<CardContainer>
-					<dt class="truncate text-sm font-medium text-theme-secondary-content">Total Guests</dt>
-					<dd class="mt-1 text-3xl font-semibold tracking-tight text-theme-content">
-						{data.eventData.attendees.length}
-					</dd>
-				</CardContainer>
-			</Card>
-			<!-- <Card>
-				<CardContainer>
-					<dt class="truncate text-sm font-medium text-theme-secondary-content">Avg. Open Rate</dt>
-					<dd class="mt-1 text-3xl font-semibold tracking-tight text-theme-content">58.16%</dd>
-				</CardContainer>
-			</Card>
-			<Card>
-				<CardContainer>
-					<dt class="truncate text-sm font-medium text-theme-secondary-content">Avg. Click Rate</dt>
-					<dd class="mt-1 text-3xl font-semibold tracking-tight text-theme-content">24.57%</dd>
-				</CardContainer>
-			</Card> -->
-		</dl>
-	</div>
-
 	<TwoColumnShell>
 		<Card>
 			<CardContainer>
-				<div class="border-b border-gray-200">
+				<div class="">
 					<div class="sm:flex sm:items-baseline sm:justify-between">
 						<div class="sm:w-0 sm:flex-1">
 							<h1 id="message-heading" class="text-base font-semibold leading-6 text-gray-900">
@@ -94,38 +72,30 @@
 							<StatusBadge status={data.eventData?.status} />
 						</div>
 					</div>
-					<div class="mt-3 sm:mt-4">
-						<div class="block">
-							<nav class="-mb-px flex space-x-8">
-								<!-- Current: "border-indigo-500 text-indigo-600", Default: "border-transparent text-gray-500 hover:border-gray-300 hover:text-gray-700" -->
-
-								<a
-									href="#"
-									class=" border-theme-primary text-theme-primary whitespace-nowrap border-b-2 px-1 pb-4 text-sm font-medium"
-									aria-current="page">Details</a
-								>
-								<a
-									href="#"
-									class="border-transparent text-gray-500 hover:border-gray-300 hover:text-gray-700 whitespace-nowrap border-b-2 px-1 pb-4 text-sm font-medium"
-									>Guests</a
-								>
-								<a
-									href="#"
-									class="border-transparent text-gray-500 hover:border-gray-300 hover:text-gray-700 whitespace-nowrap border-b-2 px-1 pb-4 text-sm font-medium"
-									>Invitation</a
-								>
-							</nav>
-						</div>
-					</div>
+					<Tabs
+						tabs={[
+							{ id: 'details', title: 'Details' },
+							{ id: 'attendees', title: 'Guests' },
+						]}
+						bind:activeTab
+					/>
+					<TabContent bind:activeTab tabId="details">
+						<DescriptionList>
+							<DescriptionListItem title="Location">
+								<AddressDisplay
+									hideTitle
+									locationName={data.eventData.locationName}
+									street={data.eventData.street}
+									street2={data.eventData.street2}
+									city={data.eventData.city}
+									state={data.eventData.state}
+									zip={data.eventData.zip}
+								/>
+							</DescriptionListItem>
+						</DescriptionList>
+					</TabContent>
+					<TabContent bind:activeTab tabId="attendees"></TabContent>
 				</div>
-				<DescriptionList>
-					<DescriptionListItem title="Title">
-						{data.eventData.title}
-					</DescriptionListItem>
-					<DescriptionListItem title="Title">
-						{data.eventData.title}
-					</DescriptionListItem>
-				</DescriptionList>
 			</CardContainer>
 		</Card>
 		<div slot="aside">

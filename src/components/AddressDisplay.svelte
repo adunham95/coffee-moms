@@ -1,4 +1,5 @@
 <script lang="ts">
+	export let hideTitle = false;
 	export let locationName: string | null;
 	export let street: string | null;
 	export let street2: string | null;
@@ -9,7 +10,9 @@
 
 <div class={`${$$props.class}`}>
 	{#if locationName}
-		<dt class="font-medium text-gray-900">Event Location</dt>
+		{#if !hideTitle}
+			<dt class="font-medium text-gray-900">Event Location</dt>
+		{/if}
 		<dd class=" text-gray-500">
 			<span class="block">{locationName}</span>
 			{#if street && city && state && zip}
