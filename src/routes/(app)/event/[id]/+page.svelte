@@ -15,6 +15,7 @@
 	import AddressDisplay from '$components/AddressDisplay.svelte';
 	import Tabs from '$components/Tabs.svelte';
 	import TabContent from '$components/TabContent.svelte';
+	import GuestTable from '$components/GuestTable.svelte';
 
 	let activeTab = 'details';
 
@@ -94,7 +95,17 @@
 							</DescriptionListItem>
 						</DescriptionList>
 					</TabContent>
-					<TabContent bind:activeTab tabId="attendees"></TabContent>
+					<TabContent bind:activeTab tabId="attendees">
+						<GuestTable
+							guests={data.eventData.attendees.map((attendee) => {
+								return {
+									name: attendee.user.firstName + ' ' + attendee.user.lastName,
+									email: attendee.user.email,
+									phone: attendee.user.phone,
+								};
+							})}
+						/>
+					</TabContent>
 				</div>
 			</CardContainer>
 		</Card>
