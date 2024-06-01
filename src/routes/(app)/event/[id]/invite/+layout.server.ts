@@ -1,8 +1,7 @@
 import prisma from '$lib/prisma';
 import { error } from '@sveltejs/kit';
-import type { PageServerLoad } from './$types';
 
-export const load: PageServerLoad = async (event) => {
+export const load = async (event) => {
 	const { id } = event.params;
 	const user = event.locals.user;
 
@@ -14,7 +13,11 @@ export const load: PageServerLoad = async (event) => {
 		},
 	});
 
-	console.log(eventData);
+	const attendeeData = await prisma.attendee.findFirst({
+		where: { eventId: parseInt(id), userId: user?.id },
+	});
+
+	console.log(eventData, attendeeData);
 	if (!eventData) error(404, 'Event Not Found');
 
 	if (eventData.securitySettings === 'private' && user?.id !== eventData.ownerId)
@@ -30,5 +33,6 @@ export const load: PageServerLoad = async (event) => {
 	return {
 		user,
 		eventData,
+		attendeeData,
 	};
 };

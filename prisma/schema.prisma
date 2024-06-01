@@ -50,7 +50,8 @@ model Event {
   zip                 String?
   securitySettings    String?       @default("private")
   rsvpEnabled         Boolean?      @default(false)
-  invitationGreeting   String?       @default("We are delighted to invite you")
+  invitationGreeting  String?       @default("We are delighted to invite you")
+  rsvp                RSVP[]
 
   @@index([ownerId])
 }
@@ -64,6 +65,7 @@ model Attendee {
   createdAt  DateTime      @default(now()) @db.Timestamptz(3)
   updatedAt  DateTime      @updatedAt @db.Timestamptz(3)
   avaliblity Avalibility[]
+  rsvp       RSVP[]
 
   @@index([eventId, userId])
 }
@@ -96,6 +98,20 @@ model Avalibility {
   event      Event    @relation(fields: [eventId], references: [id])
   attendeeId Int
   attendee   Attendee @relation(fields: [attendeeId], references: [id])
+  date       DateTime @db.Timestamptz(3)
+  createdAt  DateTime @default(now()) @db.Timestamptz(3)
+  updatedAt  DateTime @updatedAt @db.Timestamptz(3)
+}
+
+model RSVP {
+  id         Int      @id @default(autoincrement())
+  eventId    Int
+  event      Event    @relation(fields: [eventId], references: [id])
+  attendeeId Int
+  attendee   Attendee @relation(fields: [attendeeId], references: [id])
+  name       String
+  details    String
+  attending  Boolean
   date       DateTime @db.Timestamptz(3)
   createdAt  DateTime @default(now()) @db.Timestamptz(3)
   updatedAt  DateTime @updatedAt @db.Timestamptz(3)

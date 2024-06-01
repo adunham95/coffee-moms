@@ -1,12 +1,17 @@
 <script lang="ts">
 	import AddressDisplay from '$components/AddressDisplay.svelte';
+	import Dialog from '$components/Dialog.svelte';
 	import Heading from '$components/Text/Heading.svelte';
 	import Text from '$components/Text/Text.svelte';
+	import SignIn from '$components/auth/SignIn.svelte';
+	import SignInUp from '$components/auth/SignInUp.svelte';
 	import icon_logo from '$lib/images/icon-logo-brand.svg';
 	import type { PageData } from '../$types';
 
 	export let data: PageData;
 	console.log(data);
+
+	let dialog: any;
 </script>
 
 <svelte:head>
@@ -39,6 +44,28 @@
 		</dd>
 	</div>
 </dl>
+{#if !data.user}
+	<div class="border rounded border-gray-200 bg-white px-4 py-2 mb-4 max-w-md mx-auto">
+		<div class="-ml-4 -mt-4 flex flex-wrap items-center justify-between sm:flex-nowrap">
+			<div class="ml-4 mt-4">
+				<h3 class="text-base font-semibold leading-6 text-gray-900">Login</h3>
+				<p class="mt-1 text-sm text-gray-500">Login or create an account</p>
+			</div>
+			<div class="ml-4 mt-4 flex-shrink-0">
+				<button
+					on:click={() => dialog.showModal()}
+					type="button"
+					class="relative inline-flex items-center rounded-md bg-theme-primary px-3 py-2 text-sm font-semibold text-white shadow-sm hover:bg-theme-primary-hover focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-theme-primary"
+				>
+					Login
+				</button>
+			</div>
+		</div>
+	</div>
+	<Dialog bind:dialog on:close={() => console.log('closed')}>
+		<SignInUp />
+	</Dialog>
+{/if}
 {#if data.eventData.rsvpEnabled}
 	<div class="border rounded border-gray-200 bg-white px-4 py-2 mb-4 max-w-md mx-auto">
 		<div class="-ml-4 -mt-4 flex flex-wrap items-center justify-between sm:flex-nowrap">

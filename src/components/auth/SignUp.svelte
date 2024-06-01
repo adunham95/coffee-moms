@@ -4,6 +4,8 @@
 	import { enhance } from '$app/forms';
 	import { isValidEmail } from '$helpers/helpers';
 
+	export let useSignIn = false;
+
 	let email = '';
 	let password = '';
 	let confirmPassword = '';
@@ -24,7 +26,7 @@
 	}
 </script>
 
-<form method="POST" use:enhance>
+<form method="POST" action="/sign-up" use:enhance>
 	<div class="{$$props.class} grid grid-cols-1 gap-x-2 gap-y-4 sm:grid-cols-4 items-center">
 		<Input
 			label="First Name"
@@ -71,11 +73,17 @@
 				? 'Password not match'
 				: undefined}
 		/>
-		<div class="flex items-center justify-end sm:col-span-4">
+		<div class="flex items-center justify-start sm:col-span-4">
 			<div class="text-sm leading-6">
-				<a href="/login" class="font-semibold text-theme-primary hover:text-theme-primary-hover"
-					>Sign In</a
-				>
+				{#if useSignIn}
+					<button on:click class="font-semibold text-theme-accent hover:text-theme-accent-hover">
+						Sign In
+					</button>
+				{:else}
+					<a href="/login" class="font-semibold text-theme-accent hover:text-theme-accent-hover">
+						Sign In
+					</a>
+				{/if}
 			</div>
 		</div>
 		<div class="flex md:justify-end sm:col-span-4">
