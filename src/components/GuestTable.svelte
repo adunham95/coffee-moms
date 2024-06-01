@@ -1,5 +1,21 @@
 <script lang="ts">
-	export let guests: { name: string | null; email: string | null; phone: string | null }[] = [];
+	import { shareOrCopy } from '$helpers/shareOrCopy';
+
+	export let guests: {
+		name: string | null;
+		email: string | null;
+		phone: string | null;
+		token: string | null;
+	}[] = [];
+
+	function handleShare(loginToken: string) {
+		const url = `/login/${loginToken}`;
+		shareOrCopy({
+			title: 'Login Link',
+			text: 'Login with this link to add your availability',
+			url,
+		});
+	}
 </script>
 
 <div class="@container">
@@ -20,6 +36,9 @@
 					class="hidden px-3 py-3.5 text-left text-sm font-semibold text-gray-900 @sm:table-cell"
 					>Phone</th
 				>
+				<th scope="col" class="relative py-3.5 pl-3 pr-4 sm:pr-0">
+					<span class="sr-only">Link</span>
+				</th>
 			</tr>
 		</thead>
 		<tbody class="divide-y divide-gray-200 bg-white">
@@ -38,10 +57,19 @@
 					</td>
 					<td class="hidden px-3 py-4 text-sm text-gray-500 @xs:table-cell">{guest.email || ''}</td>
 					<td class="hidden px-3 py-4 text-sm text-gray-500 @sm:table-cell">{guest.phone || ''}</td>
+					<td
+						class="relative whitespace-nowrap py-4 pl-3 pr-4 text-right text-sm font-medium sm:pr-0"
+					>
+						{#if guest.token}
+							<button
+								on:click={() => handleShare(guest?.token || ' ')}
+								class="text-indigo-600 hover:text-indigo-900"
+								>Share
+							</button>
+						{/if}
+					</td>
 				</tr>
 			{/each}
-
-			<!-- More people... -->
 		</tbody>
 	</table>
 </div>

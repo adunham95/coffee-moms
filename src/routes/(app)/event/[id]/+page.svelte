@@ -6,7 +6,6 @@
 	import EventSidecar from '$components/EventSidecar.svelte';
 	import TwoColumnShell from '$components/Shell/TwoColumnShell.svelte';
 	import StatusBadge from '$components/StatusBadge.svelte';
-	import { shareOrCopy } from '$helpers/shareOrCopy';
 	import type { EStatus } from '$types/EStatus';
 	import Container from '../../../../components/Container.svelte';
 	import { generatePageName } from '../../../../helpers/generatePageName';
@@ -27,15 +26,6 @@
 
 	export let data: CustomPageData;
 	console.log(data);
-
-	function handleShare(loginToken: string) {
-		const url = `/login/${loginToken}`;
-		shareOrCopy({
-			title: 'Login Link',
-			text: 'Login with this link to add your availability',
-			url,
-		});
-	}
 </script>
 
 <svelte:head>
@@ -102,6 +92,7 @@
 									name: attendee.user.firstName + ' ' + attendee.user.lastName,
 									email: attendee.user.email,
 									phone: attendee.user.phone,
+									token: attendee.user.loginToken[0]?.token,
 								};
 							})}
 						/>

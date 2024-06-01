@@ -66,6 +66,27 @@
 		<SignInUp />
 	</Dialog>
 {/if}
+{#if data.user}
+	<div class="border rounded border-gray-200 bg-white px-4 py-2 mb-4 max-w-md mx-auto">
+		<div class="-ml-4 -mt-4 flex flex-wrap items-center justify-between sm:flex-nowrap">
+			<div class="ml-4 mt-4">
+				<h3 class="text-base font-semibold leading-6 text-gray-900">Save</h3>
+				<p class="mt-1 text-sm text-gray-500">Save this event to my account</p>
+			</div>
+			<div class="ml-4 mt-4 flex-shrink-0">
+				<form method="POST" action="?/save">
+					<input type="hidden" name="eventId" value={data.eventData.id} />
+					<button
+						type="submit"
+						class="relative inline-flex items-center rounded-md bg-theme-primary px-3 py-2 text-sm font-semibold text-white shadow-sm hover:bg-theme-primary-hover focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-theme-primary"
+					>
+						Save
+					</button>
+				</form>
+			</div>
+		</div>
+	</div>
+{/if}
 {#if data.eventData.rsvpEnabled}
 	<div class="border rounded border-gray-200 bg-white px-4 py-2 mb-4 max-w-md mx-auto">
 		<div class="-ml-4 -mt-4 flex flex-wrap items-center justify-between sm:flex-nowrap">

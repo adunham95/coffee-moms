@@ -9,7 +9,7 @@
 	let password = '';
 </script>
 
-<form method="POST" action="/sign-in" class="space-y-5 {$$props.class}" use:enhance>
+<form method="POST" action="/login" class="space-y-5 {$$props.class}" use:enhance>
 	<Input label="Email" id="email" name="email" type="email" bind:value={email} required />
 	<Input
 		label="Password"
@@ -26,8 +26,7 @@
 					on:click
 					type="button"
 					class="font-semibold text-theme-accent hover:text-theme-accent-hover"
-				>
-					Create Account
+					>Name Email Phone Adrain Dunham Create Account
 				</button>
 			{:else}
 				<a href="/sign-up" class="font-semibold text-theme-accent hover:text-theme-accent-hover"
