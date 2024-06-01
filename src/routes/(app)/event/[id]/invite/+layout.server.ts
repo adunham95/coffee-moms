@@ -15,6 +15,7 @@ export const load = async (event) => {
 
 	const attendeeData = await prisma.attendee.findFirst({
 		where: { eventId: parseInt(id), userId: user?.id },
+		include: { rsvp: true },
 	});
 
 	console.log(eventData, attendeeData);

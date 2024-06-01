@@ -1,12 +1,11 @@
 <script lang="ts">
-	import { invalidateAll } from '$app/navigation';
 	import AddressDisplay from '$components/AddressDisplay.svelte';
 	import Dialog from '$components/Dialog.svelte';
 	import Heading from '$components/Text/Heading.svelte';
 	import Text from '$components/Text/Text.svelte';
 	import SignInUp from '$components/auth/SignInUp.svelte';
 	import icon_logo from '$lib/images/icon-logo-brand.svg';
-	import type { PageData } from '../$types';
+	import type { PageData } from './$types';
 
 	export let data: PageData;
 	console.log(data);
@@ -55,7 +54,7 @@
 				<button
 					on:click={() => dialog.showModal()}
 					type="button"
-					class="relative inline-flex items-center rounded-md bg-theme-primary px-3 py-2 text-sm font-semibold text-white shadow-sm hover:bg-theme-primary-hover focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-theme-primary"
+					class="relative inline-flex items-center rounded-md bg-theme-success px-3 py-2 text-sm font-semibold text-white shadow-sm hover:bg-theme-primary-hover focus-visible:the focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-theme-primary"
 				>
 					Login
 				</button>
@@ -66,7 +65,6 @@
 		<SignInUp
 			afterAction={() => {
 				dialog.close();
-				invalidateAll();
 			}}
 		/>
 	</Dialog>
@@ -81,12 +79,22 @@
 			<div class="ml-4 mt-4 flex-shrink-0">
 				<form method="POST" action="?/save">
 					<input type="hidden" name="eventId" value={data.eventData.id} />
-					<button
-						type="submit"
-						class="relative inline-flex items-center rounded-md bg-theme-primary px-3 py-2 text-sm font-semibold text-white shadow-sm hover:bg-theme-primary-hover focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-theme-primary"
-					>
-						Save
-					</button>
+					{#if data.attendeeData?.id}
+						<button
+							type="submit"
+							disabled
+							class="relative inline-flex items-center rounded-md bg-theme-success px-3 py-2 text-sm font-semibold text-white shadow-sm"
+						>
+							Saved
+						</button>
+					{:else}
+						<button
+							type="submit"
+							class="relative inline-flex items-center rounded-md bg-theme-primary px-3 py-2 text-sm font-semibold text-white shadow-sm hover:bg-theme-primary-hover focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-theme-primary"
+						>
+							Save
+						</button>
+					{/if}
 				</form>
 			</div>
 		</div>
@@ -100,13 +108,23 @@
 				<p class="mt-1 text-sm text-gray-500">RSVP to the event so the host know whose you are</p>
 			</div>
 			<div class="ml-4 mt-4 flex-shrink-0">
-				<a
-					href={`/event/${data.eventData.id}/invite/rsvp`}
-					type="button"
-					class="relative inline-flex items-center rounded-md bg-theme-primary px-3 py-2 text-sm font-semibold text-white shadow-sm hover:bg-theme-primary-hover focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-theme-primary"
-				>
-					RSVP
-				</a>
+				{#if (data.attendeeData?.rsvp?.length || 0) > 0}
+					<a
+						href={`/event/${data.eventData.id}/invite/rsvp`}
+						type="button"
+						class="relative inline-flex items-center rounded-md bg-theme-success px-3 py-2 text-sm font-semibold text-white shadow-sm hover:bg-theme-success-secondary-content focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-theme-primary"
+					>
+						Edit
+					</a>
+				{:else}
+					<a
+						href={`/event/${data.eventData.id}/invite/rsvp`}
+						type="button"
+						class="relative inline-flex items-center rounded-md bg-theme-primary px-3 py-2 text-sm font-semibold text-white shadow-sm hover:bg-theme-primary-hover focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-theme-primary"
+					>
+						RSVP
+					</a>
+				{/if}
 			</div>
 		</div>
 	</div>

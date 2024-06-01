@@ -28,5 +28,7 @@ export const actions: Actions = {
 				userId: user?.id || '',
 			},
 		});
+
+		return { success: true, attendee: newAttendee };
 	},
 };

@@ -1,0 +1,20 @@
+-- CreateTable
+CREATE TABLE "RSVP" (
+    "id" SERIAL NOT NULL,
+    "eventId" INTEGER NOT NULL,
+    "attendeeId" INTEGER NOT NULL,
+    "name" TEXT NOT NULL,
+    "details" TEXT NOT NULL,
+    "attending" BOOLEAN NOT NULL,
+    "date" TIMESTAMPTZ(3) NOT NULL,
+    "createdAt" TIMESTAMPTZ(3) NOT NULL DEFAULT CURRENT_TIMESTAMP,
+    "updatedAt" TIMESTAMPTZ(3) NOT NULL,
+
+    CONSTRAINT "RSVP_pkey" PRIMARY KEY ("id")
+);
+
+-- AddForeignKey
+ALTER TABLE "RSVP" ADD CONSTRAINT "RSVP_eventId_fkey" FOREIGN KEY ("eventId") REFERENCES "Event"("id") ON DELETE RESTRICT ON UPDATE CASCADE;
+
+-- AddForeignKey
+ALTER TABLE "RSVP" ADD CONSTRAINT "RSVP_attendeeId_fkey" FOREIGN KEY ("attendeeId") REFERENCES "Attendee"("id") ON DELETE RESTRICT ON UPDATE CASCADE;
