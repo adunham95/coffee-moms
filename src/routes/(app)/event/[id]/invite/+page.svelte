@@ -1,9 +1,9 @@
 <script lang="ts">
+	import { invalidateAll } from '$app/navigation';
 	import AddressDisplay from '$components/AddressDisplay.svelte';
 	import Dialog from '$components/Dialog.svelte';
 	import Heading from '$components/Text/Heading.svelte';
 	import Text from '$components/Text/Text.svelte';
-	import SignIn from '$components/auth/SignIn.svelte';
 	import SignInUp from '$components/auth/SignInUp.svelte';
 	import icon_logo from '$lib/images/icon-logo-brand.svg';
 	import type { PageData } from '../$types';
@@ -63,7 +63,12 @@
 		</div>
 	</div>
 	<Dialog bind:dialog on:close={() => console.log('closed')}>
-		<SignInUp />
+		<SignInUp
+			afterAction={() => {
+				dialog.close();
+				invalidateAll();
+			}}
+		/>
 	</Dialog>
 {/if}
 {#if data.user}

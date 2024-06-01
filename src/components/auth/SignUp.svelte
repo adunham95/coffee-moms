@@ -3,8 +3,11 @@
 	import Button from '$components/Button.svelte';
 	import { enhance } from '$app/forms';
 	import { isValidEmail } from '$helpers/helpers';
+	import { goto } from '$app/navigation';
 
 	export let useSignIn = false;
+	export let useRedirect = true;
+	export let afterAction = () => {};
 
 	let email = '';
 	let password = '';
@@ -26,7 +29,20 @@
 	}
 </script>
 
-<form method="POST" action="/sign-up" use:enhance>
+<form
+	method="POST"
+	action="/sign-up"
+	use:enhance={({ formElement, formData, action, cancel }) => {
+		return async ({ result }) => {
+			console.log({ result });
+			if (useRedirect && result.type === 'redirect') {
+				goto('/dashboard');
+			} else {
+				afterAction();
+			}
+		};
+	}}
+>
 	<div class="{$$props.class} grid grid-cols-1 gap-x-2 gap-y-4 sm:grid-cols-4 items-center">
 		<Input
 			label="First Name"

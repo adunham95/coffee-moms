@@ -28,7 +28,5 @@ export const actions: Actions = {
 				userId: user?.id || '',
 			},
 		});
-
-		console.log({ newAttendee });
 	},
 };

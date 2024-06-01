@@ -2,14 +2,31 @@
 	import Input from '$components/Inputs/TextInput.svelte';
 	import Button from '$components/Button.svelte';
 	import { enhance } from '$app/forms';
+	import { goto } from '$app/navigation';
 
 	export let useSignUp = false;
+	export let useRedirect = true;
+	export let afterAction = () => {};
 
 	let email = '';
 	let password = '';
 </script>
 
-<form method="POST" action="/login" class="space-y-5 {$$props.class}" use:enhance>
+<form
+	method="POST"
+	action="/login"
+	class="space-y-5 {$$props.class}"
+	use:enhance={({ formElement, formData, action, cancel }) => {
+		return async ({ result }) => {
+			console.log({ result });
+			if (useRedirect && result.type === 'redirect') {
+				goto('/dashboard');
+			} else {
+				afterAction();
+			}
+		};
+	}}
+>
 	<Input label="Email" id="email" name="email" type="email" bind:value={email} required />
 	<Input
 		label="Password"
@@ -26,7 +43,8 @@
 					on:click
 					type="button"
 					class="font-semibold text-theme-accent hover:text-theme-accent-hover"
-					>Name Email Phone Adrain Dunham Create Account
+				>
+					Create Account
 				</button>
 			{:else}
 				<a href="/sign-up" class="font-semibold text-theme-accent hover:text-theme-accent-hover"
