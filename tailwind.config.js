@@ -89,6 +89,13 @@ export default {
 						'secondary-content': '#411361',
 						icon: '#9052a8',
 						bg: '#d8b8e0',
+						accent: {
+							DEFAULT: '#52a890',
+							content: '#073b20',
+							'secondary-content': '#136141',
+							icon: '#52a890',
+							bg: '#b8e0d8',
+						},
 					},
 
 					info: {

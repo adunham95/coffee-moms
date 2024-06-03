@@ -1,4 +1,5 @@
 <script lang="ts">
+	import Button from '$components/Button.svelte';
 	import Container from '$components/Container.svelte';
 	import Heading from '$components/Text/Heading.svelte';
 	import Text from '$components/Text/Text.svelte';
@@ -54,6 +55,31 @@
 			name: 'Brand Icon',
 			color: 'theme-brand-icon',
 			style: 'bg-theme-brand-icon',
+		},
+		{
+			name: 'Brand Accent',
+			color: 'theme-brand-accent',
+			style: 'bg-theme-brand-accent',
+		},
+		{
+			name: 'Brand Accent Background',
+			color: 'theme-brand-accent-bg',
+			style: 'bg-theme-brand-accent-bg',
+		},
+		{
+			name: 'Brand Accent Content',
+			color: 'theme-brand-accent-content',
+			style: 'bg-theme-brand-accent-content',
+		},
+		{
+			name: 'Brand Accent Alt Content',
+			color: 'theme-brand-accent-secondary-content',
+			style: 'bg-theme-brand-accent-secondary-content',
+		},
+		{
+			name: 'Brand Accent Icon',
+			color: 'theme-brand-accent-icon',
+			style: 'bg-theme-brand-accent-icon',
 		},
 		{
 			name: 'Info',
@@ -397,23 +423,12 @@
 			</div>
 		</div>
 		<!-- Primary -->
-		<button
-			type="button"
-			class="rounded-md bg-theme-primary px-3.5 py-2.5 text-sm font-semibold text-theme-primary-content shadow-sm hover:bg-theme-primary-hover focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-theme-primary"
-			>Primary</button
-		>
-		<!-- Accent -->
-		<button
-			type="button"
-			class="rounded-md bg-theme-accent px-3.5 py-2.5 text-sm font-semibold text-theme-accent-content shadow-sm hover:bg-theme-accent-hover focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-theme-accent"
-			>Accent</button
-		>
-		<!-- Danger -->
-		<button
-			type="button"
-			class="rounded-md bg-theme-danger px-3.5 py-2.5 text-sm font-semibold text-theme-danger-content shadow-sm hover:bg-theme-danger-hover focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-theme-danger"
-			>Danger</button
-		>
+		<Button>Brand</Button>
+		<Button style="accent">Accent</Button>
+		<Button style="info">Info</Button>
+		<Button style="success">Success</Button>
+		<Button style="error">Error</Button>
+		<Button style="warn">Warn</Button>
 	</div>
 
 	<!-- Typography -->

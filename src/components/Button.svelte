@@ -8,9 +8,9 @@
 	// console.log({ color });
 	// TODO generate colors
 	const styles = {
-		brand:
-			'text-white bg-brand-400 focus:ring-brand-500 hover:bg-brand-700 disabled:bg-brand-200 disabled:hover:bg-grey-700',
-		accent: 'text-white',
+		brand: 'text-white bg-theme-brand focus:ring-theme-brand hover:bg-theme-brand/80',
+		accent:
+			'text-white bg-theme-brand-accent focus:ring-theme-brand-accent hover:bg-theme-brand-accent/80',
 		info: 'text-white bg-theme-info focus:ring-theme-info hover:bg-theme-info/80',
 		success: 'text-white bg-theme-success focus:ring-theme-success hover:bg-theme-success/80',
 		error: 'text-white bg-theme-error focus:ring-theme-error hover:bg-theme-error/80',
