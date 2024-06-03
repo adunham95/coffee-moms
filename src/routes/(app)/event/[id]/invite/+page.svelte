@@ -1,5 +1,6 @@
 <script lang="ts">
 	import AddressDisplay from '$components/AddressDisplay.svelte';
+	import Button from '$components/Button.svelte';
 	import Dialog from '$components/Dialog.svelte';
 	import Heading from '$components/Text/Heading.svelte';
 	import Text from '$components/Text/Text.svelte';
@@ -79,21 +80,11 @@
 			<div class="ml-4 mt-4 flex-shrink-0">
 				<form method="POST" action="?/save">
 					<input type="hidden" name="eventId" value={data.eventData.id} />
+
 					{#if data.attendeeData?.id}
-						<button
-							type="submit"
-							disabled
-							class="relative inline-flex items-center rounded-md bg-theme-success px-3 py-2 text-sm font-semibold text-white shadow-sm"
-						>
-							Saved
-						</button>
+						<Button disabled style="success" size="sm" class="font-semibold">Saved</Button>
 					{:else}
-						<button
-							type="submit"
-							class="relative inline-flex items-center rounded-md bg-theme-primary px-3 py-2 text-sm font-semibold text-white shadow-sm hover:bg-theme-primary-hover focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-theme-primary"
-						>
-							Save
-						</button>
+						<Button size="sm" type="submit">Save</Button>
 					{/if}
 				</form>
 			</div>
