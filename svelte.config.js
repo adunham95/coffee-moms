@@ -21,6 +21,7 @@ const config = {
 			$components: resolve('./src/components/'),
 			$helpers: resolve('./src/helpers/'),
 			$const: resolve('./src/const/'),
+			$store: resolve('./src/store/'),
 		},
 	},
 };
