@@ -1,6 +1,9 @@
 <script lang="ts">
 	import Calender from '$components/Calender.svelte';
 	import TimeSelector from '$components/TimeSelector.svelte';
+
+	export let groupName: string;
+
 	const today = new Date();
 	let selectedDay = { month: today.getMonth(), day: today.getDate(), year: today.getFullYear() };
 
@@ -32,10 +35,10 @@
 				data[`${selectedDay.month}-${selectedDay.day}-${selectedDay.year}`] = times.detail;
 			}}
 		/>
-		<ul>
+		<ul class="hidden">
 			{#each list as time}
 				<li>
-					<input class="w-full" disabled name="time-date" type="datetime" value={time} />
+					<input class="w-full" disabled name={groupName} type="datetime" value={time} />
 				</li>
 			{/each}
 		</ul>

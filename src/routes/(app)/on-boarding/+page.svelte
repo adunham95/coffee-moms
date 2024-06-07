@@ -15,6 +15,7 @@
 	import { eventType } from '$const/event-types';
 	import Toggle from '$components/Inputs/Toggle.svelte';
 	import StepperFieldSet from '$components/Stepper/StepperFieldSet.svelte';
+	import TimeDateSelector from '$components/TimeDateSelector.svelte';
 
 	let showProposeDate = false;
 	let loading = false;
@@ -124,7 +125,7 @@
 						bind:checked={showProposeDate}
 					/>
 					{#if showProposeDate}
-						<ScheduleInput hideHeading />
+						<TimeDateSelector groupName="time-preference" />
 					{:else}
 						<DateInput id="event-date" label="Date" />
 					{/if}

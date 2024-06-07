@@ -9,5 +9,5 @@
 </svelte:head>
 
 <Container>
-	<TimeDateSelector />
+	<TimeDateSelector groupName="time-preference" />
 </Container>
