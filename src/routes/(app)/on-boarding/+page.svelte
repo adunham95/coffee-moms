@@ -119,6 +119,7 @@
 						text="Let’s find the time. Choose a time, or propose some times that work for you."
 					/>
 					<Toggle
+						class="pb-3"
 						id="select-date-type"
 						label="Propose Time"
 						subLabel="Propose some times that work for you"

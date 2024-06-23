@@ -11,7 +11,7 @@
 					on:click={() => {
 						activeTab = tab.id;
 					}}
-					class={`${activeTab === tab.id ? 'border-theme-primary text-theme-primary' : ' border-theme-secondary-content text-theme-secondary-content'}  whitespace-nowrap border-b-2 px-1 pb-2 text-sm font-medium`}
+					class={`${activeTab === tab.id ? 'border-theme-primary text-theme-primary' : ' border-theme-secondary-content text-theme-secondary-content'}  whitespace-nowrap border-b-2 px-1 pb-1 text-sm font-medium`}
 					aria-current="page"
 				>
 					{tab.title}

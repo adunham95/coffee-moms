@@ -14,7 +14,7 @@
 		</div>
 		<div class="ml-3">
 			<!-- <h3 class="font-medium mb-2 text-theme-content">Beatrice Tips</h3> -->
-			<div class="text-sm text-theme-content">
+			<div class="text-sm text-theme-content font-semibold">
 				<p>
 					{text}
 				</p>
